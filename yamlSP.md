@@ -73,13 +73,12 @@ translator:
 lang: fr
 orig_lang:
 translations:
-- traduction:
-  - lang:
-    titre:
-    url:
-  - lang:
-    titre:
-    url:
+- lang:
+  titre:
+  url:
+- lang:
+  titre:
+  url:
 articleslies:
 - url:
   titre:
