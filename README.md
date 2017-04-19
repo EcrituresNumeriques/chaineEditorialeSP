@@ -32,12 +32,12 @@ Dans ce repository sont déposés:
 
 ## Md2html
 
-    pandoc --standalone --template=templateHtmlDcV0.html5 --ascii --filter pandoc-citeproc -f markdown -t html SPXXXX.docx.md -o SPXXXX.docx.md.html
+    pandoc --standalone --template=templateHtmlDcV0.html5 --ascii --filter pandoc-citeproc -f markdown -t html SPXXXX.docx.md SPXXXX.yaml -o SPXXXX.docx.md.html
 
 
 ## Md2tex
 
-    pandoc --standalone --template=templateLaTeX.latex -f markdown -t latex SPXXXX.docx.md -o SPXXXX.docx.md.tex
+    pandoc --standalone --template=templateLaTeX.latex -f markdown -t latex SPXXXX.docx.md SPXXXX.yaml -o SPXXXX.docx.md.tex
 
 ## tex2pdf
 

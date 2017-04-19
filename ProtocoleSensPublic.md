@@ -19,30 +19,40 @@ Vous devez maintenant avoir 3 fichiers dans votre dossier :
 - fichier source (définitif auteur)
 - SPxxxx.docx
 - SPxxxx.docx.md
+- [media] (dossier créé lorsque le document comprend des images)
 
-Désormais, le fichier md vous sert de fichier de travail et sera le format pivot.
+Si le dossier `media` n'existe pas : 
+  * créer un dossier media et copier y les deux fichiers `../chaineEditorialeSP/logo.png` et `../chaineEditorialeSP/crochets.png`
 
-## Etape 2 : travail sur le md
-Le document est composé du :
-- yaml: contient toutes les métadonnées
+Désormais, le fichier markdown `SPxxxx.docx.md` vous sert de fichier de travail et sera le format pivot.
+
+## Etape 2 : Edition de l'article
+
+Un article est composé par plusieurs fichiers : 
+
+* Yaml : SPxxxx.yaml - fichier de métadonnées au format Yaml
+* Markdown : SPxxxx.docx.md - contenu de l'article au format Markdown
+* Bibtex : SPxxxx.bib - fichier de bibliographie au format Bibtex
+
+Le contenu de l'article est composé par : 
 - corps de texte : l'article
 - notes de bas de page
 
-- la bibliographie est contenue dans un fichier SPxxxx.bib (voir partie )
+### 2.1 : Métadonnées - SPxxxx.yaml
+- copier le fichier `../chaineEditorialeSP/modeleYaml.yaml` dans le dossier `SPxxxx` et le renommer `SPxxxx.yaml`
+- remplir les champs tel que spécifié dans le modèle et selon les règles générales suivantes :
 
-### 2.1 : travail sur le yaml
-- ouvrir le fichier modeleYaml.md et copier tout le contenu
-- coller le contenu au tout début de votre fichier SPxxxx
-- remplir les champs tel que spécifié dans le modèle
-
-* Règles générales à suivre:
+**Règles générales à suivre:**
   - si un titre ou un résumé comprend ":", le remplacer avec &#58; (les : ne sont pas admis)
   - les `controlledKeywords` renvoient aux mots-clés de référence sur Sens public. Pour remplir les champs, se référer au document autoritesRAMEAU. dans le dosier Edition. ! Tous les mots-clés ne sont pas forcément inclus dans le doc de référence. Vous pouvez aussi en créer. Dans ce cas, il faut consulter la [base des autorités Rameau](http://catalogue.bnf.fr/recherche-autorite.do?pageRech=rat).
   - les `keyword_fr/en` (ou autre langue) renvoient aux mots-clés choisis par l'auteur. (Parfois, il peut s'agir des mêmes mots-clés que ceux de SP).
   - supprimer tout champ qui ne serait pas renseigné.
   - ne pas oublier de toujours renseigner le champ langue.
+  - dans le cas d'une date commençant par un zéro, mettre le numéro entre guillemets sinon le zéro n'est pas pris en compte. Exemple : 
+    * `01` devient `1` (pas correct)
+    * `"01"` devient `01` (correct)
 
-### 2.2 travail sur l'article
+### 2.2 Corps de l'article - SPxxxx.docx.md
 * Vérifier que le corps de l'article ne contient ni titre, ni auteur, ni résumé ou mot-clé (tous ces éléments doivent être inclus dans le yaml)
 
 * Vérifier le document dans son ensemble, identifier les éléments problématiques comme:
@@ -62,20 +72,20 @@ Le document est composé du :
 * Listes <!-- à définir-->
 
 
-## Etape 3: Travail sur la bibliographie
+## Etape 3: Bibliographie - SPxxxx.bib
 
-* Normalement, l'auteur fournit un fichier .bib. Le renommer "SPxxxx.bib" et l'enregistrer dans le dossier SPxxxx.
+Il est prévu que l'auteur fournit un fichier Bibtex. Dans ce cas, le renommer `SPxxxx.bib` et l'enregistrer dans le dossier `SPxxxx`.
 
-* Sinon, créer sur Zotero la biblio de l'article, à partir de la biblio déjà présente dans l'article + des notes de bas de page, puis exporter un fichier bibtex sous le nom "SPxxxx.bib" dans le dossier SPxxxx.
+Dans le cas contraire, créer sur Zotero la biblio de l'article, à partir de la biblio déjà présente dans l'article + des notes de bas de page, puis exporter un fichier Bibtex sous le nom `SPxxxx.bib` dans le dossier `SPxxxx`.
 
-* Dans le fichier .md, réintégrer les références suivant les recommandations de l'auteur.
+Dans le fichier Markdown, réintégrer les références suivant les recommandations de l'auteur.
   * dans SPxxxx.bib : `giddens_consequences_1990`
   * dans SPxxxx.docx.md :  
     `Malgré sa dissimulation et notre immersion dans l’ère du numérique, le tas d’or conserve une grande réalité ; contrairement à ce que suggère Giddens [@giddens_consequences_1990, p. 25] en mettant en exergue le phénomène de l’argent désincarné dans les sociétés modernes, qui est celui de l’entrepreneur, l’argent matérialisé du cupide continue d’impressionner et d’exciter.`
   * résultat final affiché :  
-    `Malgré sa dissimulation et notre immersion dans l’ère du numérique, le tas d’or conserve une grande réalité ; contrairement à ce que suggère Giddens  (Giddens 1990, 25) en mettant en exergue le phénomène de l’argent désincarné dans les sociétés modernes, qui est celui de l’entrepreneur, l’argent matérialisé du cupide continue d’impressionner et d’exciter.`
+    `Malgré sa dissimulation et notre immersion dans l’ère du numérique, le tas d’or conserve une grande réalité ; contrairement à ce que suggère Giddens (Giddens 1990, 25) en mettant en exergue le phénomène de l’argent désincarné dans les sociétés modernes, qui est celui de l’entrepreneur, l’argent matérialisé du cupide continue d’impressionner et d’exciter.`
 
-* Dans la partie Yaml du fichier .md, vérifier les 3 champs relatifs à la bibliographie :
+* Dans le Yaml, vérifier les 3 champs relatifs à la bibliographie :
 
       ---
       bibliography: SPxxxx.bib
@@ -92,17 +102,26 @@ Le document est composé du :
           @monjour_litterature_2016, @monjour_dibutade_2015
         ---
 
-## Étape 4 : conversion md2html
+## Étape 4 : Conversion md2html
 
-* Retourner dans le terminal et lancer la commande suivante :  
-  `pandoc --standalone --ascii --filter pandoc-citeproc --template=../templates/templateHtmlDcV0.html5 -f markdown -t html SPxxxx.docx.md -o SPxxxx.html`
+Dans le cas d'un article avec une bibliographie, lancer la commande suivante : 
 
-* Vous devez maintenant avoir 5 fichiers dans votre dossier :
+    pandoc --standalone --ascii --filter pandoc-citeproc --template=../chaineEditorialeSP/templates/templateHtmlDcV0.html5 -f markdown -t html SPxxxx.docx.md SPxxxx.yaml -o SPxxxx.html
+
+Dans le cas d'un article sans bibliographie, lancer la commande : 
+
+    pandoc --standalone --ascii --template=../chaineEditorialeSP/templates/templateHtmlDcV0.html5 -f markdown -t html SPxxxx.docx.md SPxxxx.yaml -o SPxxxx.html
+
+
+Vous devez maintenant avoir 6 fichiers dans votre dossier :
+
 - fichier source (définitif auteur)
 - SPxxxx.docx
 - SPxxxx.docx.md
+- SPxxxx.yaml
 - SPxxxx.bib
-- SPxxxx.docx.md.html
+- SPxxxx.html
+
 
 ## Étape 5 : intégration de l'article sur SPIP
 
@@ -131,14 +150,21 @@ Le document est composé du :
 
 ## Création du fichier pdf.
 
-* retourner dans le terminal et insérer la commande blabla
+* retourner dans le terminal et lancer successivement les 3 commandes suivantes :
+
+      pandoc --standalone --template=../chaineEditorialeSP/templates/LaTeX.latex -f markdown -t latex SPXXXX.docx.md SPXXXX.yaml -o SPXXXX.docx.md.tex  
+
+      pdflatex SPXXXX.docx.md.tex  
+
+      pdflatex SPXXXX.docx.md.tex 
 
 * Vous devez avoir pour terminer 6 fichiers dans votre dossier :
 - fichier source (définitif auteur)
 - SPxxxx.docx
 - SPxxxx.docx.md
+- SPxxxx.yaml
 - SPxxxx.bib
-- SPxxxx.docx.md.html
-- SPxxxx.docx.md.html.pdf
+- SPxxxx.html
+- SPxxxx.pdf
 
 * Ne pas oublier de joindre le .pdf à l'article sur SPIP.
