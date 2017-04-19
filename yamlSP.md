@@ -9,13 +9,13 @@ controlledKeywords:
   idRameau:
   wikidata:
 - label:
-uriRameau:
-idRameau:
-wikidata:
+  uriRameau:
+  idRameau:
+  wikidata:
 - label:
-uriRameau:
-idRameau:
-wikidata:
+  uriRameau:
+  idRameau:
+  wikidata:
 - label:
   uriRameau:
   idRameau:
@@ -61,13 +61,10 @@ author:
 abstract:
 - lang:
   text:
-- lang: en
+- lang:
   text:
-
 keyword_fr:
 keyword_en:
-
-
 url_article_sp:
 id_sp:
 translator:
