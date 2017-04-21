@@ -21,20 +21,20 @@ Vous devez maintenant avoir 3 fichiers dans votre dossier :
 - SPxxxx.docx.md
 - [media] (dossier créé lorsque le document comprend des images)
 
-Si le dossier `media` n'existe pas : 
+Si le dossier `media` n'existe pas :
   * créer un dossier media et copier y les deux fichiers `../chaineEditorialeSP/logo.png` et `../chaineEditorialeSP/crochets.png`
 
 Désormais, le fichier markdown `SPxxxx.docx.md` vous sert de fichier de travail et sera le format pivot.
 
 ## Etape 2 : Edition de l'article
 
-Un article est composé par plusieurs fichiers : 
+Un article est composé par plusieurs fichiers :
 
 * Yaml : SPxxxx.yaml - fichier de métadonnées au format Yaml
 * Markdown : SPxxxx.docx.md - contenu de l'article au format Markdown
 * Bibtex : SPxxxx.bib - fichier de bibliographie au format Bibtex
 
-Le contenu de l'article est composé par : 
+Le contenu de l'article est composé par :
 - corps de texte : l'article
 - notes de bas de page
 
@@ -48,7 +48,7 @@ Le contenu de l'article est composé par :
   - les `keyword_fr/en` (ou autre langue) renvoient aux mots-clés choisis par l'auteur. (Parfois, il peut s'agir des mêmes mots-clés que ceux de SP).
   - supprimer tout champ qui ne serait pas renseigné.
   - ne pas oublier de toujours renseigner le champ langue.
-  - dans le cas d'une date commençant par un zéro, mettre le numéro entre guillemets sinon le zéro n'est pas pris en compte. Exemple : 
+  - dans le cas d'une date commençant par un zéro, mettre le numéro entre guillemets sinon le zéro n'est pas pris en compte. Exemple :
     * `01` devient `1` (pas correct)
     * `"01"` devient `01` (correct)
 
@@ -104,11 +104,11 @@ Dans le fichier Markdown, réintégrer les références suivant les recommandati
 
 ## Étape 4 : Conversion md2html
 
-Dans le cas d'un article avec une bibliographie, lancer la commande suivante : 
+Dans le cas d'un article avec une bibliographie, lancer la commande suivante :
 
     pandoc --standalone --ascii --filter pandoc-citeproc --template=../chaineEditorialeSP/templates/templateHtmlDcV0.html5 -f markdown -t html SPxxxx.docx.md SPxxxx.yaml -o SPxxxx.html
 
-Dans le cas d'un article sans bibliographie, lancer la commande : 
+Dans le cas d'un article sans bibliographie, lancer la commande :
 
     pandoc --standalone --ascii --template=../chaineEditorialeSP/templates/templateHtmlDcV0.html5 -f markdown -t html SPxxxx.docx.md SPxxxx.yaml -o SPxxxx.html
 
@@ -152,11 +152,20 @@ Vous devez maintenant avoir 6 fichiers dans votre dossier :
 
 * retourner dans le terminal et lancer successivement les 3 commandes suivantes :
 
-      pandoc --standalone --template=../chaineEditorialeSP/templates/LaTeX.latex -f markdown -t latex SPXXXX.docx.md SPXXXX.yaml -o SPXXXX.docx.md.tex  
+- dans le cas d'un article avec biblio:
+      pandoc --standalone --filter pandoc-citeproc --template=../chaineEditorialeSP/templates/templateLaTeX.latex -f markdown -t latex SPXXXX.docx.md SPXXXX.yaml -o SPXXXX.docx.md.tex  
 
       pdflatex SPXXXX.docx.md.tex  
 
-      pdflatex SPXXXX.docx.md.tex 
+      pdflatex SPXXXX.docx.md.tex
+
+- dans le cas d'un article sans biblio:
+
+      pandoc --standalone  --template=../chaineEditorialeSP/templates/templateLaTeX.latex -f markdown -t latex SPXXXX.docx.md SPXXXX.yaml -o SPXXXX.docx.md.tex
+
+      pdflatex SPXXXX.docx.md.tex  
+
+      pdflatex SPXXXX.docx.md.tex
 
 * Vous devez avoir pour terminer 6 fichiers dans votre dossier :
 - fichier source (définitif auteur)
