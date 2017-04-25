@@ -135,13 +135,6 @@ presque tout... ce n'est qu'une première version de test. par ex:
 
 <!--TEMPLATES CORPS -->
 
-
-<!-- Pour recréer les sections 
-    http://stackoverflow.com/questions/34907867/how-to-wrap-h2-and-p-tags-inside-a-section-tag-in-xslt#34909285 
-    régler le pb Xpath et mettre l'applytemplate au bon endroit pour éviter le traitement récursif des para -->
-<!--    <xsl:key name="sectElems" match="/body/*[not(self::h2)]" 
-        use="generate-id(preceding-sibling::h2[1])"/>-->
-
     <xsl:template match="body">
         <corps>           
             <xsl:for-each-group select="*" group-starting-with="h2">
@@ -152,14 +145,6 @@ presque tout... ce n'est qu'une première version de test. par ex:
         </corps>
     </xsl:template>
 
-<!--    <xsl:template match="body">
-<!-\- traiter les pargraphes précédents le 1er h2 -\->
-        <corps>
-            <xsl:apply-templates/>
-        </corps>
-    </xsl:template>
--->
-    
     <xsl:template match="h2">
         <titre>
             <xsl:apply-templates/>
@@ -189,19 +174,6 @@ presque tout... ce n'est qu'une première version de test. par ex:
     </xsl:template>
     
 
-
-<!--    <xsl:template match="h2">
-        <xsl:variable name="id">
-            <xsl:value-of select="generate-id()"/>
-        </xsl:variable>
-        <section1>
-            <titre>
-                <xsl:copy-of select="./node()|key('sectElems',$id)/node()"/>
-            </titre>
-            <xsl:copy-of select=".|key('sectElems',$id)"/>
-        </section1>
-    </xsl:template>-->
-
 <!--
     <xsl:template match="h2[@id='bibliographie']">
         <!-\-<xsl:variable name="id">
@@ -214,28 +186,7 @@ presque tout... ce n'est qu'une première version de test. par ex:
             <xsl:apply-templates/>
         </grBiblio>
     </xsl:template>-->
-    
-
-  <!--
-    <xsl:key name="sectElems" match="/body/*[not(self::h3)]" 
-        use="generate-id(preceding-sibling::h3[1])"/>
-    <xsl:template match="body">
-        <xsl:copy>
-            <xsl:copy-of select="@*"/>
-            <xsl:apply-templates select="h3"/>
-        </xsl:copy>
-    </xsl:template>
-    
-    <xsl:template match="h3">
-        <xsl:variable name="id">
-            <xsl:value-of select="generate-id()"/>
-        </xsl:variable>
-        <section2>
-            <xsl:copy-of select=".|key('sectElems',$id)"/>
-        </section2>
-    </xsl:template>
--->
-  
+      
 
     <xsl:template match="figure">
         <figure>
