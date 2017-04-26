@@ -25,15 +25,24 @@ issnnum: 2104-3272
 director:
 - forname: Marcello
   surname: Vitali-Rosati
-  orcid: 0000-0001-6424-3229
   gender: male
+  orcid: 0000-0001-6424-3229
+  viaf:
+  foaf:
+  isni:
 redacteurDossier:
 - forname:
   surname:
   orcid:
+  viaf:
+  foaf:
+  isni:
 - forname:
   surname:
   orcid:
+  viaf:
+  foaf:
+  isni:
 year:
 month:
 day:
@@ -41,10 +50,10 @@ date:
 dossier:
 - title:
   id:
-publisher:
-prod:
-prodnum:
-diffnum:
+publisher: Département des littératures de langue française
+prod: Sens Public
+prodnum: Sens Public
+diffnum: Érudit
 rights: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 title:
 subtitle:
@@ -53,10 +62,16 @@ author:
 - forname:
   surname:
   orcid:
+  viaf:
+  foaf:
+  isni:
   wikidata:
 - forname:
   surname:
   orcid:
+  viaf:
+  foaf:
+  isni:
   wikidata:
 abstract:
 - lang:
@@ -87,6 +102,9 @@ reviewers:
  - forname:
    name:
    orcid:
+   viaf:
+   foaf:
+   isni:
 bibliography:
 link-citations: true
 nocite: |
