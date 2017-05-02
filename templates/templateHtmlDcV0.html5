@@ -10,22 +10,22 @@
 
 <!--DC-->
 
-$if(lang)$ 
+$if(lang)$
     <meta http-equiv="Content-language" content="$lang$" />
 $endif$
-$if(url_article_sp)$    
+$if(url_article_sp)$
     <meta name="url" content="$url_article_sp$" />
 $endif$
 
     <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
     <link rel="schema.MARCREL" href="http://www.loc.gov/loc.terms/relators/"/>
-    <link rel="DCTERMS.subject" href="http://rameau.bnf.fr"/>	
+    <link rel="DCTERMS.subject" href="http://rameau.bnf.fr"/>
     <meta name="DC.type" content="Text" />
     <meta name="DC.format" content="text/html" />
-$if(url_article_sp)$   
+$if(url_article_sp)$
     <meta name="DC.identifier" scheme="URI" content="$url_article_sp$" />
 $endif$
-$if(issnnum)$  
+$if(issnnum)$
     <meta name="DC.identifier" scheme="ISSN" content="$issnnum$" />
 $endif$
     <meta name="DC.title" content="$title$" />
@@ -35,17 +35,17 @@ $endif$
 
 
 
-    <meta name="author" content="$for(author)$$author.forname$ $author.surname$$sep$, $endfor$" />
-$if(author)$   
-$for(author)$
- <meta name="DC.creator" content="$author.forname$ $author.surname$" />
+    <meta name="author" content="$for(authors)$$authors.forname$ $authors.surname$$sep$, $endfor$" />
+$if(authors)$
+$for(authors)$
+ <meta name="DC.creator" content="$authors.forname$ $authors.surname$" />
    $endfor$
-$endif$	
+$endif$
 $if(abstract)$
 $for(abstract)$
     <meta name="description" xml:lang="$abstract.lang$" lang="$abstract.lang$" content="$abstract.text$" />
     <meta name="DC.description" xml:lang="$abstract.lang$" lang="$abstract.lang$" content="$abstract.text$" />
-$endfor$    
+$endfor$
 $endif$
 
 
@@ -57,31 +57,31 @@ $endif$
 $if(keyword_en)$
 <meta name="keywords" xml:lang="en" lang="en" content="$for(keyword_en)$$keyword_en$$sep$, $endfor$" />
 $endif$
-    
+
 $if(controlledKeywords)$
 $for(controlledKeywords)$
     <meta name="DC.subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
 $endfor$
 $endif$
-    
-   
+
+
     <meta name="DC.date" scheme="W3CDTF" content="$date$" />
     <meta name="DC.rights" content="$rights$" />
     <meta name="DC.relation.isPartOf" content="$dossier$" />
     <meta name="DC.source" content="$journal$" />
-    
+
 
 <meta name="citation_journal_title" content="$journal$" />
     <meta name="citation_publisher" content="$publisher$" />
-$for(author)$    
-<meta name="citation_authors" content="$author.forname$ $author.surname$" />
+$for(authors)$
+<meta name="citation_authors" content="$authors.forname$ $authors.surname$" />
 $endfor$
     <meta name="citation_title" content="$title$" />
     <meta name="citation_publication_date" content="$date$" />
     <meta name="citation_online_date" content="$date$" />
     <meta name="citation_issn" content="$issnnum$" />
     <meta name="citation_isbn" content="$issnnum$" />
-    
+
 <!--perinent?
     <meta name="citation_issue" content="" />
     <meta name="citation_firstpage" content="29" />
@@ -94,20 +94,20 @@ $if(abstract)$
 $for(abstract)$
     <meta name="citation_abstract" xml:lang="$abstract.lang$" lang="$abstract.lang$" content="$abstract.text$" />
 
-$endfor$    
+$endfor$
 $endif$
-    
+
 $if(translator)$
 $for(translator)$
     <meta name="DC.contributor.trl" content="$translator.forname$ $translator.surname$" />
 $endfor$
-$endif$ 
+$endif$
 <!--
     <meta name="DC.description.tableOfContents" content="$toc$"/>-->
     <link title="schema(PRISM)" rel="schema.prism" href="http://prismstandard.org/namespaces/basic/2.0/"/>
     <meta name="prism.url" content="$url_article_sp$"/>
     <meta name="prism.publicationName" content="$journal$"/>
-  
+
 
 <!--  <meta name="prism.number" content="4"/>
     <meta name="prism.volume" content="47"/>
@@ -123,16 +123,16 @@ $endif$
     <meta name="prism.issn" content="$issnnum$"/>
     <meta name="prism.eIssn" content="$issnnum$"/>
     <meta name="prism.teaser" content="$abstract.fr$"/>
-   
+
 
 <!--RDFa-->
 
  <meta property="dc:type" content="Text" />
     <meta property="dc:format" content="text/html" />
-$if(url_article_sp)$   
+$if(url_article_sp)$
     <meta property="dc:identifier" scheme="URI" content="$url_article_sp$" />
 $endif$
-$if(issnnum)$  
+$if(issnnum)$
     <meta property="dc:identifier" scheme="ISSN" content="$issnnum$" />
 $endif$
     <meta property="dc:title" content="$title$" />
@@ -140,26 +140,26 @@ $endif$
     <meta property="dc:language" scheme="RFC3066" content="$lang$" />
     <meta property="dc:type" content="journalArticle" />
 
-$for(author)$
-    <meta property="dc:creator" content="$author.forname$ $author.surname$" />
-$endfor$   
-	
+$for(authors)$
+    <meta property="dc:creator" content="$authors.forname$ $authors.surname$" />
+$endfor$
+
 $if(abstract)$
 $for(abstract)$
-   
+
     <meta property="dcterms:abstract" xml:lang="$abstract.lang$" lang="$abstract.lang$" content="$abstract.text$" />
-$endfor$    
+$endfor$
 $endif$
 
 
 $if(controlledKeywords)$
 $for(controlledKeywords)$
     <meta property="dc:subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
-  <link rel="dc:subject" href="$controlledKeywords.uriRameau$"/>	
+  <link rel="dc:subject" href="$controlledKeywords.uriRameau$"/>
 $endfor$
 $endif$
 
-   
+
     <meta property="dcterm:created" scheme="W3CDTF" content="$date$" />
     <meta property="dc:rights" content="$rights$" />
     <meta property="dc:relation.isPartOf" content="$dossier$" />
@@ -180,9 +180,9 @@ $for(director)$
 $endfor$
 $endif$
 
-$if(author)$
-$for(author)$
-<meta name="author" content="$author.forname$ $author.surname$" forname="$author.forname$" surname="$author.surname$" orcid="$author.orcid$" />
+$if(authors)$
+$for(authors)$
+<meta name="author" content="$authors.forname$ $authors.surname$" forname="$authors.forname$" surname="$authors.surname$" orcid="$authors.orcid$" />
 $endfor$
 $endif$
 

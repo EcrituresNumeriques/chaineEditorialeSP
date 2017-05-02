@@ -58,7 +58,7 @@ rights: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International 
 title:
 subtitle:
 typeArticle:
-author:
+authors:
 - forname:
   surname:
   orcid:
