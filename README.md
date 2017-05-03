@@ -34,6 +34,10 @@ Dans ce repository sont déposés:
 
     pandoc --standalone --template=templateHtmlDcV0.html5 --ascii --filter pandoc-citeproc -f markdown -t html SPXXXX.docx.md SPXXXX.yaml -o SPXXXX.docx.md.html
 
+## Md2tei
+
+    pandoc -S -s -f markdown -t tei --template=templates/teiV0.template --ascii --filter pandoc-citeproc SPXXXX.md SPXXXX.yaml -o SPXXXX.tei
+
 
 ## Md2tex
 
@@ -48,6 +52,7 @@ Dans ce repository sont déposés:
 ## html2erudit
 - xslt : HTML2eruditV0.xsl
 
+## bib2yaml
 
-
+     pandoc-citeproc --bib2yaml SPXXXX.bib
 
