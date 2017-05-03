@@ -15123,7 +15123,6 @@ function parse() {
 
   try {
     obj = jsyaml.load(str, { schema: SEXY_SCHEMA });
-    console.log(obj);
     result.setOption('mode', 'javascript');
     result.setValue(JSON.stringify(obj, false, 1));
   } catch (err) {

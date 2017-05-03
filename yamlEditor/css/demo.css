@@ -28,14 +28,14 @@ body {
   float: right;
 }
 
-.src, .dst {
+.src, .dst, .app {
   width: 49%;
   position: relative;
   float: left;
   height: 100%;
 }
 
-.dst {
+.dst, .app {
   float: right;
 }
 
