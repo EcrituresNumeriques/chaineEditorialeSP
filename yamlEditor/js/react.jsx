@@ -1,6 +1,6 @@
 let init = {
   obj:{
-   "controlledKeywordsd": [
+   "controlledKeywords": [
     {
      "label": null,
      "uriRameau": null,
@@ -54,7 +54,7 @@ let init = {
    "prodnum": "Sens Public",
    "diffnum": "Érudit",
    "rights": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
-   "title": null,
+   "title": "test",
    "subtitle": null,
    "typeArticle": null,
    "authors": [
@@ -132,36 +132,33 @@ let init = {
    "link-citations": true,
    "nocite": null
   }
-};
+}
 
 
 const reducer = function(state,action){
+  console.log(action.type);
   if(action.type == "YAML_UPDATE"){
+    console.log(state.obj == action.obj);
     state.obj = action.obj;
-    console.log('update triggered');
+    return state
+  }
+  if(action.type == "FORM_UPDATE"){
+    state.obj[action.target] = action.value;
     return state
   }
   return state;
 }
 
+const {Provider} = ReactRedux;
+
 let store = Redux.createStore(reducer,init);
 
-function Identifiant(){
+function Metadonnees(){
   return(
     <section>
-    <h1>Identifiant</h1>
-    <input type="text" placeholder="SPXXXX" />
-    </section>
-  )
-}
-
-function Titre(){
-  var titre = store.getState().obj.title;
-  return(
-    <section>
+      <TextInput target="id_sp" title="Identifiant" placeholder="SPxxxx" />
       <TextInput target="title" title="Titre" />
-      <h1>Sous-titre</h1>
-      <input type="text" placeholder="sous-titre" />
+      <TextInput target="subtitle" title="Sous-titre" />
       <h1>Résumé</h1>
       <textarea name="resume" placeholder="Résumé"></textarea>
     </section>
@@ -171,19 +168,33 @@ function Titre(){
 class TextInput extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
         title:this.props.title,
+        placeholder:this.props.placeholder || this.props.title,
         target : this.props.target,
         value: store.getState().obj[this.props.target]
      };
+  }
+
+  componentDidMount(){
+    let context = this;
+    store.subscribe(function(){
+      let value = store.getState().obj[context.state.target] || '';
+      if(context.state.value != value){
+        context.setState({value:value});
+      }
+    });
+  }
+
+  handleTextChange(event) {
+    store.dispatch({type:"FORM_UPDATE",target:this.state.target, value:event.target.value});
   }
 
   render() {
     return (
       <section>
         <h1>{this.state.title}</h1>
-        <input type="text" placeholder={this.state.title} value={this.state.value}/>
+        <input type="text" placeholder={this.state.placeholder} value={this.state.value} onChange={this.handleTextChange.bind(this)}/>
       </section>
     )
   }
@@ -201,14 +212,17 @@ function App(){
   var array = store.getState().skillz;
   return(
     <div>
-      <Identifiant />
-      <Titre />
+      <Metadonnees />
 
     </div>
   )
 }
 function render(){
-  ReactDOM.render(<App state={init}/>,document.querySelector('.app'));
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.querySelector('.app'));
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {

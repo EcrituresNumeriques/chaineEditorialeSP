@@ -3623,7 +3623,7 @@ module.exports = new Type('tag:yaml.org,2002:null', {
   construct: constructYamlNull,
   predicate: isNull,
   represent: {
-    canonical: function () { return '';    },
+    canonical: function () { return ' ';    },
     lowercase: function () { return 'null'; },
     uppercase: function () { return 'NULL'; },
     camelcase: function () { return 'Null'; }
@@ -15147,6 +15147,26 @@ function dump() {
   }
 }
 
+function updateReact(){
+  var obj = store.getState().obj,str;
+  try {
+    str = jsyaml.safeDump(obj, { schema: SEXY_SCHEMA,'styles': {'!!null': 'canonical'}});
+    source.setOption('mode', 'yaml');
+    source.setValue(str,false,10);
+  } catch (err) {
+    source.setOption('mode', 'text/plain');
+    source.setValue(err.message || String(err));
+  }
+  try {
+    obj = jsyaml.load(str, { schema: SEXY_SCHEMA });
+    result.setOption('mode', 'javascript');
+    result.setValue(JSON.stringify(obj, false, 1));
+  } catch (err) {
+    result.setOption('mode', 'text/plain');
+    result.setValue(err.message || String(err));
+  }
+}
+
 function updateSource() {
   var yaml;
 
@@ -15162,41 +15182,46 @@ window.onload = function () {
   permalink    = document.getElementById('permalink');
   default_text = document.getElementById('source').value || '';
   default_js = document.getElementById('result').value || '';
+  var last_update = "react";
 
   source = codemirror.fromTextArea(document.getElementById('source'), {
     mode: 'yaml',
     lineNumbers: true
   });
 
-  var timer,last_update;
+  var timer;
   source.on('focus',function(){
     last_update = "yaml";
   })
   source.on('change', function () {
-    if(last_update != "js"){
-      last_update = "yaml";
+    if(last_update == "yaml"){
       clearTimeout(timer);
-      timer = setTimeout(parse, 500);
+      //timer = setTimeout(parse, 500);
     }
   });
 
   result = codemirror.fromTextArea(document.getElementById('result'), {
     readOnly: false
   });
+
   result.on('focus',function(){
     last_update = "js";
   })
   result.on('change', function () {
-    if(last_update != "yaml"){
-      last_update = "js";
+    if(last_update == "js"){
       clearTimeout(timer);
-      timer = setTimeout(dump, 500);
+      //timer = setTimeout(dump, 500);
     }
   });
 
 
   // initial source
   updateSource();
+
+  store.subscribe(function(){
+    last_update = "react";
+    updateReact();
+  });
 };
 
 },{"../../":1,"./base64":38,"codemirror":31,"codemirror/mode/javascript/javascript.js":32,"codemirror/mode/yaml/yaml.js":33,"util":37}],"esprima":[function(require,module,exports){

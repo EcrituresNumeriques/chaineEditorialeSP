@@ -10,7 +10,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var init = {
   obj: {
-    "controlledKeywordsd": [{
+    "controlledKeywords": [{
       "label": null,
       "uriRameau": null,
       "idRameau": null,
@@ -55,7 +55,7 @@ var init = {
     "prodnum": "Sens Public",
     "diffnum": "Érudit",
     "rights": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
-    "title": null,
+    "title": "test",
     "subtitle": null,
     "typeArticle": null,
     "authors": [{
@@ -121,41 +121,32 @@ var init = {
 };
 
 var reducer = function reducer(state, action) {
+  console.log(action.type);
   if (action.type == "YAML_UPDATE") {
+    console.log(state.obj == action.obj);
     state.obj = action.obj;
-    console.log('update triggered');
+    return state;
+  }
+  if (action.type == "FORM_UPDATE") {
+    state.obj[action.target] = action.value;
     return state;
   }
   return state;
 };
 
+var _ReactRedux = ReactRedux,
+    Provider = _ReactRedux.Provider;
+
+
 var store = Redux.createStore(reducer, init);
 
-function Identifiant() {
+function Metadonnees() {
   return React.createElement(
     "section",
     null,
-    React.createElement(
-      "h1",
-      null,
-      "Identifiant"
-    ),
-    React.createElement("input", { type: "text", placeholder: "SPXXXX" })
-  );
-}
-
-function Titre() {
-  var titre = store.getState().obj.title;
-  return React.createElement(
-    "section",
-    null,
+    React.createElement(TextInput, { target: "id_sp", title: "Identifiant", placeholder: "SPxxxx" }),
     React.createElement(TextInput, { target: "title", title: "Titre" }),
-    React.createElement(
-      "h1",
-      null,
-      "Sous-titre"
-    ),
-    React.createElement("input", { type: "text", placeholder: "sous-titre" }),
+    React.createElement(TextInput, { target: "subtitle", title: "Sous-titre" }),
     React.createElement(
       "h1",
       null,
@@ -173,9 +164,9 @@ var TextInput = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (TextInput.__proto__ || Object.getPrototypeOf(TextInput)).call(this, props));
 
-    console.log(_this.props);
     _this.state = {
       title: _this.props.title,
+      placeholder: _this.props.placeholder || _this.props.title,
       target: _this.props.target,
       value: store.getState().obj[_this.props.target]
     };
@@ -183,6 +174,22 @@ var TextInput = function (_React$Component) {
   }
 
   _createClass(TextInput, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var context = this;
+      store.subscribe(function () {
+        var value = store.getState().obj[context.state.target] || '';
+        if (context.state.value != value) {
+          context.setState({ value: value });
+        }
+      });
+    }
+  }, {
+    key: "handleTextChange",
+    value: function handleTextChange(event) {
+      store.dispatch({ type: "FORM_UPDATE", target: this.state.target, value: event.target.value });
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
@@ -193,7 +200,7 @@ var TextInput = function (_React$Component) {
           null,
           this.state.title
         ),
-        React.createElement("input", { type: "text", placeholder: this.state.title, value: this.state.value })
+        React.createElement("input", { type: "text", placeholder: this.state.placeholder, value: this.state.value, onChange: this.handleTextChange.bind(this) })
       );
     }
   }]);
@@ -210,12 +217,15 @@ function App() {
   return React.createElement(
     "div",
     null,
-    React.createElement(Identifiant, null),
-    React.createElement(Titre, null)
+    React.createElement(Metadonnees, null)
   );
 }
 function render() {
-  ReactDOM.render(React.createElement(App, { state: init }), document.querySelector('.app'));
+  ReactDOM.render(React.createElement(
+    Provider,
+    { store: store },
+    React.createElement(App, null)
+  ), document.querySelector('.app'));
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
