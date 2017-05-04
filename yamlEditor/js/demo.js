@@ -15125,6 +15125,7 @@ function parse() {
     obj = jsyaml.load(str, { schema: SEXY_SCHEMA });
     result.setOption('mode', 'javascript');
     result.setValue(JSON.stringify(obj, false, 1));
+    store.dispatch({type:"YAML_UPDATE",obj:obj});
   } catch (err) {
     result.setOption('mode', 'text/plain');
     result.setValue(err.message || String(err));
