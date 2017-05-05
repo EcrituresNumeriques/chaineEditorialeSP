@@ -225,8 +225,8 @@ $if(subtitle)$
 \providecommand{\subtitle}[1]{}
 \subtitle{$subtitle$}
 $endif$
-$if(author)$
-\author{$for(author)$$author.forname$ $author.surname$$sep$ \and $endfor$}
+$if(authors)$
+\author{$for(authors)$$authors.forname$ $authors.surname$$sep$ \and $endfor$}
 $endif$
 $if(institute)$
 \providecommand{\institute}[1]{}
@@ -244,8 +244,8 @@ $endif$
 $if(subtitle)$
 \vspace*{0.5cm}\huge $subtitle$\\
 $endif$
-\vspace*{1cm} \LARGE $if(author)$
-$for(author)$$author.forname$ $author.surname$$sep$,  $endfor$
+\vspace*{1cm} \LARGE $if(authors)$
+$for(authors)$$authors.forname$ $authors.surname$$sep$,  $endfor$
 $endif$\\
 \normalsize\vspace*{1cm}Publié le $day$-$month$-$year$\\
 \vspace*{3cm}
