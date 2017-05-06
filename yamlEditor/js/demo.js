@@ -15138,32 +15138,37 @@ function dump() {
 
   try {
     str = jsyaml.safeDump(obj, { schema: SEXY_SCHEMA,'styles': {'!!null': 'canonical'}});
-
     source.setOption('mode', 'yaml');
     source.setValue(str,false,10);
+    store.dispatch({type:"JS_UPDATE",obj:obj});
   } catch (err) {
     source.setOption('mode', 'text/plain');
     source.setValue(err.message || String(err));
   }
 }
 
-function updateReact(){
+function updateReact(last_update){
   var obj = store.getState().obj,str;
-  try {
-    str = jsyaml.safeDump(obj, { schema: SEXY_SCHEMA,'styles': {'!!null': 'canonical'}});
-    source.setOption('mode', 'yaml');
-    source.setValue(str,false,10);
-  } catch (err) {
-    source.setOption('mode', 'text/plain');
-    source.setValue(err.message || String(err));
+  if(last_update != "yaml"){
+    //console.log("updating yamlsource");
+    try {
+      str = jsyaml.safeDump(obj, { schema: SEXY_SCHEMA,'styles': {'!!null': 'canonical'}});
+      source.setOption('mode', 'yaml');
+      source.setValue(str,false,10);
+    } catch (err) {
+      source.setOption('mode', 'text/plain');
+      source.setValue(err.message || String(err));
+    }
   }
-  try {
-    obj = jsyaml.load(str, { schema: SEXY_SCHEMA });
-    result.setOption('mode', 'javascript');
-    result.setValue(JSON.stringify(obj, false, 1));
-  } catch (err) {
-    result.setOption('mode', 'text/plain');
-    result.setValue(err.message || String(err));
+  if(last_update != "js"){
+    //console.log("updating jssource");
+    try {
+      result.setOption('mode', 'javascript');
+      result.setValue(JSON.stringify(obj, false, 1));
+    } catch (err) {
+      result.setOption('mode', 'text/plain');
+      result.setValue(err.message || String(err));
+    }
   }
 }
 
@@ -15188,30 +15193,38 @@ window.onload = function () {
     mode: 'yaml',
     lineNumbers: true
   });
+  source.setSize('100%','100%');
 
   var timer;
   source.on('focus',function(){
+    console.log(last_update);
     last_update = "yaml";
   })
   source.on('change', function () {
     if(last_update == "yaml"){
       clearTimeout(timer);
-      //timer = setTimeout(parse, 500);
+      timer = setTimeout(parse, 500);
     }
   });
 
   result = codemirror.fromTextArea(document.getElementById('result'), {
     readOnly: false
   });
+  result.setSize('100%','100%');
 
   result.on('focus',function(){
+    console.log(last_update);
     last_update = "js";
   })
   result.on('change', function () {
     if(last_update == "js"){
       clearTimeout(timer);
-      //timer = setTimeout(dump, 500);
+      timer = setTimeout(dump, 500);
     }
+  });
+
+  document.querySelector('.app').addEventListener("click",function(){
+    last_update = "react";
   });
 
 
@@ -15219,8 +15232,7 @@ window.onload = function () {
   updateSource();
 
   store.subscribe(function(){
-    last_update = "react";
-    updateReact();
+    updateReact(last_update);
   });
 };
 

@@ -123,12 +123,15 @@ var init = {
 var reducer = function reducer(state, action) {
   console.log(action.type);
   if (action.type == "YAML_UPDATE") {
-    console.log(state.obj == action.obj);
+    state.obj = action.obj;
+    return state;
+  }
+  if (action.type == "JS_UPDATE") {
     state.obj = action.obj;
     return state;
   }
   if (action.type == "FORM_UPDATE") {
-    state.obj[action.target] = action.value;
+    _.set(state.obj, action.target, action.value);
     return state;
   }
   return state;
@@ -147,6 +150,7 @@ function Metadonnees() {
     React.createElement(TextInput, { target: "id_sp", title: "Identifiant", placeholder: "SPxxxx" }),
     React.createElement(TextInput, { target: "title", title: "Titre" }),
     React.createElement(TextInput, { target: "subtitle", title: "Sous-titre" }),
+    React.createElement(TextInput, { target: "abstract[0].text", title: "R\xE9sum\xE9", element: "textArea" }),
     React.createElement(
       "h1",
       null,
@@ -168,7 +172,8 @@ var TextInput = function (_React$Component) {
       title: _this.props.title,
       placeholder: _this.props.placeholder || _this.props.title,
       target: _this.props.target,
-      value: store.getState().obj[_this.props.target]
+      value: _.get(store.getState().obj, _this.props.target, ""),
+      element: _this.props.element || 'input'
     };
     return _this;
   }
@@ -178,7 +183,7 @@ var TextInput = function (_React$Component) {
     value: function componentDidMount() {
       var context = this;
       store.subscribe(function () {
-        var value = store.getState().obj[context.state.target] || '';
+        var value = _.get(store.getState().obj, context.props.target, "");
         if (context.state.value != value) {
           context.setState({ value: value });
         }
@@ -194,13 +199,13 @@ var TextInput = function (_React$Component) {
     value: function render() {
       return React.createElement(
         "section",
-        null,
+        { className: "reactForm" },
         React.createElement(
-          "h1",
+          "label",
           null,
           this.state.title
         ),
-        React.createElement("input", { type: "text", placeholder: this.state.placeholder, value: this.state.value, onChange: this.handleTextChange.bind(this) })
+        this.state.element == "input" ? React.createElement("input", { type: "text", placeholder: this.state.placeholder, value: this.state.value, onChange: this.handleTextChange.bind(this) }) : this.state.element == "textArea" ? React.createElement("textarea", { placeholder: this.state.placeholder, value: this.state.value, onChange: this.handleTextChange.bind(this) }) : null
       );
     }
   }]);

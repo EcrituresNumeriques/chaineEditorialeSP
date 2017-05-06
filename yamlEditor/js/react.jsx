@@ -138,12 +138,15 @@ let init = {
 const reducer = function(state,action){
   console.log(action.type);
   if(action.type == "YAML_UPDATE"){
-    console.log(state.obj == action.obj);
+    state.obj = action.obj;
+    return state
+  }
+  if(action.type == "JS_UPDATE"){
     state.obj = action.obj;
     return state
   }
   if(action.type == "FORM_UPDATE"){
-    state.obj[action.target] = action.value;
+    _.set(state.obj, action.target, action.value);
     return state
   }
   return state;
@@ -159,6 +162,7 @@ function Metadonnees(){
       <TextInput target="id_sp" title="Identifiant" placeholder="SPxxxx" />
       <TextInput target="title" title="Titre" />
       <TextInput target="subtitle" title="Sous-titre" />
+      <TextInput target="abstract[0].text" title="Résumé" element="textArea"/>
       <h1>Résumé</h1>
       <textarea name="resume" placeholder="Résumé"></textarea>
     </section>
@@ -172,14 +176,15 @@ class TextInput extends React.Component {
         title:this.props.title,
         placeholder:this.props.placeholder || this.props.title,
         target : this.props.target,
-        value: store.getState().obj[this.props.target]
+        value: _.get(store.getState().obj, this.props.target, ""),
+        element: this.props.element || 'input'
      };
   }
 
   componentDidMount(){
     let context = this;
     store.subscribe(function(){
-      let value = store.getState().obj[context.state.target] || '';
+      let value = _.get(store.getState().obj, context.props.target, "");
       if(context.state.value != value){
         context.setState({value:value});
       }
@@ -192,9 +197,11 @@ class TextInput extends React.Component {
 
   render() {
     return (
-      <section>
-        <h1>{this.state.title}</h1>
-        <input type="text" placeholder={this.state.placeholder} value={this.state.value} onChange={this.handleTextChange.bind(this)}/>
+      <section className="reactForm">
+        <label>{this.state.title}</label>
+        { this.state.element == "input" ? <input type="text" placeholder={this.state.placeholder} value={this.state.value} onChange={this.handleTextChange.bind(this)}/> :
+        this.state.element == "textArea" ? <textarea placeholder={this.state.placeholder} value={this.state.value} onChange={this.handleTextChange.bind(this)}/> :
+        null }
       </section>
     )
   }

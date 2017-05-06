@@ -22,21 +22,16 @@ body {
 
 .content {
   height: 100%;
-}
-
-#permalink {
-  float: right;
+  display:-webkit-flex;
+  display:flex;
 }
 
 .src, .dst, .app {
-  width: 49%;
+  flex:0 0 calc((100% - 4em) / 3);
+  margin:0 0.5em;
   position: relative;
-  float: left;
   height: 100%;
-}
-
-.dst, .app {
-  float: right;
+  box-sizing: border-box;
 }
 
 .src .CodeMirror {
@@ -95,4 +90,30 @@ body {
 }
 .csstransforms .gh-ribbon {
     display: block;
+}
+
+.reactForm{
+  display:flex;
+}
+.reactForm > label {
+  padding:0.5em 1em;
+  display:block;
+  flex:0 0 150px;
+  margin:2px;
+  box-shadow: 0 1px 1px #f0f0f0;;
+  background-color:white;
+  text-align: right;
+}
+.reactForm > input, .reactForm textarea {
+  padding:0.5em 1em;
+  display:block;
+  flex:1 1 auto;
+  margin:2px;
+  box-shadow: 0 1px 1px #f0f0f0;;
+  background-color:white;
+  text-align: left;
+  border:none;
+}
+.reactForm textarea {
+  height:5em;
 }
