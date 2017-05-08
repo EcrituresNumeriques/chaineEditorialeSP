@@ -6,12 +6,13 @@ import { createStore } from 'redux'
 import { store } from './redux/store.js'
 import { TextInput } from './components/TextInput.jsx'
 import { SelectInput } from './components/SelectInput.jsx'
+import { Resumes} from './components/Resumes.jsx'
 import _ from 'lodash'
 import '../css/demo.css'
-import { yaml, js} from './DOMselector.js'
+import { yaml, js } from './DOMselector.js'
 
 function App(){
-  
+
   return(
     <section>
       <TextInput target="id_sp" title="Identifiant" placeholder="SPxxxx" />
@@ -21,27 +22,6 @@ function App(){
     </section>
   )
 }
-
-function Resumes(){
-  let resumes = _.get(store.getState().obj,"abstract",[]);
-  return(
-    <section>{resumes.map((o,i)=>(<Resume key={i} index={i}/>))}</section>
-  )
-}
-function Resume(props){
-  return(
-    <section className="group">
-      <TextInput target={"abstract["+props.index+"].text"} title="Résumé" element="textArea"/>
-      <SelectInput target={"abstract["+props.index+"].lang"} title="Language" placeholder="Choisir la langue du résumé" options={['fr','en','it']}/>
-    </section>
-  )
-}
-function LanguageSelect(){
-  return(
-    <p>lang</p>
-  )
-}
-
 
 function keywords(){
   return(
