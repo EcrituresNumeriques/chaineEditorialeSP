@@ -3623,7 +3623,7 @@ module.exports = new Type('tag:yaml.org,2002:null', {
   construct: constructYamlNull,
   predicate: isNull,
   represent: {
-    canonical: function () { return '';    },
+    canonical: function () { return ' ';    },
     lowercase: function () { return 'null'; },
     uppercase: function () { return 'NULL'; },
     camelcase: function () { return 'Null'; }
@@ -15125,6 +15125,7 @@ function parse() {
     obj = jsyaml.load(str, { schema: SEXY_SCHEMA });
     result.setOption('mode', 'javascript');
     result.setValue(JSON.stringify(obj, false, 1));
+    store.dispatch({type:"YAML_UPDATE",obj:obj});
   } catch (err) {
     result.setOption('mode', 'text/plain');
     result.setValue(err.message || String(err));
@@ -15137,12 +15138,37 @@ function dump() {
 
   try {
     str = jsyaml.safeDump(obj, { schema: SEXY_SCHEMA,'styles': {'!!null': 'canonical'}});
-
     source.setOption('mode', 'yaml');
     source.setValue(str,false,10);
+    store.dispatch({type:"JS_UPDATE",obj:obj});
   } catch (err) {
     source.setOption('mode', 'text/plain');
     source.setValue(err.message || String(err));
+  }
+}
+
+function updateReact(last_update){
+  var obj = store.getState().obj,str;
+  if(last_update != "yaml"){
+    //console.log("updating yamlsource");
+    try {
+      str = jsyaml.safeDump(obj, { schema: SEXY_SCHEMA,'styles': {'!!null': 'canonical'}});
+      source.setOption('mode', 'yaml');
+      source.setValue(str,false,10);
+    } catch (err) {
+      source.setOption('mode', 'text/plain');
+      source.setValue(err.message || String(err));
+    }
+  }
+  if(last_update != "js"){
+    //console.log("updating jssource");
+    try {
+      result.setOption('mode', 'javascript');
+      result.setValue(JSON.stringify(obj, false, 1));
+    } catch (err) {
+      result.setOption('mode', 'text/plain');
+      result.setValue(err.message || String(err));
+    }
   }
 }
 
@@ -15161,19 +15187,21 @@ window.onload = function () {
   permalink    = document.getElementById('permalink');
   default_text = document.getElementById('source').value || '';
   default_js = document.getElementById('result').value || '';
+  var last_update = "react";
 
   source = codemirror.fromTextArea(document.getElementById('source'), {
     mode: 'yaml',
     lineNumbers: true
   });
+  source.setSize('100%','100%');
 
-  var timer,last_update;
+  var timer;
   source.on('focus',function(){
+    console.log(last_update);
     last_update = "yaml";
   })
   source.on('change', function () {
-    if(last_update != "js"){
-      last_update = "yaml";
+    if(last_update == "yaml"){
       clearTimeout(timer);
       timer = setTimeout(parse, 500);
     }
@@ -15182,20 +15210,30 @@ window.onload = function () {
   result = codemirror.fromTextArea(document.getElementById('result'), {
     readOnly: false
   });
+  result.setSize('100%','100%');
+
   result.on('focus',function(){
+    console.log(last_update);
     last_update = "js";
   })
   result.on('change', function () {
-    if(last_update != "yaml"){
-      last_update = "js";
+    if(last_update == "js"){
       clearTimeout(timer);
       timer = setTimeout(dump, 500);
     }
   });
 
+  document.querySelector('.app').addEventListener("click",function(){
+    last_update = "react";
+  });
+
 
   // initial source
   updateSource();
+
+  store.subscribe(function(){
+    updateReact(last_update);
+  });
 };
 
 },{"../../":1,"./base64":38,"codemirror":31,"codemirror/mode/javascript/javascript.js":32,"codemirror/mode/yaml/yaml.js":33,"util":37}],"esprima":[function(require,module,exports){

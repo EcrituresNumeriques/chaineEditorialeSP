@@ -1,36 +1,216 @@
-let init = {};
+let init = {
+  obj:{
+   "controlledKeywords": [
+    {
+     "label": null,
+     "uriRameau": null,
+     "idRameau": null,
+     "wikidata": null
+    }
+   ],
+   "journal": "Sens public",
+   "issnnum": "2104-3272",
+   "director": [
+    {
+     "forname": "Marcello",
+     "surname": "Vitali-Rosati",
+     "gender": "male",
+     "orcid": "0000-0001-6424-3229",
+     "viaf": null,
+     "foaf": null,
+     "isni": null
+    }
+   ],
+   "redacteurDossier": [
+    {
+     "forname": null,
+     "surname": null,
+     "orcid": null,
+     "viaf": null,
+     "foaf": null,
+     "isni": null
+    },
+    {
+     "forname": null,
+     "surname": null,
+     "orcid": null,
+     "viaf": null,
+     "foaf": null,
+     "isni": null
+    }
+   ],
+   "year": null,
+   "month": null,
+   "day": null,
+   "date": null,
+   "dossier": [
+    {
+     "title": null,
+     "id": null
+    }
+   ],
+   "publisher": "Département des littératures de langue française",
+   "prod": "Sens Public",
+   "prodnum": "Sens Public",
+   "diffnum": "Érudit",
+   "rights": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+   "title": "test",
+   "subtitle": null,
+   "typeArticle": null,
+   "authors": [
+    {
+     "forname": null,
+     "surname": null,
+     "orcid": null,
+     "viaf": null,
+     "foaf": null,
+     "isni": null,
+     "wikidata": null
+    },
+    {
+     "forname": null,
+     "surname": null,
+     "orcid": null,
+     "viaf": null,
+     "foaf": null,
+     "isni": null,
+     "wikidata": null
+    }
+   ],
+   "abstract": [
+    {
+     "lang": null,
+     "text": null
+    },
+    {
+     "lang": null,
+     "text": null
+    }
+   ],
+   "keyword_fr": null,
+   "keyword_en": null,
+   "url_article_sp": null,
+   "id_sp": null,
+   "translator": [
+    {
+     "forname": null,
+     "surname": null
+    }
+   ],
+   "lang": "fr",
+   "orig_lang": null,
+   "translations": [
+    {
+     "lang": null,
+     "titre": null,
+     "url": null
+    },
+    {
+     "lang": null,
+     "titre": null,
+     "url": null
+    }
+   ],
+   "articleslies": [
+    {
+     "url": null,
+     "titre": null,
+     "auteur": null
+    }
+   ],
+   "reviewers": [
+    {
+     "forname": null,
+     "name": null,
+     "orcid": null,
+     "viaf": null,
+     "foaf": null,
+     "isni": null
+    }
+   ],
+   "bibliography": null,
+   "link-citations": true,
+   "nocite": null
+  }
+}
 
 
 const reducer = function(state,action){
-  if(action.type == "toggleMaterialize"){
-    state.skillz[0].materialize = !state.skillz[0].materialize;
-    state.count += action.count;
-    console.log(state.skillz[0].materialize)
+  console.log(action.type);
+  if(action.type == "YAML_UPDATE"){
+    state.obj = action.obj;
+    return state
+  }
+  if(action.type == "JS_UPDATE"){
+    state.obj = action.obj;
+    return state
+  }
+  if(action.type == "FORM_UPDATE"){
+    _.set(state.obj, action.target, action.value);
     return state
   }
   return state;
 }
 
+const {Provider} = ReactRedux;
+
 let store = Redux.createStore(reducer,init);
 
-function Identifiant(){
+function Metadonnees(){
   return(
     <section>
-    <h1>Identifiant</h1>
-    <input type="text" placeholder="SPXXXX" />
+      <TextInput target="id_sp" title="Identifiant" placeholder="SPxxxx" />
+      <TextInput target="title" title="Titre" />
+      <TextInput target="subtitle" title="Sous-titre" />
+      <TextInput target="abstract[0].text" title="Résumé" element="textArea"/>
+      <h1>Résumé</h1>
+      <textarea name="resume" placeholder="Résumé"></textarea>
     </section>
   )
 }
 
-function Titre(){
+class TextInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        title:this.props.title,
+        placeholder:this.props.placeholder || this.props.title,
+        target : this.props.target,
+        value: _.get(store.getState().obj, this.props.target, ""),
+        element: this.props.element || 'input'
+     };
+  }
+
+  componentDidMount(){
+    let context = this;
+    store.subscribe(function(){
+      let value = _.get(store.getState().obj, context.props.target, "");
+      if(context.state.value != value){
+        context.setState({value:value});
+      }
+    });
+  }
+
+  handleTextChange(event) {
+    store.dispatch({type:"FORM_UPDATE",target:this.state.target, value:event.target.value});
+  }
+
+  render() {
+    return (
+      <section className="reactForm">
+        <label>{this.state.title}</label>
+        { this.state.element == "input" ? <input type="text" placeholder={this.state.placeholder} value={this.state.value} onChange={this.handleTextChange.bind(this)}/> :
+        this.state.element == "textArea" ? <textarea placeholder={this.state.placeholder} value={this.state.value} onChange={this.handleTextChange.bind(this)}/> :
+        null }
+      </section>
+    )
+  }
+}
+
+function keywords(){
   return(
     <section>
-      <h1>Titre</h1>
-      <input type="text" placeholder="titre"/>
-      <h1>Sous-titre</h1>
-      <input type="text" placeholder="sous-titre" />
-      <h1>Résumé</h1>
-      <textarea name="resume" placeholder="Résumé"></textarea>
+
     </section>
   )
 }
@@ -39,15 +219,19 @@ function App(){
   var array = store.getState().skillz;
   return(
     <div>
-      <Identifiant />
-      <Titre />
+      <Metadonnees />
 
     </div>
   )
 }
 function render(){
-  ReactDOM.render(<App state={init}/>,document.querySelector('.app'));
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.querySelector('.app'));
 }
+
 document.addEventListener("DOMContentLoaded", function(event) {
   render()
   store.subscribe(render)
