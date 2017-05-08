@@ -207,6 +207,12 @@ class TextInput extends React.Component {
   }
 }
 
+export function Menu(){
+  render(
+    <p>Menu</p>
+  )
+}
+
 function keywords(){
   return(
     <section>
