@@ -81,10 +81,6 @@ export let init = {
     {
      "lang": '',
      "text": 'resume1'
-    },
-    {
-     "lang": '',
-     "text": 'resume2'
     }
    ],
    "keyword_fr": '',

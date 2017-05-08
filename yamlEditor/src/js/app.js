@@ -5,10 +5,13 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { store } from './redux/store.js'
 import { TextInput } from './components/TextInput.jsx'
+import { SelectInput } from './components/SelectInput.jsx'
 import _ from 'lodash'
 import '../css/demo.css'
+import { yaml, js} from './DOMselector.js'
 
-function Metadonnees(){
+function App(){
+  
   return(
     <section>
       <TextInput target="id_sp" title="Identifiant" placeholder="SPxxxx" />
@@ -27,9 +30,9 @@ function Resumes(){
 }
 function Resume(props){
   return(
-    <section>
+    <section className="group">
       <TextInput target={"abstract["+props.index+"].text"} title="Résumé" element="textArea"/>
-      <LanguageSelect target={"abstract["+props.index+"].lang"}/>
+      <SelectInput target={"abstract["+props.index+"].lang"} title="Language" placeholder="Choisir la langue du résumé" options={['fr','en','it']}/>
     </section>
   )
 }
@@ -48,14 +51,6 @@ function keywords(){
   )
 }
 
-function App(){
-  return(
-    <div>
-      <Metadonnees />
-
-    </div>
-  )
-}
 function renderApp(){
   render(
     <Provider store={store}>
@@ -64,16 +59,27 @@ function renderApp(){
     document.querySelector('.app'));
 }
 
-var yaml = document.querySelector("#source");
-var js = document.querySelector("#result");
+
+function updateYAML(){
+  yaml.value = YAML.safeDump(store.getState().obj);
+  //console.log('updating Yaml');
+}
+function updateJS(){
+  js.value = JSON.stringify(store.getState().obj,false,1);
+  //console.log('updating JS');
+}
+
+function formUpdate(){
+  console.log("updating from react form");
+  updateYAML();
+  updateJS();
+}
+
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
-
   renderApp()
-  store.subscribe(renderApp)
+  formUpdate()
+  store.subscribe(renderApp);
+  store.subscribe(_.debounce(formUpdate,500));
 });
-
-
-
-console.log(YAML.safeDump({test:"ok"}));

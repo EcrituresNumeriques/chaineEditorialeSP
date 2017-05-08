@@ -1,43 +1,62 @@
-const path = require('path');
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-var webpack = require('webpack');
 
+var extractPlugin = new ExtractTextPlugin({
+   filename: 'main.css'
+});
 
 module.exports = {
-  context: __dirname + "/src",
-
-  entry: {
-    javascript: "./js/app.jsx",
-    html: "./index.html",
-  },
-
-  output: {
-    filename: "./js/bundle.js",
-    path: __dirname + "/dist"
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json', 'css'],
-    root: path.resolve(__dirname, './src'),
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loaders: ["react-hot", "babel-loader"],
-      },
-      {
-        test: /\.html$/,
-        loader: "file?name=[name].[ext]",
-      },
-      {
-        test: /\.css$/,
-        loaders:['style-loader','css-loader']
-      }
-    ],
-  },
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new webpack.optimize.UglifyJsPlugin({})
-  ]
-}
+    entry: './src/js/app.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        // publicPath: '/dist'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['es2015','react']
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: extractPlugin.extract({
+                    use: ['css-loader']
+                })
+            },
+            {
+                test: /\.html$/,
+                use: ['html-loader']
+            },
+            {
+                test: /\.(jpg|png)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'img/',
+                            publicPath: 'img/'
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    plugins: [
+        extractPlugin,
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        }),
+        //new CleanWebpackPlugin(['dist'])
+    ]
+};
