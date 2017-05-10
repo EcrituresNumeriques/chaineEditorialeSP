@@ -9,7 +9,7 @@ export class SelectInput extends React.Component {
         title:this.props.title,
         placeholder:this.props.placeholder || this.props.title,
         target : this.props.target,
-        value: _.get(store.getState().obj, this.props.target, "fr"),
+        value: _.get(store.getState().obj, this.props.target, ''),
         options: this.props.options || ['fr','en','it']
      };
   }
@@ -18,7 +18,7 @@ export class SelectInput extends React.Component {
     let context = this;
     store.subscribe(function(){
       let value = _.get(store.getState().obj, context.props.target, "fr");
-      if(context.state.value != value){
+      if(context.state.value && context.state.value != value){
         context.setState({value:value});
       }
     });

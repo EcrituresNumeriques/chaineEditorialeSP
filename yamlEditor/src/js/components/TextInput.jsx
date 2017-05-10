@@ -18,7 +18,7 @@ export class TextInput extends React.Component {
     let context = this;
     store.subscribe(function(){
       let value = _.get(store.getState().obj, context.props.target, "");
-      if(context.state.value != value){
+      if(context.state.value && context.state.value != value){
         context.setState({value:value});
       }
     });
