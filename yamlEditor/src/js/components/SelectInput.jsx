@@ -16,12 +16,16 @@ export class SelectInput extends React.Component {
 
   componentDidMount(){
     let context = this;
-    store.subscribe(function(){
-      let value = _.get(store.getState().obj, context.props.target, "fr");
-      if(context.state.value && context.state.value != value){
+    this.setState({unsubscribe : store.subscribe(function(){
+      let value = _.get(store.getState().obj, context.props.target, undefined);
+      if(typeof(value) != "undefined" && context.state.value != value){
         context.setState({value:value});
       }
-    });
+    })});
+  }
+
+  componentWillUnmount(){
+    this.state.unsubscribe();
   }
 
   handleTextChange(event) {
@@ -32,7 +36,7 @@ export class SelectInput extends React.Component {
     return (
       <section className="reactForm">
         <label>{this.state.title} :</label>
-        <select onChange={this.handleTextChange.bind(this)} defaultValue="">
+        <select onChange={this.handleTextChange.bind(this)} value={this.state.value}>
           <option value="" disabled >{this.state.placeholder}</option>
           {this.state.options.map((o,i)=>(<option value={o} key={i}>{o}</option>))}
         </select>

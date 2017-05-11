@@ -6,8 +6,12 @@ import _ from 'lodash'
 
 export function Resumes(){
   let resumes = _.get(store.getState().obj,"abstract",[]);
+  let targetNewResume = resumes.length;
   return(
-    <section>{resumes.map((o,i)=>(<Resume key={i} index={i}/>))}</section>
+    <section>
+      {resumes.map((o,i)=>(<Resume key={i} index={i}/>))}
+      <p className="addToArray" onClick={function(){store.dispatch({type:"FORM_UPDATE",target:"abstract["+targetNewResume+"]",value:{"lang":'',"text":''}})}}><i className="fa fa-plus" aria-hidden="true"></i> Ajouter un résumé dans une autre langue</p>
+    </section>
   )
 }
 

@@ -1,5 +1,5 @@
 export const reducer = function(state,action){
-  console.log(action.type);
+  //console.log(action);
   if(action.type == "YAML_UPDATE"){
     state.obj = action.obj;
     return state

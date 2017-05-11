@@ -16,13 +16,18 @@ export class TextInput extends React.Component {
 
   componentDidMount(){
     let context = this;
-    store.subscribe(function(){
-      let value = _.get(store.getState().obj, context.props.target, "");
-      if(context.state.value && context.state.value != value){
+    this.setState({unsubscribe : store.subscribe(function(){
+      let value = _.get(store.getState().obj, context.props.target, undefined);
+      if(typeof(value) != "undefined" && context.state.value != value){
         context.setState({value:value});
       }
-    });
+    })});
   }
+
+  componentWillUnmount(){
+    this.state.unsubscribe();
+  }
+
 
   handleTextChange(event) {
     store.dispatch({type:"FORM_UPDATE",target:this.state.target, value:event.target.value});

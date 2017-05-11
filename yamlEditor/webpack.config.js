@@ -4,14 +4,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var extractPlugin = new ExtractTextPlugin({
-   filename: 'main.css'
+   filename: 'css/main.css'
 });
 
 module.exports = {
     entry: './src/js/app.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: 'js/bundle.js',
         // publicPath: '/dist'
     },
     module: {
@@ -48,6 +48,19 @@ module.exports = {
                             publicPath: 'img/'
                         }
                     }
+                ]
+            },
+            {
+              test : /\.(woff2?|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+              use: [
+                  {
+                      loader: 'file-loader',
+                      options: {
+                          name: 'fonts/[name].[ext]',
+                          outputPath: './fonts/',
+                          //publicPath: './fonts/'
+                      }
+                  }
                 ]
             }
         ]
