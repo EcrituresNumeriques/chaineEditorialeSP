@@ -4,6 +4,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.js'
 import { App } from './components/App.jsx'
+import _ from 'lodash'
 
 
 let yaml = document.querySelector("#source");

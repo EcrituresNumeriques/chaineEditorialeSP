@@ -2,6 +2,7 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 var extractPlugin = new ExtractTextPlugin({
    filename: 'css/main.css'
@@ -22,6 +23,7 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
+                            plugins: ['lodash'],
                             presets: ['es2015','react']
                         }
                     }
@@ -70,6 +72,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
-        //new CleanWebpackPlugin(['dist'])
+        new BundleAnalyzerPlugin(),
+        new CleanWebpackPlugin(['dist'])
     ]
 };
