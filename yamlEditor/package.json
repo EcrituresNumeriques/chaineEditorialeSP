@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack-dev-server  --hot --inline --history-api-fallback",
-    "build:prod": "webpack -p",
+    "build:prod": "NODE_ENV=production webpack -p",
     "analyse": "webpack --profile --json > stats.json"
   },
   "repository": {

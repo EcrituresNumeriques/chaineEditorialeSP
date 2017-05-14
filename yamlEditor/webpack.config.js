@@ -8,6 +8,16 @@ var extractPlugin = new ExtractTextPlugin({
    filename: 'css/main.css'
 });
 
+var isProd = (process.env.NODE_ENV === 'production');
+var plugins = [        extractPlugin,
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        })];
+if(isProd){
+  plugins.push(new BundleAnalyzerPlugin());
+  plugins.push(new CleanWebpackPlugin(['dist']));
+}
+
 module.exports = {
     entry: './src/js/app.jsx',
     output: {
@@ -67,12 +77,5 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        extractPlugin,
-        new HtmlWebpackPlugin({
-            template: 'src/index.html'
-        }),
-        new BundleAnalyzerPlugin(),
-        new CleanWebpackPlugin(['dist'])
-    ]
+    plugins: plugins
 };
