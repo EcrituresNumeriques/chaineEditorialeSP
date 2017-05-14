@@ -9,7 +9,8 @@ export function Collaborateurs(){
   let targetNewResume = resumes.length;
   return(
     <section>
-      <TextInput title="auteur"/>
+      <TextInput title="Auteurs"/>
+      <TextInput title="Reviseurs"/>
     </section>
   )
 }

@@ -45,9 +45,7 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.3.2",
     "webpack-bundle-analyzer": "^2.7.0",
-    "webpack-dev-server": "^2.4.2"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^2.4.2",
     "font-awesome-webpack": "0.0.5-beta.2",
     "js-yaml": "^3.8.3",
     "lodash": "^4.17.4",
@@ -55,5 +53,7 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0"
+  },
+  "dependencies": {
   }
 }
