@@ -17,7 +17,7 @@ export function App(){
       <Resumes/>
       <Collaborateurs/>
       <MotsClefs/>
-      <Date/>
+      <Date target="date" title="Date"/>
       <Rubriques/>
       <Types/>
     </section>

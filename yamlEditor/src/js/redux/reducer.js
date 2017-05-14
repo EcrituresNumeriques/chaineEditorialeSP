@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export const reducer = function(state,action){
   //console.log(action);
   if(action.type == "YAML_UPDATE"){
