@@ -77,6 +77,16 @@ section.group {
   margin:1em 0 0 0;
   border:1px solid #f0f0f0;
 }
+section.group:first-of-type{
+  margin:0;
+}
+
+section > h1 {
+  background-color:#f0f0f0;
+  font-size: 1em;
+  padding:0.5em 1em;
+  margin:0;
+}
 
 .addToArray {
   padding:0.5em 1em;

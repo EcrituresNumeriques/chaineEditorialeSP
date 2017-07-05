@@ -1,15 +1,16 @@
-import { TextInput } from './TextInput.jsx'
-import { SelectInput } from './SelectInput.jsx'
-import { store } from '../redux/store.js'
-import React from 'react'
-import _ from 'lodash'
+import { TextInput } from './TextInput.jsx';
+import { SelectInput } from './SelectInput.jsx';
+import { store } from '../redux/store.js';
+import React from 'react';
+import _ from 'lodash';
 
 export function Resumes(){
   let resumes = _.get(store.getState().obj,"abstract",[]);
   let targetNewResume = resumes.length;
   return(
     <section>
-      {resumes.map((o,i)=>(<Resume key={i} index={i}/>))}
+      <h1><i className="fa fa-file-text-o" aria-hidden="true"></i> Résumés</h1>
+      {resumes.map((o,i)=>(<Resume key={i} index={i} />))}
       <p className="addToArray" onClick={function(){store.dispatch({type:"FORM_UPDATE",target:"abstract["+targetNewResume+"]",value:{"lang":'',"text":''}})}}><i className="fa fa-plus" aria-hidden="true"></i> Ajouter un résumé dans une autre langue</p>
     </section>
   )

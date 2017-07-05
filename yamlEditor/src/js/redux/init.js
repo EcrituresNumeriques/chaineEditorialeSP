@@ -29,14 +29,6 @@ export let init = {
      "viaf": '',
      "foaf": '',
      "isni": ''
-    },
-    {
-     "forname": '',
-     "surname": '',
-     "orcid": '',
-     "viaf": '',
-     "foaf": '',
-     "isni": ''
     }
    ],
    "year": '',
@@ -66,21 +58,12 @@ export let init = {
      "foaf": '',
      "isni": '',
      "wikidata": ''
-    },
-    {
-     "forname": '',
-     "surname": '',
-     "orcid": '',
-     "viaf": '',
-     "foaf": '',
-     "isni": '',
-     "wikidata": ''
     }
    ],
    "abstract": [
     {
      "lang": '',
-     "text": 'resume1'
+     "text": ''
     }
    ],
    "keyword_fr": '',
