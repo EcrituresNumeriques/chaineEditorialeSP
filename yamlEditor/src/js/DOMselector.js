@@ -17,7 +17,7 @@ let SexyYamlType = new YAML.Type('!sexy', {
     return data.map(function (string) { return 'sexy ' + string; });
   }
 });
-var SEXY_SCHEMA = YAML.Schema.create([ SexyYamlType ]);
+let SEXY_SCHEMA = YAML.Schema.create([ SexyYamlType ]);
 
 function renderApp(){
   render(
@@ -70,13 +70,13 @@ export function handleDOMchanges() {
 }
 
 //Drag and drop module
-var dropZone = document.querySelector('#drop');
+let dropZone = document.querySelector('#drop');
 
 function handleFileSelect(evt) {
     evt.stopPropagation();
     evt.preventDefault();
-    var files = evt.dataTransfer.files;
-    var reader = new FileReader();
+    let files = evt.dataTransfer.files;
+    let reader = new FileReader();
     reader.onload = function(event) {
          yaml.value = event.target.result;
          yaml.dispatchEvent(new Event('input'));
@@ -106,3 +106,39 @@ function addDragClass(){
   dropZone.addEventListener('drop', handleFileSelect, false);
   dropZone.addEventListener('dragenter', addDragClass, false);
   dropZone.addEventListener('dragleave', removeDragClass, false);
+  document.querySelector("#download").addEventListener('click',saveTextAsFile,false);
+
+function destroyClickedElement(event)
+{
+    document.body.removeChild(event.target);
+}
+function saveTextAsFile()
+{
+    let textToWrite = yaml.value
+    let textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+
+    let fileNameToSaveAs = _.get(store.getState().obj,"id_sp","default");
+    if(fileNameToSaveAs == ""){fileNameToSaveAs = "default"}
+    fileNameToSaveAs += ".yaml";
+
+    let downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}

@@ -120,11 +120,16 @@ div#drop.draghover:before{
 div#download{
   display:inline-block;
   width:50%;
+  border:2px dashed #c0c0c0;
+  cursor:pointer;
+  border-left: none;
   box-sizing: border-box;
   padding:3rem;
 }
+div#download:hover{
+  background-color: #f0f0f0;}
 div#download:before{
   display:block;
-  content:"T\E9l\0000E9charger le fichier YAML";
+  content:"T\E9l\0000E9\000063harger le fichier YAML";
   text-align:center;
 }
