@@ -110,5 +110,7 @@ export let init = {
    "bibliography": '',
    "link-citations": true,
    "nocite": ''
-  }
-}
+ },
+ misc:{
+ }
+};
