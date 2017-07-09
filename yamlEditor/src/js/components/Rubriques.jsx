@@ -7,7 +7,7 @@ export function Rubriques(){
   let rubriques = _.get(store.getState().misc,"rubriques",[]);
   return(
       <section className="group">
-        <h1><i className="fa fa-file-text-o" aria-hidden="true"></i> Catégories</h1>
+        <h1><i className="fa fa-check-square-o" aria-hidden="true"></i> Catégories</h1>
         {rubriques.map((o,i)=>(<Rubrique key={i} index={i} label={o.label}/>))}
       </section>
     )
