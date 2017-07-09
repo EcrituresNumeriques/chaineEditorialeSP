@@ -16,6 +16,7 @@ export const reducer = function(state,action){
   }
   if(action.type == "MISC_UPDATE"){
     _.set(state.misc, action.target, action.value);
+    console.log(state.misc);
     return state;
   }
   return state;

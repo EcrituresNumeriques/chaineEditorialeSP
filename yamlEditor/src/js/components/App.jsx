@@ -20,7 +20,6 @@ export function App(){
       <Resumes/>
       <Authors />
       <Reviewers />
-      <MotsClefs/>
       <Rubriques/>
       <Types/>
     </section>

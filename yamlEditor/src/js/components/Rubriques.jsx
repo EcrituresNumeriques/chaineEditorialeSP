@@ -1,15 +1,20 @@
-import { TextInput } from './TextInput.jsx'
-import { SelectInput } from './SelectInput.jsx'
+import { CheckBoxInput } from './CheckBoxInput.jsx'
 import { store } from '../redux/store.js'
 import React from 'react'
 import _ from 'lodash'
 
 export function Rubriques(){
-  let resumes = _.get(store.getState().obj,"abstract",[]);
-  let targetNewResume = resumes.length;
+  let rubriques = _.get(store.getState().misc,"rubriques",[]);
   return(
-    <section>
-      <TextInput title="Rubriques"/>
-    </section>
-  )
-}
+      <section className="group">
+        <h1><i className="fa fa-file-text-o" aria-hidden="true"></i> Catégories</h1>
+        {rubriques.map((o,i)=>(<Rubrique key={i} index={i} label={o.label}/>))}
+      </section>
+    )
+  }
+
+  function Rubrique(props){
+    return(
+        <CheckBoxInput target={"rubriques["+props.index+"].selected"} title={props.label} />
+    )
+  }

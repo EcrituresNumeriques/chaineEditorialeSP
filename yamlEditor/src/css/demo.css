@@ -51,6 +51,7 @@ body {
 
 .reactForm{
   display:flex;
+  align-items: baseline;
 }
 .reactForm > label{
   padding:0.5em 1em;
@@ -70,6 +71,14 @@ body {
   background-color:white;
   text-align: left;
   border:none;
+}
+.reactForm > label.lcheckbox{
+  flex:1 1 150px;
+  text-align: left;
+}
+.reactForm > input.icheckbox {
+  flex:0 0 auto;
+  margin: 0.5em 0em 0.5em 1em;
 }
 .reactForm textarea {
   height:5em;
