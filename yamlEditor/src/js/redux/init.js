@@ -1,3 +1,4 @@
+import { categories } from './categories';
 export let init = {
   obj:{
    "controlledKeywords": [
@@ -129,6 +130,6 @@ export let init = {
      {"label":"Lu sur le web","selected":false},
      {"label":"Autres informations","selected":false}
    ],
-   "categories":[]
+   categories
  }
 };

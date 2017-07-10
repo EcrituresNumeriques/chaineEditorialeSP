@@ -1,4 +1,4 @@
-[
+export let categories = [
  {
   "fr": "Genres",
   "en": "Gender",
