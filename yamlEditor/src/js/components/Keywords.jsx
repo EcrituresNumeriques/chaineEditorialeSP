@@ -44,7 +44,7 @@ class InputKeyword extends React.Component{
   componentWillUnmount(){
   }
 
-  checkValue(event) {
+  checkValueFR(event) {
     let Categories = store.getState().misc.categories;
     for(let i=0;i<Categories.length;i++){
       if(Categories[i].fr===event.target.value){
@@ -52,15 +52,30 @@ class InputKeyword extends React.Component{
         event.target.value="";
       }
     }
-    //let answer = event.target.checked;
+  }
+  checkValueEN(event) {
+    let Categories = store.getState().misc.categories;
+    for(let i=0;i<Categories.length;i++){
+      if(Categories[i].en===event.target.value){
+        store.dispatch({type:"MISC_UPDATE",target:"categories["+i+"].selected", value:true});
+        event.target.value="";
+      }
+    }
+  }
+  addKeyword(event){
+    //Add uncontrolled keyword
+    let index = store.getState().misc.uncontrolledKeywords.length;
+    store.dispatch({type:"MISC_UPDATE",target:"uncontrolledKeywords["+index+"]", value:{fr:event.target.parentNode.querySelector("#kwFR").value,en:event.target.parentNode.querySelector("#kwEN").value}});
+    event.target.parentNode.querySelector("#kwFR").value = "";
+    event.target.parentNode.querySelector("#kwEN").value = "";
   }
 
   render() {
     return(
       <div className="keywords">
-        <input type="text" placeholder="mot clé" list="keywordsFR" onBlur={this.checkValue.bind(this)}/>
-        <input type="text" placeholder="keyword" list="keywordsEN"/>
-        <i className="fa fa-check validate" aria-hidden="true" data-id={this.props.index}></i>
+        <input type="text" id="kwFR" placeholder="mot clé" list="keywordsFR" onBlur={this.checkValueFR.bind(this)}/>
+        <input type="text" id="kwEN" placeholder="keyword" list="keywordsEN" onBlur={this.checkValueEN.bind(this)}/>
+        <i className="fa fa-check validate" aria-hidden="true" data-id={this.props.index} onClick={this.addKeyword.bind(this)}></i>
       </div>
     )
   }
