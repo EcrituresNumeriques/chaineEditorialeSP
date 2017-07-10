@@ -8,7 +8,7 @@ export function Rubriques(){
   return(
       <section className="group">
         <h1><i className="fa fa-check-square-o" aria-hidden="true"></i> Catégories</h1>
-        {rubriques.map((o,i)=>(<Rubrique key={i} index={i} label={o.label}/>))}
+        {rubriques.map((o,i)=>(<Rubrique key={i} index={i} label={o.fr}/>))}
       </section>
     )
   }

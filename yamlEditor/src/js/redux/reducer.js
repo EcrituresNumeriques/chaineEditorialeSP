@@ -16,7 +16,25 @@ export const reducer = function(state,action){
   }
   if(action.type == "MISC_UPDATE"){
     _.set(state.misc, action.target, action.value);
-    console.log(state.misc);
+
+    //Compute selected controlled keywords
+    let rubriques = state.misc.rubriques.filter(function(rubrique){
+      return rubrique.selected === true;
+    });
+    let categories = state.misc.categories.filter(function(category){
+      return category.selected === true;
+    });
+
+    //Generate new keywords in state.obj
+    let keywords = [...rubriques, ...categories];
+    state.obj.keyword_fr = [];
+    state.obj.keyword_en = [];
+    for(let i=0;i<keywords.length;i++){
+      state.obj.keyword_fr.push(keywords[i].fr);
+      state.obj.keyword_en.push(keywords[i].en);
+    }
+
+    //console.log(keywords,state.misc);
     return state;
   }
   return state;
