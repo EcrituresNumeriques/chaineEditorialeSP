@@ -49,7 +49,7 @@ body {
     box-shadow: 0 0 3px #ccc inset;
 }
 
-.reactForm{
+.reactForm, .keywords{
   display:flex;
   align-items: baseline;
 }
@@ -62,7 +62,7 @@ body {
   background-color:white;
   text-align: right;
 }
-.reactForm > input, .reactForm textarea,.reactForm > select {
+.reactForm > input, .reactForm textarea,.reactForm > select, .keywords > input {
   padding:0.5em 1em;
   display:block;
   flex:1 1 auto;
@@ -71,6 +71,18 @@ body {
   background-color:white;
   text-align: left;
   border:none;
+}
+.keywords > input.controlled{
+  background-color: #f0fff0;
+}
+.keywords > i {
+  padding:0.5em 1em;
+  background-color:red;
+  color:white;
+  cursor: pointer;
+}
+.keywords > i.validate{
+  background-color:green;
 }
 .reactForm > label.lcheckbox{
   flex:1 1 150px;

@@ -115,7 +115,7 @@ export let init = {
  misc:{
    "rubriques":[
      {"it":"TODO Revue en ligne","en":"TODO Revue en ligne","fr":"Revue en ligne","selected":false},
-     {"it":"TODO Essai","en":"TODO Essai","fr":"Essai","selected":true},
+     {"it":"TODO Essai","en":"TODO Essai","fr":"Essai","selected":false},
      {"it":"TODO Création","en":"TODO Création","fr":"Création","selected":false},
      {"it":"TODO L'édition papier de Sens-Public","en":"TODO L'édition papier de Sens-Public","fr":"L'édition papier de Sens-Public","selected":false},
      {"it":"TODO Archive","en":"TODO Archive","fr":"Archive","selected":false},
@@ -130,6 +130,7 @@ export let init = {
      {"it":"TODO Lu sur le web","en":"TODO Lu sur le web","fr":"Lu sur le web","selected":false},
      {"it":"TODO Autres informations","en":"TODO Autres informations","fr":"Autres informations","selected":false}
    ],
-   categories
+   categories,
+   uncontrolledKeywords:[]
  }
 };

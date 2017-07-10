@@ -8,6 +8,7 @@ import { Collaborateurs} from './Collaborateurs.jsx';
 import { MotsClefs} from './MotsClefs.jsx';
 import { Date} from './Date.jsx';
 import { Rubriques} from './Rubriques.jsx';
+import { Keywords} from './Keywords.jsx';
 import { Types} from './Types.jsx';
 
 export function App(){
@@ -20,8 +21,8 @@ export function App(){
       <Resumes/>
       <Authors />
       <Reviewers />
+      <Keywords/>
       <Rubriques/>
-      <Types/>
     </section>
   )
 }

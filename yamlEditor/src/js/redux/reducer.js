@@ -24,17 +24,17 @@ export const reducer = function(state,action){
     let categories = state.misc.categories.filter(function(category){
       return category.selected === true;
     });
+    state.misc.selectedCategories = categories;
 
     //Generate new keywords in state.obj
-    let keywords = [...rubriques, ...categories];
+    let keywords = [...rubriques, ...categories,...state.misc.uncontrolledKeywords];
     state.obj.keyword_fr = [];
     state.obj.keyword_en = [];
     for(let i=0;i<keywords.length;i++){
       state.obj.keyword_fr.push(keywords[i].fr);
       state.obj.keyword_en.push(keywords[i].en);
     }
-
-    //console.log(keywords,state.misc);
+    console.log(state.misc);
     return state;
   }
   return state;
