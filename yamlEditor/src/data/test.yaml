@@ -1,0 +1,90 @@
+controlledKeywords:
+  - label: ''
+    uriRameau: ''
+    idRameau: ''
+    wikidata: ''
+journal: Sens public
+issnnum: 2104-3272
+director:
+  - forname: Marcello
+    surname: Vitali-Rosati
+    gender: male
+    orcid: 0000-0001-6424-3229
+    viaf: ''
+    foaf: ''
+    isni: ''
+redacteurDossier:
+  - forname: ''
+    surname: ''
+    orcid: ''
+    viaf: ''
+    foaf: ''
+    isni: ''
+year: '2017'
+month: '07'
+day: '06'
+date: 2017/07/06
+dossier:
+  - title: ''
+    id: ''
+publisher: Département des littératures de langue française
+prod: Sens Public
+prodnum: Sens Public
+diffnum: Érudit
+rights: >-
+  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC
+  BY-NC-SA 4.0)
+title: test drag and drop
+subtitle: Should work
+typeArticle: ''
+authors:
+  - forname: Arthur
+    surname: Juchereau
+    orcid: ''
+    viaf: ''
+    foaf: ''
+    isni: ''
+    wikidata: ''
+  - forname: 2eme
+    surname: test
+    orcid: ''
+    viaf: ''
+    foaf: ''
+    isni: ''
+    wikidata: ''
+abstract:
+  - lang: fr
+    text: Ceci est un test
+  - lang: en
+    text: This is a test
+keyword_fr: ''
+keyword_en: ''
+url_article_sp: ''
+id_sp: SP0001
+translator:
+  - forname: ''
+    surname: ''
+lang: fr
+orig_lang: ''
+translations:
+  - lang: ''
+    titre: ''
+    url: ''
+  - lang: ''
+    titre: ''
+    url: ''
+articleslies:
+  - url: ''
+    titre: ''
+    auteur: ''
+reviewers:
+  - forname: Arthur
+    name: Juchereau
+    orcid: ''
+    viaf: ''
+    foaf: ''
+    isni: ''
+bibliography: ''
+link-citations: true
+nocite: ''
+

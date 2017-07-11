@@ -1,0 +1,156 @@
+@import url('https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.css');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0 30px;
+  padding-bottom: 125px;
+  overflow-x: hidden;
+}
+
+.header {
+  padding: 1px 0 30px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.subheader {
+  position: absolute;
+  top: -35px;
+  width: 100%;
+}
+
+.content {
+  min-height: 100%;
+  display:-webkit-flex;
+  display:flex;
+}
+
+.src, .dst, .app {
+  flex:0 0 calc((100% - 1em) / 2);
+  margin:0;
+  position: relative;
+  box-sizing: border-box;
+}
+.src {
+  margin-right:1em;
+}
+
+.src textarea, .dst textarea {
+    width: 100%;
+    height: calc(100% - 6rem);
+    padding:1em;
+    background-color: #fffffb;
+    border: 1px solid #888;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #ccc inset;
+}
+
+.reactForm, .keywords{
+  display:flex;
+  align-items: baseline;
+}
+.reactForm > label{
+  padding:0.5em 1em;
+  display:block;
+  flex:0 0 150px;
+  margin:2px;
+  box-shadow: 0 1px 1px #f0f0f0;;
+  background-color:white;
+  text-align: right;
+}
+.reactForm > input, .reactForm textarea,.reactForm > select, .keywords > input {
+  padding:0.5em 1em;
+  display:block;
+  flex:1 1 auto;
+  margin:2px;
+  box-shadow: 0 1px 1px #f0f0f0;;
+  background-color:white;
+  text-align: left;
+  border:none;
+}
+.keywords > input.controlled{
+  background-color: #f0fff0;
+}
+.keywords > i {
+  padding:0.5em 1em;
+  background-color:red;
+  color:white;
+  cursor: pointer;
+}
+.keywords > i.validate{
+  background-color:green;
+}
+.reactForm > label.lcheckbox{
+  flex:1 1 150px;
+  text-align: left;
+}
+.reactForm > input.icheckbox {
+  flex:0 0 auto;
+  margin: 0.5em 0em 0.5em 1em;
+}
+.reactForm textarea {
+  height:5em;
+}
+
+section.group {
+  margin:1em 0 0 0;
+  border:1px solid #f0f0f0;
+}
+section.group:first-of-type{
+  margin:0;
+}
+
+section > h1 {
+  background-color:#f0f0f0;
+  font-size: 1em;
+  padding:0.5em 1em;
+  margin:0;
+}
+
+.addToArray {
+  padding:0.5em 1em;
+  background-color: #f0f0f0;
+  cursor:pointer;
+}
+
+
+div#drop{
+  padding:3rem;
+  border:2px dashed #c0c0c0;
+  display:inline-block;
+  width:50%;
+  box-sizing: border-box;
+}
+div#drop:before{
+  display:block;
+  content:"Glisser votre fichier YAML";
+  text-align:center;
+}
+div#drop.draghover{
+  background-color: #96c79a;
+}
+div#drop.draghover:before{
+  display:block;
+  content:"D\00E9poser votre fichier YAML";
+  text-align:center;
+}
+div#download{
+  display:inline-block;
+  width:50%;
+  border:2px dashed #c0c0c0;
+  cursor:pointer;
+  border-left: none;
+  box-sizing: border-box;
+  padding:3rem;
+}
+div#download:hover{
+  background-color: #f0f0f0;}
+div#download:before{
+  display:block;
+  content:"T\E9l\0000E9\000063harger le fichier YAML";
+  text-align:center;
+}
