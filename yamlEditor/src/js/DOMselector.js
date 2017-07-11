@@ -114,7 +114,7 @@ function destroyClickedElement(event)
 }
 function saveTextAsFile()
 {
-    let textToWrite = yaml.value
+    let textToWrite = "----\n"+yaml.value+"\n---"
     let textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
 
     let fileNameToSaveAs = _.get(store.getState().obj,"id_sp","default");
