@@ -25,15 +25,34 @@ export function Keywords(){
     )
   }
 
-  function Keyword(props){
-    return(
-      <div className="keywords">
-        <input className={props.controlled ? "controlled":"free"} type="text" placeholder="FR" value={props.object.fr} readOnly="true"/>
-        <input className={props.controlled ? "controlled":"free"} type="text" placeholder="EN" value={props.object.en} readOnly="true"/>
-        <i className="fa fa-minus-circle" aria-hidden="true" data-id={props.index}></i>
-      </div>
-    )
+  class Keyword extends React.Component{
+
+    constructor(props) {
+      super(props);
+    }
+
+    removeKeyword(controlled){
+      if(this.props.controlled){
+       store.dispatch({type:"MISC_UPDATE",target:"controlledKeywords["+this.props.index+"].selected", value:false});
+      }
+      else{
+        let uncontrolledKeywords = store.getState().misc.uncontrolledKeywords;
+        uncontrolledKeywords.splice(this.props.index, 1);
+        store.dispatch({type:"MISC_UPDATE",target:"uncontrolledKeywords", value:uncontrolledKeywords});
+      }
+    }
+
+    render() {
+      return(
+        <div className="keywords">
+          <input className={this.props.controlled ? "controlled":"free"} type="text" placeholder="FR" value={this.props.object.fr} readOnly="true"/>
+          <input className={this.props.controlled ? "controlled":"free"} type="text" placeholder="EN" value={this.props.object.en} readOnly="true"/>
+          <i className="fa fa-minus-circle" aria-hidden="true" data-id={this.props.index} onClick={this.removeKeyword.bind(this)}></i>
+        </div>
+      )
+    }
   }
+
 
 class InputKeyword extends React.Component{
   constructor(props) {

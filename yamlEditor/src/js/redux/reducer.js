@@ -45,6 +45,7 @@ function compileKeywords(state){
   let categories = state.misc.categories.filter(function(category){
     return category.selected === true;
   });
+  state.misc.controlledKeywords = categories;
   state.obj.controlledKeywords = categories.map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o});
 
   //Compute uncontrolledKeywords
@@ -54,6 +55,6 @@ function compileKeywords(state){
     state.obj.keyword_fr.push(state.misc.uncontrolledKeywords[i].fr);
     state.obj.keyword_en.push(state.misc.uncontrolledKeywords[i].en);
   }
-  console.log("update keywords");
+  //console.log("update keywords");
   return state;
 }
