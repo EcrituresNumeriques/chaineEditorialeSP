@@ -39,18 +39,20 @@ function compileKeywords(state){
   let rubriques = state.misc.rubriques.filter(function(rubrique){
     return rubrique.selected === true;
   });
+  state.obj.typeArticle = rubriques.map((r)=>(r.label)).join(', ');
+
+  //compute typeArticle
   let categories = state.misc.categories.filter(function(category){
     return category.selected === true;
   });
-  state.misc.selectedCategories = categories;
+  state.obj.controlledKeywords = categories;
 
-  //Generate new keywords in state.obj
-  let keywords = [...rubriques, ...categories,...state.misc.uncontrolledKeywords];
+  //Compute uncontrolledKeywords
   state.obj.keyword_fr = [];
   state.obj.keyword_en = [];
-  for(let i=0;i<keywords.length;i++){
-    state.obj.keyword_fr.push(keywords[i].fr);
-    state.obj.keyword_en.push(keywords[i].en);
+  for(let i=0;i<state.misc.uncontrolledKeywords.length;i++){
+    state.obj.keyword_fr.push(state.misc.uncontrolledKeywords[i].fr);
+    state.obj.keyword_en.push(state.misc.uncontrolledKeywords[i].en);
   }
   console.log("update keywords");
   return state;

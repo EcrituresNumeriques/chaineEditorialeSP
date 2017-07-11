@@ -4,9 +4,11 @@ import React from 'react'
 import _ from 'lodash'
 
 export function Keywords(){
-  let selected = _.get(store.getState().misc,"selectedCategories",[]);
   let uncontrolledKeywords = _.get(store.getState().misc,"uncontrolledKeywords",[]);
   let categories = _.get(store.getState().misc,"categories",[]);
+  let selected = categories.filter(function(category){
+    return category.selected === true;
+  });
   return(
       <section className="group">
         <h1><i className="fa fa-tag" aria-hidden="true"></i> Mots clés</h1>
