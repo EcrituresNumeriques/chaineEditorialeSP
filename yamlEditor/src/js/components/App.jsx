@@ -11,6 +11,7 @@ import { Date} from './Date.jsx';
 import { Rubriques} from './Rubriques.jsx';
 import { Keywords} from './Keywords.jsx';
 import { Types} from './Types.jsx';
+require('./../../logo.png')
 
 export function App(){
   return(
