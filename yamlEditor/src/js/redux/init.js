@@ -50,7 +50,7 @@ export let init = {
    "rights": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
    "title": "test",
    "subtitle": '',
-   "typeArticle": '',
+   "typeArticle": [],
    "authors": [
     {
      "forname": '',
@@ -68,8 +68,8 @@ export let init = {
      "text": ''
     }
    ],
-   "keyword_fr": '',
-   "keyword_en": '',
+   "keyword_fr": "",
+   "keyword_en": "",
    "url_article_sp": '',
    "id_sp": '',
    "translator": [

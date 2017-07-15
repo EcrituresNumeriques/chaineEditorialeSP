@@ -9,6 +9,7 @@ export const reducer = function(state,action){
     state.misc.rubriques.map((o)=>(o.selected=false));
     state.misc.categories.map((o)=>(o.selected=false));
     state.misc.uncontrolledKeywords = [];
+    state = decompileKeywords(state);
     state = compileKeywords(state);
     return state;
   }
@@ -32,6 +33,36 @@ export const reducer = function(state,action){
   return state;
 };
 
+function decompileKeywords(state){
+  //get all the typeArticle
+  let typeArticle = state.obj.typeArticle;
+  let toEnable = typeArticle.map((a)=>(state.misc.rubriques.map((c)=>(c.label)).indexOf(a)));
+  for(let i=0;i<toEnable.length;i++){
+    if(toEnable[i] > -1){
+      state.misc.rubriques[toEnable[i]].selected = true;
+    }
+  }
+
+  //get all the controlled keywords
+  let controlledKeywords = state.obj.controlledKeywords;
+  let toSelect = controlledKeywords.map((a)=>(state.misc.categories.map((c)=>(c.fr)).indexOf(a.fr)));
+  for(let i=0;i<toSelect.length;i++){
+    if(toSelect[i] > -1){
+      state.misc.categories[toSelect[i]].selected = true;
+    }
+  }
+
+
+  //get all the uncontrolledKeywords
+  let keyword_fr = state.obj.keyword_fr.split(',');
+  let keyword_en = state.obj.keyword_en.split(',');
+  for(let i=0;i<keyword_fr.length&&i<keyword_en.length;i++){
+    state.misc.uncontrolledKeywords.push({fr:keyword_fr[i],en:keyword_en[i]});
+  }
+
+
+  return state;
+}
 
 
 function compileKeywords(state){
@@ -39,22 +70,26 @@ function compileKeywords(state){
   let rubriques = state.misc.rubriques.filter(function(rubrique){
     return rubrique.selected === true;
   });
-  state.obj.typeArticle = rubriques.map((r)=>(r.label)).join(', ');
+  state.obj.typeArticle = rubriques.map((r)=>(r.label));
 
   //compute typeArticle
   let categories = state.misc.categories.filter(function(category){
     return category.selected === true;
   });
   state.misc.controlledKeywords = categories;
-  state.obj.controlledKeywords = categories.map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o});
+  state.obj.controlledKeywords = categories.map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;});
 
   //Compute uncontrolledKeywords
-  state.obj.keyword_fr = [];
-  state.obj.keyword_en = [];
+  let keyword_fr = [];
+  let keyword_en = [];
+  console.log(keyword_fr,keyword_en);
   for(let i=0;i<state.misc.uncontrolledKeywords.length;i++){
-    state.obj.keyword_fr.push(state.misc.uncontrolledKeywords[i].fr);
-    state.obj.keyword_en.push(state.misc.uncontrolledKeywords[i].en);
+    keyword_fr.push(state.misc.uncontrolledKeywords[i].fr);
+    keyword_en.push(state.misc.uncontrolledKeywords[i].en);
   }
+  console.log(keyword_fr,keyword_en);
+  state.obj.keywords_fr = keyword_fr.join(',');
+  state.obj.keywords_en = keyword_en.join(',');
   //console.log("update keywords");
   return state;
 }

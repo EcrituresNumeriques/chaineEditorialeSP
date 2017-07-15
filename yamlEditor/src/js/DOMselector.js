@@ -78,7 +78,7 @@ function handleFileSelect(evt) {
     let files = evt.dataTransfer.files;
     let reader = new FileReader();
     reader.onload = function(event) {
-         yaml.value = event.target.result;
+         yaml.value = event.target.result.replace(/[\-]{3}\n/g, "").replace(/\n[\-]{3}/g, "");
          yaml.dispatchEvent(new Event('input'));
          removeDragClass();
     };
@@ -114,7 +114,7 @@ function destroyClickedElement(event)
 }
 function saveTextAsFile()
 {
-    let textToWrite = yaml.value
+    let textToWrite = "---\n"+yaml.value+"\n---"
     let textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
 
     let fileNameToSaveAs = _.get(store.getState().obj,"id_sp","default");
