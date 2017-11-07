@@ -308,7 +308,7 @@ $endif$
 
 
 $body$
-$for(include-after)$•••••••••••
+$for(include-after)$
 $include-after$
 $endfor$
 </body>
