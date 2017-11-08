@@ -45,7 +45,7 @@ function decompileKeywords(state){
 
   //get all the controlled keywords
   let controlledKeywords = state.obj.controlledKeywords;
-  let toSelect = controlledKeywords.map((a)=>(state.misc.categories.map((c)=>(c.fr)).indexOf(a.fr)));
+  let toSelect = controlledKeywords.map((a)=>(state.misc.categories.map((c)=>(c.label)).indexOf(a.label)));
   for(let i=0;i<toSelect.length;i++){
     if(toSelect[i] > -1){
       state.misc.categories[toSelect[i]].selected = true;

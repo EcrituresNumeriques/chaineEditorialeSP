@@ -1,6 +1,6 @@
 export let categories = [
  {
-  "fr": "Genres",
+  "label": "Genres",
   "en": "Gender",
   "it": "Genere",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb16248353h/",
@@ -8,7 +8,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Barack Obama",
+  "label": "Barack Obama",
   "en": "Barack Obama",
   "it": "Barack Obama",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb15591663c/",
@@ -16,7 +16,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Crise financière",
+  "label": "Crise financière",
   "en": "Financial crisis",
   "it": "Crisi economica",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb15957573q/",
@@ -25,7 +25,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Sports",
+  "label": "Sports",
   "en": "Sports",
   "it": "Sport",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb133188907/",
@@ -34,7 +34,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Société de consommation",
+  "label": "Société de consommation",
   "en": "Consumerism",
   "it": "Consumismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12135912x/",
@@ -42,7 +42,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Milieu politique",
+  "label": "Milieu politique",
   "en": "TODO Milieu politique",
   "it": "TODO Milieu politique",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13319064q/",
@@ -51,7 +51,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Religions",
+  "label": "Religions",
   "en": "Religion",
   "it": "Religioni",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11963568t/",
@@ -60,7 +60,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Pays en développement",
+  "label": "Pays en développement",
   "en": "Developing countries",
   "it": "Paesi in via di sviluppo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119456356/",
@@ -69,7 +69,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Mondialisation",
+  "label": "Mondialisation",
   "en": "Globalization",
   "it": "Mondializzazione",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb125694464/",
@@ -78,7 +78,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Relations internationales",
+  "label": "Relations internationales",
   "en": "International relations",
   "it": "Relazioni internazionali",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11976886h/",
@@ -90,7 +90,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Identité",
+  "label": "Identité",
   "en": "Identity",
   "it": "Identità",
   "url": [
@@ -110,7 +110,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Nation, nationalisme",
+  "label": "Nation, nationalisme",
   "en": "Nation, nationalism",
   "it": "Nazione, nazionalismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11937474t/",
@@ -119,7 +119,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Guerre et conflit",
+  "label": "Guerre et conflit",
   "en": "War and conflict",
   "it": "Guerra e conflitto",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13318436b/",
@@ -128,7 +128,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Postcolonial",
+  "label": "Postcolonial",
   "en": "Postcolonial",
   "it": "Postcoloniale",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb135350399/",
@@ -137,7 +137,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Démocratie",
+  "label": "Démocratie",
   "en": "Democracy",
   "it": "Democrazia ",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb133185567/",
@@ -146,7 +146,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Espace public",
+  "label": "Espace public",
   "en": "Public space",
   "it": "Spazio pubblico",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12011791z/",
@@ -155,7 +155,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Élections présidentielles",
+  "label": "Élections présidentielles",
   "en": "TODO Élections présidentielles",
   "it": "TODO Élections présidentielles",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb120141853/",
@@ -164,7 +164,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Écologie",
+  "label": "Écologie",
   "en": "Ecology",
   "it": "Ecologia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb158291948/",
@@ -176,7 +176,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Édition, presse et médias",
+  "label": "Édition, presse et médias",
   "en": "TODO Édition, presse et médias",
   "it": "TODO Édition, presse et médias",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13318593f/",
@@ -185,8 +185,7 @@ export let categories = [
   "selected": false
  },
  {
-  "label": "Publishers and publishing Publication and distribution Publishing",
-  "fr": "TODO Press",
+  "label": "TODO Press",
   "en": "Press",
   "it": "TODO Press",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb133183691/",
@@ -195,8 +194,7 @@ export let categories = [
   "selected": false
  },
  {
-  "label": "Publishers and publishing Publication and distribution Publishing",
-  "fr": "TODO Mass media",
+  "label": "TODO Mass media",
   "en": "Mass media",
   "it": "TODO Mass media",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119323312/",
@@ -205,7 +203,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Socialisme et Communisme",
+  "label": "Socialisme et Communisme",
   "en": "Socialism and Communism",
   "it": "Socialismo e Comunismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12647612n/",
@@ -214,7 +212,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Socialisme et Communisme",
+  "label": "Socialisme et Communisme",
   "en": "Socialism and Communism",
   "it": "Socialismo e Comunismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb133408542/",
@@ -223,7 +221,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Travail et emploi",
+  "label": "Travail et emploi",
   "en": "Work",
   "it": "Lavoro",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119715347/",
@@ -237,7 +235,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Universalisme",
+  "label": "Universalisme",
   "en": "Universalism",
   "it": "Universalismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb125597651/",
@@ -245,7 +243,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Droits humains",
+  "label": "Droits humains",
   "en": "Human rights",
   "it": "Diritti umani",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13318689g/",
@@ -255,7 +253,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Image, Iconographie",
+  "label": "Image, Iconographie",
   "en": "Image, Iconography",
   "it": "TODO Image, Iconography",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb126479296/",
@@ -268,7 +266,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Sexualité",
+  "label": "Sexualité",
   "en": "Sexuality",
   "it": "Sessualità",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11933266p/",
@@ -278,7 +276,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Érotisme",
+  "label": "Érotisme",
   "en": "Eroticism",
   "it": "Erotismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12650884k/",
@@ -287,7 +285,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Métaphysique",
+  "label": "Métaphysique",
   "en": "Metaphysics",
   "it": "Metafisica",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11934604g/",
@@ -297,7 +295,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Mouvement social",
+  "label": "Mouvement social",
   "en": "Social movements",
   "it": "Movimento sociale",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119477578/",
@@ -307,7 +305,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Psychanalyse",
+  "label": "Psychanalyse",
   "en": "Psychoanalysis",
   "it": "Psicoanalisi",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11932657k/",
@@ -316,7 +314,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Homosexualité",
+  "label": "Homosexualité",
   "en": "Homosexuality",
   "it": "Omosessualità",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119320348/",
@@ -325,7 +323,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Récit, voyage",
+  "label": "Récit, voyage",
   "en": "TODO Récit, voyage",
   "it": "TODO Récit, voyage",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119327315/",
@@ -334,7 +332,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Capitalisme",
+  "label": "Capitalisme",
   "en": "Capitalism",
   "it": "Capitalismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119360614/",
@@ -343,7 +341,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Entreprises",
+  "label": "Entreprises",
   "en": "Business",
   "it": "Imprese",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119360614/",
@@ -352,7 +350,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Multilinguisme",
+  "label": "Multilinguisme",
   "en": "Multilingualism",
   "it": "Multilinguismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11936549n/",
@@ -361,7 +359,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Francophonie",
+  "label": "Francophonie",
   "en": "French speaking world",
   "it": "Francofonia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11931487q/",
@@ -370,7 +368,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Diversité culturelle",
+  "label": "Diversité culturelle",
   "en": "Cultural diversity",
   "it": "Diversità culturale",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11940030m/",
@@ -379,7 +377,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Éducation et enseignement",
+  "label": "Éducation et enseignement",
   "en": "Education",
   "it": "Educazione",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13318807v/",
@@ -388,7 +386,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Éducation et enseignement",
+  "label": "Éducation et enseignement",
   "en": "Education",
   "it": "Educazione",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11934463f/",
@@ -397,19 +395,19 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Politique mémorielle",
+  "label": "Politique mémorielle",
   "en": "Politics of memory",
   "it": "Politica della memoria",
   "selected": false
  },
  {
-  "fr": "Société du spectacle",
+  "label": "Société du spectacle",
   "en": "TODO Société du spectacle",
   "it": "TODO Société du spectacle",
   "selected": false
  },
  {
-  "fr": "Phénoménologie",
+  "label": "Phénoménologie",
   "en": "Phenomenology",
   "it": "Fenomenologia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11933094c/",
@@ -418,7 +416,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Humanisme",
+  "label": "Humanisme",
   "en": "Humanism",
   "it": "Umanismo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11957838g/",
@@ -427,7 +425,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Technologies",
+  "label": "Technologies",
   "en": "Technologies",
   "it": "Tecnologie",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119338890/",
@@ -436,7 +434,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Révoltes arabes",
+  "label": "Révoltes arabes",
   "en": "Arab revolution",
   "it": "Rivoluzione araba",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb16536368c/",
@@ -444,7 +442,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Internet",
+  "label": "Internet",
   "en": "Internet",
   "it": "Internet",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12337059x/",
@@ -453,7 +451,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Imaginaire",
+  "label": "Imaginaire",
   "en": "Imagination",
   "it": "Immaginario",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11932093s/",
@@ -462,7 +460,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Créativité",
+  "label": "Créativité",
   "en": "Creativity",
   "it": "Creatività",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11936171q/",
@@ -471,7 +469,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Patrimoine",
+  "label": "Patrimoine",
   "en": "Heritage",
   "it": "Patrimonio",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb133190710/",
@@ -480,7 +478,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Stéréotypes",
+  "label": "Stéréotypes",
   "en": "Stereotypes",
   "it": "Stereotipi",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119781057/",
@@ -489,7 +487,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Valeurs",
+  "label": "Valeurs",
   "en": "Values",
   "it": "Valori",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11936003z/",
@@ -498,7 +496,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Utopie",
+  "label": "Utopie",
   "en": "Utopia",
   "it": "Utopia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119337395/",
@@ -510,7 +508,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Minorités",
+  "label": "Minorités",
   "en": "Minorities",
   "it": "Minoranze",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119325052/",
@@ -519,7 +517,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Sujet",
+  "label": "Sujet",
   "en": "Subject",
   "it": "Soggetto",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11956929j/",
@@ -528,7 +526,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Publicité",
+  "label": "Publicité",
   "en": "TODO Publicité",
   "it": "TODO Publicité",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13318427c/",
@@ -540,7 +538,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Altérité",
+  "label": "Altérité",
   "en": "TODO Altérité",
   "it": "TODO Altérité",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11959060x/",
@@ -552,7 +550,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Futur",
+  "label": "Futur",
   "en": "TODO Futur",
   "it": "TODO Futur",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb124789914/",
@@ -561,7 +559,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Double, Dédoublement",
+  "label": "Double, Dédoublement",
   "en": "TODO Double, Dédoublement",
   "it": "TODO Double, Dédoublement",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11948554x/",
@@ -574,7 +572,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Traduction automatique",
+  "label": "Traduction automatique",
   "en": "TODO Traduction automatique",
   "it": "TODO Traduction automatique",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11947452q/",
@@ -583,7 +581,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "MOOC",
+  "label": "MOOC",
   "en": "TODO MOOC",
   "it": "TODO MOOC",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb16901246n/",
@@ -592,7 +590,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Allende, Isabel",
+  "label": "Allende, Isabel",
   "en": "Allende, Isabel",
   "it": "Allende, Isabel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12013110z",
@@ -601,7 +599,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Antonin, Artaud",
+  "label": "Antonin, Artaud",
   "en": "Antonin, Artaud",
   "it": "Antonin, Artaud",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118892409",
@@ -610,7 +608,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Arendt, Hannah",
+  "label": "Arendt, Hannah",
   "en": "Arendt, Hannah",
   "it": "Arendt, Hannah",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118890622",
@@ -619,7 +617,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Avery, Tex",
+  "label": "Avery, Tex",
   "en": "Avery, Tex",
   "it": "Avery, Tex",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12536037q",
@@ -628,7 +626,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Bakounine, Mikhaïl",
+  "label": "Bakounine, Mikhaïl",
   "en": "Bakounine, Mikhaïl",
   "it": "Bakounine, Mikhaïl",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11889937b",
@@ -637,7 +635,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Barrès, Maurice",
+  "label": "Barrès, Maurice",
   "en": "Barrès, Maurice",
   "it": "Barrès, Maurice",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118903382",
@@ -646,7 +644,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Barthes, Roland",
+  "label": "Barthes, Roland",
   "en": "Barthes, Roland",
   "it": "Barthes, Roland",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118904281",
@@ -655,7 +653,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Beauvoir (de), Simone",
+  "label": "Beauvoir (de), Simone",
   "en": "Beauvoir (de), Simone",
   "it": "Beauvoir (de), Simone",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11890854p",
@@ -664,7 +662,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Beckett, Samuel",
+  "label": "Beckett, Samuel",
   "en": "Beckett, Samuel",
   "it": "Beckett, Samuel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118908958",
@@ -673,7 +671,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Bolzano, Bernard",
+  "label": "Bolzano, Bernard",
   "en": "Bolzano, Bernard",
   "it": "Bolzano, Bernard",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12027042g",
@@ -682,7 +680,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Bourdieu, Pierre",
+  "label": "Bourdieu, Pierre",
   "en": "Bourdieu, Pierre",
   "it": "Bourdieu, Pierre",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118934022",
@@ -691,7 +689,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Cahun, Claude",
+  "label": "Cahun, Claude",
   "en": "Cahun, Claude",
   "it": "Cahun, Claude",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12375017b",
@@ -700,7 +698,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Calle-Gruber, Mireille",
+  "label": "Calle-Gruber, Mireille",
   "en": "Calle-Gruber, Mireille",
   "it": "Calle-Gruber, Mireille",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12027120f",
@@ -709,7 +707,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Camus, Albert",
+  "label": "Camus, Albert",
   "en": "Camus, Albert",
   "it": "Camus, Albert",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118949856",
@@ -718,7 +716,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Cardon, Dominique",
+  "label": "Cardon, Dominique",
   "en": "Cardon, Dominique",
   "it": "Cardon, Dominique",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb16206537h",
@@ -727,7 +725,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Castoriadis, Cornelius",
+  "label": "Castoriadis, Cornelius",
   "en": "Castoriadis, Cornelius",
   "it": "Castoriadis, Cornelius",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118955364",
@@ -736,7 +734,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Chedid, Andrée",
+  "label": "Chedid, Andrée",
   "en": "Chedid, Andrée",
   "it": "Chedid, Andrée",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118964859",
@@ -745,7 +743,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Clausewitz (von), Carl",
+  "label": "Clausewitz (von), Carl",
   "en": "Clausewitz (von), Carl",
   "it": "Clausewitz (von), Carl",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11896966d",
@@ -754,7 +752,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Comte, Auguste",
+  "label": "Comte, Auguste",
   "en": "Comte, Auguste",
   "it": "Comte, Auguste",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11897482h",
@@ -763,7 +761,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Condorcet",
+  "label": "Condorcet",
   "en": "Condorcet",
   "it": "Condorcet",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118975118",
@@ -772,7 +770,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Daumal",
+  "label": "Daumal",
   "en": "Daumal",
   "it": "Daumal",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11898736d",
@@ -781,7 +779,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Deguy, Michel",
+  "label": "Deguy, Michel",
   "en": "Deguy, Michel",
   "it": "Deguy, Michel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11899119d",
@@ -790,7 +788,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Delbo, Charlotte",
+  "label": "Delbo, Charlotte",
   "en": "Delbo, Charlotte",
   "it": "Delbo, Charlotte",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11899280r",
@@ -799,7 +797,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Deleuze, Gilles",
+  "label": "Deleuze, Gilles",
   "en": "Deleuze, Gilles",
   "it": "Deleuze, Gilles",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118993325",
@@ -808,7 +806,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Derrida, Jacques",
+  "label": "Derrida, Jacques",
   "en": "Derrida, Jacques",
   "it": "Derrida, Jacques",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11899710z",
@@ -817,7 +815,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Desanti, Dominique",
+  "label": "Desanti, Dominique",
   "en": "Desanti, Dominique",
   "it": "Desanti, Dominique",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118997448",
@@ -826,7 +824,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Descartes",
+  "label": "Descartes",
   "en": "Descartes",
   "it": "Descartes",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11899775j",
@@ -835,7 +833,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Duras, Marguerite",
+  "label": "Duras, Marguerite",
   "en": "Duras, Marguerite",
   "it": "Duras, Marguerite",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119013498",
@@ -844,7 +842,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Eschyle",
+  "label": "Eschyle",
   "en": "Eschyle",
   "it": "Eschyle",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb118881476",
@@ -853,7 +851,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Fanon, Frantz",
+  "label": "Fanon, Frantz",
   "en": "Fanon, Frantz",
   "it": "Fanon, Frantz",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb120165772",
@@ -862,7 +860,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Fichte",
+  "label": "Fichte",
   "en": "Fichte",
   "it": "Fichte",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11902725m",
@@ -871,7 +869,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Foucault, Michel",
+  "label": "Foucault, Michel",
   "en": "Foucault, Michel",
   "it": "Foucault, Michel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11903202t",
@@ -880,7 +878,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Freud, Sigmund",
+  "label": "Freud, Sigmund",
   "en": "Freud, Sigmund",
   "it": "Freud, Sigmund",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119035855",
@@ -889,7 +887,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Fukazaku, Kinji",
+  "label": "Fukazaku, Kinji",
   "en": "Fukazaku, Kinji",
   "it": "Fukazaku, Kinji",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb14043205j",
@@ -898,7 +896,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Gatti, Armand",
+  "label": "Gatti, Armand",
   "en": "Gatti, Armand",
   "it": "Gatti, Armand",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11904288m",
@@ -907,7 +905,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Genet, Jean",
+  "label": "Genet, Jean",
   "en": "Genet, Jean",
   "it": "Genet, Jean",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11998463n",
@@ -916,7 +914,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Gennes (de), Pierre-Gilles",
+  "label": "Gennes (de), Pierre-Gilles",
   "en": "Gennes (de), Pierre-Gilles",
   "it": "Gennes (de), Pierre-Gilles",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12179651s",
@@ -925,7 +923,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Gide, André",
+  "label": "Gide, André",
   "en": "Gide, André",
   "it": "Gide, André",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11904849c",
@@ -934,7 +932,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Glissant, Édouard",
+  "label": "Glissant, Édouard",
   "en": "Glissant, Édouard",
   "it": "Glissant, Édouard",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11905179m",
@@ -943,7 +941,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Godard, Jean-Luc",
+  "label": "Godard, Jean-Luc",
   "en": "Godard, Jean-Luc",
   "it": "Godard, Jean-Luc",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11905213z",
@@ -952,7 +950,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Gorz, André",
+  "label": "Gorz, André",
   "en": "Gorz, André",
   "it": "Gorz, André",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11905453r",
@@ -961,7 +959,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Grimaldi, Nicolas",
+  "label": "Grimaldi, Nicolas",
   "en": "Grimaldi, Nicolas",
   "it": "Grimaldi, Nicolas",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119059236",
@@ -970,7 +968,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Habermas, Jürgen",
+  "label": "Habermas, Jürgen",
   "en": "Habermas, Jürgen",
   "it": "Habermas, Jürgen",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11906645x",
@@ -979,7 +977,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Hadot, Pierre",
+  "label": "Hadot, Pierre",
   "en": "Hadot, Pierre",
   "it": "Hadot, Pierre",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11906675v",
@@ -988,7 +986,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Heidegger, Martin",
+  "label": "Heidegger, Martin",
   "en": "Heidegger, Martin",
   "it": "Heidegger, Martin",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11907130r",
@@ -997,7 +995,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Herder, Johann Gottfried",
+  "label": "Herder, Johann Gottfried",
   "en": "Herder, Johann Gottfried",
   "it": "Herder, Johann Gottfried",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119073262",
@@ -1006,7 +1004,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Herzl, Theodor",
+  "label": "Herzl, Theodor",
   "en": "Herzl, Theodor",
   "it": "Herzl, Theodor",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119074370",
@@ -1015,7 +1013,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Hitchcock",
+  "label": "Hitchcock",
   "en": "Hitchcock",
   "it": "Hitchcock",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11907571f",
@@ -1024,7 +1022,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Hobbes, Thomas",
+  "label": "Hobbes, Thomas",
   "en": "Hobbes, Thomas",
   "it": "Hobbes, Thomas",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11907586g",
@@ -1033,7 +1031,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Husserl, Edmund",
+  "label": "Husserl, Edmund",
   "en": "Husserl, Edmund",
   "it": "Husserl, Edmund",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11908089c",
@@ -1042,7 +1040,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Innerarity, Daniel",
+  "label": "Innerarity, Daniel",
   "en": "Innerarity, Daniel",
   "it": "Innerarity, Daniel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb15040085w",
@@ -1051,7 +1049,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "James, C.R.L.",
+  "label": "James, C.R.L.",
   "en": "James, C.R.L.",
   "it": "James, C.R.L.",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb120129954",
@@ -1060,7 +1058,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Jammes, Francis",
+  "label": "Jammes, Francis",
   "en": "Jammes, Francis",
   "it": "Jammes, Francis",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119085574",
@@ -1069,7 +1067,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Jarmush, Jim",
+  "label": "Jarmush, Jim",
   "en": "Jarmush, Jim",
   "it": "Jarmush, Jim",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13750759d",
@@ -1078,7 +1076,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Kafka, Frantz",
+  "label": "Kafka, Frantz",
   "en": "Kafka, Frantz",
   "it": "Kafka, Frantz",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119093016",
@@ -1087,7 +1085,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Kant",
+  "label": "Kant",
   "en": "Kant",
   "it": "Kant",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11909393p",
@@ -1096,7 +1094,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Kierkegaard, Sören",
+  "label": "Kierkegaard, Sören",
   "en": "Kierkegaard, Sören",
   "it": "Kierkegaard, Sören",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11909736z",
@@ -1105,7 +1103,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Kofman, Sarah",
+  "label": "Kofman, Sarah",
   "en": "Kofman, Sarah",
   "it": "Kofman, Sarah",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119099235",
@@ -1114,7 +1112,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Konrád, György",
+  "label": "Konrád, György",
   "en": "Konrád, György",
   "it": "Konrád, György",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119099622",
@@ -1123,7 +1121,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Lacan, Jacques",
+  "label": "Lacan, Jacques",
   "en": "Lacan, Jacques",
   "it": "Lacan, Jacques",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119104423",
@@ -1132,7 +1130,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Laclos, Choderlos (de)",
+  "label": "Laclos, Choderlos (de)",
   "en": "Laclos, Choderlos (de)",
   "it": "Laclos, Choderlos (de)",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11896727z",
@@ -1141,7 +1139,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Leduc, Violette",
+  "label": "Leduc, Violette",
   "en": "Leduc, Violette",
   "it": "Leduc, Violette",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11912057h",
@@ -1150,7 +1148,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Levinas, Emmanuel",
+  "label": "Levinas, Emmanuel",
   "en": "Levinas, Emmanuel",
   "it": "Levinas, Emmanuel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119128222",
@@ -1159,7 +1157,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Lumet, Sydney",
+  "label": "Lumet, Sydney",
   "en": "Lumet, Sydney",
   "it": "Lumet, Sydney",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13896863c",
@@ -1168,7 +1166,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Luxemburg, Rosa",
+  "label": "Luxemburg, Rosa",
   "en": "Luxemburg, Rosa",
   "it": "Luxemburg, Rosa",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12275704r",
@@ -1177,7 +1175,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Majdalani, Charif",
+  "label": "Majdalani, Charif",
   "en": "Majdalani, Charif",
   "it": "Majdalani, Charif",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb150214803",
@@ -1186,7 +1184,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Mallarmé, Stéphane",
+  "label": "Mallarmé, Stéphane",
   "en": "Mallarmé, Stéphane",
   "it": "Mallarmé, Stéphane",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11914131k",
@@ -1195,7 +1193,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Malraux, André",
+  "label": "Malraux, André",
   "en": "Malraux, André",
   "it": "Malraux, André",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11914167k",
@@ -1204,7 +1202,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Marker, Chris",
+  "label": "Marker, Chris",
   "en": "Marker, Chris",
   "it": "Marker, Chris",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119146282",
@@ -1213,7 +1211,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Marx, Karl",
+  "label": "Marx, Karl",
   "en": "Marx, Karl",
   "it": "Marx, Karl",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11914934t",
@@ -1222,7 +1220,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Maupassant (de), Guy",
+  "label": "Maupassant (de), Guy",
   "en": "Maupassant (de), Guy",
   "it": "Maupassant (de), Guy",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11915226h",
@@ -1231,7 +1229,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Mauriac, François",
+  "label": "Mauriac, François",
   "en": "Mauriac, François",
   "it": "Mauriac, François",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11915247g",
@@ -1240,7 +1238,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Merleau-Ponty, Maurice",
+  "label": "Merleau-Ponty, Maurice",
   "en": "Merleau-Ponty, Maurice",
   "it": "Merleau-Ponty, Maurice",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11886967j",
@@ -1249,7 +1247,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Millet, Richard",
+  "label": "Millet, Richard",
   "en": "Millet, Richard",
   "it": "Millet, Richard",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119161583",
@@ -1258,7 +1256,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Montaigne",
+  "label": "Montaigne",
   "en": "Montaigne",
   "it": "Montaigne",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11916599s",
@@ -1267,7 +1265,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Morin, Edgar",
+  "label": "Morin, Edgar",
   "en": "Morin, Edgar",
   "it": "Morin, Edgar",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119168717",
@@ -1276,7 +1274,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Musil, Robert",
+  "label": "Musil, Robert",
   "en": "Musil, Robert",
   "it": "Musil, Robert",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12158156g",
@@ -1285,7 +1283,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Ndiaye, Marie",
+  "label": "Ndiaye, Marie",
   "en": "Ndiaye, Marie",
   "it": "Ndiaye, Marie",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12016218q",
@@ -1294,7 +1292,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Negri, Antonio",
+  "label": "Negri, Antonio",
   "en": "Negri, Antonio",
   "it": "Negri, Antonio",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119175124",
@@ -1303,7 +1301,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Nietzsche",
+  "label": "Nietzsche",
   "en": "Nietzsche",
   "it": "Nietzsche",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb137409692",
@@ -1312,7 +1310,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Pasolini*Pier,Paolo",
+  "label": "Pasolini*Pier,Paolo",
   "en": "Pasolini*Pier,Paolo",
   "it": "Pasolini*Pier,Paolo",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119187049",
@@ -1321,7 +1319,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Patočka, Jan",
+  "label": "Patočka, Jan",
   "en": "Patočka, Jan",
   "it": "Patočka, Jan",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11918768j",
@@ -1330,7 +1328,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Pinter, Harold",
+  "label": "Pinter, Harold",
   "en": "Pinter, Harold",
   "it": "Pinter, Harold",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11919883z",
@@ -1339,7 +1337,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Prévost (L’abbé)",
+  "label": "Prévost (L’abbé)",
   "en": "Prévost (L’abbé)",
   "it": "Prévost (L’abbé)",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11920607b",
@@ -1348,7 +1346,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Quentin Tarantino",
+  "label": "Quentin Tarantino",
   "en": "Quentin Tarantino",
   "it": "Quentin Tarantino",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13167925h",
@@ -1357,7 +1355,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Renan, Ernest",
+  "label": "Renan, Ernest",
   "en": "Renan, Ernest",
   "it": "Renan, Ernest",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119214865",
@@ -1366,7 +1364,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Resnais, Alain",
+  "label": "Resnais, Alain",
   "en": "Resnais, Alain",
   "it": "Resnais, Alain",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11921604j",
@@ -1375,7 +1373,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Ricoeur, Paul",
+  "label": "Ricoeur, Paul",
   "en": "Ricoeur, Paul",
   "it": "Ricoeur, Paul",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11921926p",
@@ -1384,7 +1382,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Rimbaud",
+  "label": "Rimbaud",
   "en": "Rimbaud",
   "it": "Rimbaud",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119219976",
@@ -1393,7 +1391,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Rocha, Glauber",
+  "label": "Rocha, Glauber",
   "en": "Rocha, Glauber",
   "it": "Rocha, Glauber",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11968431d",
@@ -1402,7 +1400,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Rohmer, Éric",
+  "label": "Rohmer, Éric",
   "en": "Rohmer, Éric",
   "it": "Rohmer, Éric",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11922412v",
@@ -1411,7 +1409,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Rousseau",
+  "label": "Rousseau",
   "en": "Rousseau",
   "it": "Rousseau",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119228797",
@@ -1420,7 +1418,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Sartre, Jean-Paul",
+  "label": "Sartre, Jean-Paul",
   "en": "Sartre, Jean-Paul",
   "it": "Sartre, Jean-Paul",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11923735k",
@@ -1429,7 +1427,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Schmid, Jakob Robert",
+  "label": "Schmid, Jakob Robert",
   "en": "Schmid, Jakob Robert",
   "it": "Schmid, Jakob Robert",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb126381787",
@@ -1438,7 +1436,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Shakespeare",
+  "label": "Shakespeare",
   "en": "Shakespeare",
   "it": "Shakespeare",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119246079",
@@ -1447,7 +1445,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Sidney, Algernon",
+  "label": "Sidney, Algernon",
   "en": "Sidney, Algernon",
   "it": "Sidney, Algernon",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12295784n",
@@ -1456,7 +1454,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Sieyès, Emmanuel",
+  "label": "Sieyès, Emmanuel",
   "en": "Sieyès, Emmanuel",
   "it": "Sieyès, Emmanuel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12041767q",
@@ -1465,7 +1463,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Simmel, Georg",
+  "label": "Simmel, Georg",
   "en": "Simmel, Georg",
   "it": "Simmel, Georg",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11924807v",
@@ -1474,7 +1472,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Simon, Claude",
+  "label": "Simon, Claude",
   "en": "Simon, Claude",
   "it": "Simon, Claude",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119891228",
@@ -1483,7 +1481,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Smith, Adam",
+  "label": "Smith, Adam",
   "en": "Smith, Adam",
   "it": "Smith, Adam",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119250114",
@@ -1492,7 +1490,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Spinoza",
+  "label": "Spinoza",
   "en": "Spinoza",
   "it": "Spinoza",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11925350v",
@@ -1501,7 +1499,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Tarde, Gabriel",
+  "label": "Tarde, Gabriel",
   "en": "Tarde, Gabriel",
   "it": "Tarde, Gabriel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119260221",
@@ -1510,7 +1508,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Tarkovski",
+  "label": "Tarkovski",
   "en": "Tarkovski",
   "it": "Tarkovski",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb122597943",
@@ -1519,7 +1517,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Thiry, Marcel",
+  "label": "Thiry, Marcel",
   "en": "Thiry, Marcel",
   "it": "Thiry, Marcel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11926469s",
@@ -1528,7 +1526,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Tocqueville (de), Alexis",
+  "label": "Tocqueville (de), Alexis",
   "en": "Tocqueville (de), Alexis",
   "it": "Tocqueville (de), Alexis",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119267448",
@@ -1537,7 +1535,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Tönnies, Ferdinand",
+  "label": "Tönnies, Ferdinand",
   "en": "Tönnies, Ferdinand",
   "it": "Tönnies, Ferdinand",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119267370",
@@ -1546,7 +1544,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Varda, Agnès",
+  "label": "Varda, Agnès",
   "en": "Varda, Agnès",
   "it": "Varda, Agnès",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11927678j",
@@ -1555,7 +1553,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Vas Sant, Gus",
+  "label": "Vas Sant, Gus",
   "en": "Vas Sant, Gus",
   "it": "Vas Sant, Gus",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13607881b",
@@ -1564,7 +1562,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Vigo, Jean",
+  "label": "Vigo, Jean",
   "en": "Vigo, Jean",
   "it": "Vigo, Jean",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb121201369",
@@ -1573,7 +1571,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Vinaver, Michel",
+  "label": "Vinaver, Michel",
   "en": "Vinaver, Michel",
   "it": "Vinaver, Michel",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119284338",
@@ -1582,7 +1580,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Virilio, Paul",
+  "label": "Virilio, Paul",
   "en": "Virilio, Paul",
   "it": "Virilio, Paul",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11928524k",
@@ -1591,7 +1589,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Voltaire",
+  "label": "Voltaire",
   "en": "Voltaire",
   "it": "Voltaire",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11928669t",
@@ -1600,7 +1598,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Weber, Max",
+  "label": "Weber, Max",
   "en": "Weber, Max",
   "it": "Weber, Max",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11928969n",
@@ -1609,7 +1607,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Welby, Victoria",
+  "label": "Welby, Victoria",
   "en": "Welby, Victoria",
   "it": "Welby, Victoria",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119877600",
@@ -1618,7 +1616,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Wilde, Oscar",
+  "label": "Wilde, Oscar",
   "en": "Wilde, Oscar",
   "it": "Wilde, Oscar",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11929190h",
@@ -1627,7 +1625,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Wittig, Monique",
+  "label": "Wittig, Monique",
   "en": "Wittig, Monique",
   "it": "Wittig, Monique",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11929323x",
@@ -1636,7 +1634,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Zeyer, Julius",
+  "label": "Zeyer, Julius",
   "en": "Zeyer, Julius",
   "it": "Zeyer, Julius",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb12055073w",
@@ -1645,7 +1643,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Zola, Émile",
+  "label": "Zola, Émile",
   "en": "Zola, Émile",
   "it": "Zola, Émile",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119297200",
@@ -1654,7 +1652,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Cinéma",
+  "label": "Cinéma",
   "en": "Cinema",
   "it": "Cinema",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119361188",
@@ -1663,7 +1661,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Danse",
+  "label": "Danse",
   "en": "Dance",
   "it": "Danza",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11931841h",
@@ -1672,7 +1670,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Musique",
+  "label": "Musique",
   "en": "Music",
   "it": "Musica",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb133183660",
@@ -1681,7 +1679,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Peinture",
+  "label": "Peinture",
   "en": "Painting",
   "it": "Pittura",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11932942c",
@@ -1690,7 +1688,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Photographie",
+  "label": "Photographie",
   "en": "Photography",
   "it": "Fotografia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11933113t",
@@ -1699,7 +1697,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Poésie",
+  "label": "Poésie",
   "en": "Poetry",
   "it": "Poesia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11933161p",
@@ -1708,7 +1706,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Roman",
+  "label": "Roman",
   "en": "Fiction",
   "it": "Romanzi",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11940505s",
@@ -1717,7 +1715,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Théâtre",
+  "label": "Théâtre",
   "en": "Theater",
   "it": "Teatro",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb13162689q",
@@ -1726,7 +1724,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Video",
+  "label": "Video",
   "en": "Video",
   "it": "Video",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11933779d",
@@ -1735,7 +1733,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Arts et lettres",
+  "label": "Arts et lettres",
   "en": "Art and literature",
   "it": "Arte e letteratura",
   "zh": "藝文",
@@ -1749,7 +1747,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Histoire",
+  "label": "Histoire",
   "en": "History",
   "it": "Storia",
   "zh": "歷史",
@@ -1763,7 +1761,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Monde numérique",
+  "label": "Monde numérique",
   "en": "Digital world",
   "it": "Mondo digitale",
   "zh": "數位世界",
@@ -1777,7 +1775,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Philosophie",
+  "label": "Philosophie",
   "en": "Philosophy",
   "it": "Filosofia",
   "zh": "哲學",
@@ -1791,7 +1789,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Politique et société",
+  "label": "Politique et société",
   "en": "Politics and society",
   "it": "Politica e società",
   "zh": "政治與社會",
@@ -1805,7 +1803,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Sciences et environnement",
+  "label": "Sciences et environnement",
   "en": "Science and environment",
   "it": "Scienza e ambiente",
   "zh": "科學與環境",
@@ -1819,7 +1817,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Video et son",
+  "label": "Video et son",
   "en": "TODO Video et son",
   "it": "TODO Video et son",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119517649",
@@ -1828,7 +1826,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Afrique",
+  "label": "Afrique",
   "en": "Africa",
   "it": "Africa",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119308418",
@@ -1837,7 +1835,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Amérique latine",
+  "label": "Amérique latine",
   "en": "TODO Amérique latine",
   "it": "TODO Amérique latine",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11930876x",
@@ -1846,7 +1844,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Asie",
+  "label": "Asie",
   "en": "Asia",
   "it": "Asia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119765364",
@@ -1855,7 +1853,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Brésil",
+  "label": "Brésil",
   "en": "Brazil",
   "it": "Brasile",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119316758",
@@ -1864,7 +1862,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Canada/Québec",
+  "label": "Canada/Québec",
   "en": "Canada",
   "it": "Canada",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11933413n",
@@ -1873,7 +1871,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Colombie",
+  "label": "Colombie",
   "en": "Colombia",
   "it": "Colombia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11931746z",
@@ -1882,7 +1880,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "États-Unis",
+  "label": "États-Unis",
   "en": "United States",
   "it": "Stati Uniti",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119313712",
@@ -1891,7 +1889,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Europe",
+  "label": "Europe",
   "en": "Europe",
   "it": "Europa",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11931301w",
@@ -1900,7 +1898,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "France",
+  "label": "France",
   "en": "France",
   "it": "Francia",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb119314762",
@@ -1909,7 +1907,7 @@ export let categories = [
   "selected": false
  },
  {
-  "fr": "Moyen Orient",
+  "label": "Moyen Orient",
   "en": "Middle East",
   "it": "Medio Oriente",
   "url": "http://catalogue.bnf.fr/ark:/12148/cb11941591f",

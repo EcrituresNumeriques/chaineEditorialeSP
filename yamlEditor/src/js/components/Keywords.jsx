@@ -13,7 +13,7 @@ export function Keywords(){
       <section className="group">
         <h1><i className="fa fa-tag" aria-hidden="true"></i> Mots clés</h1>
         <datalist id="keywordsFR">
-          {categories.map((o,i)=>(<option key={"keywordsFR"+i} value={o.fr}/>))}
+          {categories.map((o,i)=>(<option key={"keywordsFR"+i} value={o.label}/>))}
         </datalist>
         <datalist id="keywordsEN">
           {categories.map((o,i)=>(<option key={"keywordsEN"+i} value={o.en}/>))}
@@ -45,7 +45,7 @@ export function Keywords(){
     render() {
       return(
         <div className="keywords">
-          <input className={this.props.controlled ? "controlled":"free"} type="text" placeholder="FR" value={this.props.object.fr} readOnly="true"/>
+          <input className={this.props.controlled ? "controlled":"free"} type="text" placeholder="FR" value={this.props.object.label} readOnly="true"/>
           <input className={this.props.controlled ? "controlled":"free"} type="text" placeholder="EN" value={this.props.object.en} readOnly="true"/>
           <i className="fa fa-minus-circle" aria-hidden="true" data-id={this.props.index} onClick={this.removeKeyword.bind(this)}></i>
         </div>
@@ -68,7 +68,7 @@ class InputKeyword extends React.Component{
   checkValueFR(event) {
     let Categories = store.getState().misc.categories;
     for(let i=0;i<Categories.length;i++){
-      if(Categories[i].fr===event.target.value){
+      if(Categories[i].label===event.target.value){
         store.dispatch({type:"MISC_UPDATE",target:"categories["+i+"].selected", value:true});
         event.target.value="";
       }
