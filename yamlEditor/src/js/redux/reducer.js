@@ -55,9 +55,9 @@ function decompileKeywords(state){
 
   //get all the uncontrolledKeywords
   let keyword_fr = state.obj.keyword_fr.split(',');
-  let keyword_en = state.obj.keyword_en.split(',');
-  for(let i=0;i<keyword_fr.length&&i<keyword_en.length;i++){
-    state.misc.uncontrolledKeywords.push({fr:keyword_fr[i],en:keyword_en[i]});
+  for(let i=0;i<keyword_fr.length;i++){
+    console.log(keyword_fr);
+    state.misc.uncontrolledKeywords.push({label:keyword_fr[i]});
   }
 
 
@@ -81,15 +81,12 @@ function compileKeywords(state){
 
   //Compute uncontrolledKeywords
   let keyword_fr = [];
-  let keyword_en = [];
-  console.log(keyword_fr,keyword_en);
   for(let i=0;i<state.misc.uncontrolledKeywords.length;i++){
-    keyword_fr.push(state.misc.uncontrolledKeywords[i].fr);
-    keyword_en.push(state.misc.uncontrolledKeywords[i].en);
+    keyword_fr.push(state.misc.uncontrolledKeywords[i].label);
   }
-  console.log(keyword_fr,keyword_en);
-  state.obj.keywords_fr = keyword_fr.join(',');
-  state.obj.keywords_en = keyword_en.join(',');
+  if(keyword_fr.length > 0){
+    state.obj.keywords_fr = keyword_fr.join(',');
+  }
   //console.log("update keywords");
   return state;
 }

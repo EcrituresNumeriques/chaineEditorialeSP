@@ -74,9 +74,8 @@ class InputKeyword extends React.Component{
   addKeyword(event){
     //Add uncontrolled keyword
     let index = store.getState().misc.uncontrolledKeywords.length;
-    store.dispatch({type:"MISC_UPDATE",target:"uncontrolledKeywords["+index+"]", value:{fr:event.target.parentNode.querySelector("#kwFR").value,en:event.target.parentNode.querySelector("#kwEN").value}});
+    store.dispatch({type:"MISC_UPDATE",target:"uncontrolledKeywords["+index+"]", value:{label:event.target.parentNode.querySelector("#kwFR").value}});
     event.target.parentNode.querySelector("#kwFR").value = "";
-    event.target.parentNode.querySelector("#kwEN").value = "";
   }
 
   render() {
