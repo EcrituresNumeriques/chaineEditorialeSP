@@ -3,24 +3,24 @@ export let categories = [
   "label": "Genres",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb16248353h/",
-  "id": "FRBNF16248353",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb16248353h/",
+  "idRameau": "FRBNF16248353",
   "selected": false
  },
  {
   "label": "Barack Obama",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb15591663c/",
-  "id": "FRBNF15591663",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb15591663c/",
+  "idRameau": "FRBNF15591663",
   "selected": false
  },
  {
   "label": "Crise financière",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb15957573q/",
-  "id": "FRBNF15957573",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb15957573q/",
+  "idRameau": "FRBNF15957573",
   "term": "Global Financial Crisis, 2008-2009",
   "selected": false
  },
@@ -28,8 +28,8 @@ export let categories = [
   "label": "Sports",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb133188907/",
-  "id": "FRBNF13318890",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb133188907/",
+  "idRameau": "FRBNF13318890",
   "term": "Sports",
   "selected": false
  },
@@ -37,16 +37,16 @@ export let categories = [
   "label": "Société de consommation",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12135912x/",
-  "id": "FRBNF12135912",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12135912x/",
+  "idRameau": "FRBNF12135912",
   "selected": false
  },
  {
   "label": "Milieu politique",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13319064q/",
-  "id": "FRBNF13319064",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13319064q/",
+  "idRameau": "FRBNF13319064",
   "term": "Political science",
   "selected": false
  },
@@ -54,8 +54,8 @@ export let categories = [
   "label": "Religions",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11963568t/",
-  "id": "FRBNF11963568",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11963568t/",
+  "idRameau": "FRBNF11963568",
   "term": "Religion",
   "selected": false
  },
@@ -63,8 +63,8 @@ export let categories = [
   "label": "Pays en développement",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119456356/",
-  "id": "FRBNF11945635",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119456356/",
+  "idRameau": "FRBNF11945635",
   "term": "Developing countries",
   "selected": false
  },
@@ -72,8 +72,8 @@ export let categories = [
   "label": "Mondialisation",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb125694464/",
-  "id": "FRBNF12569446",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb125694464/",
+  "idRameau": "FRBNF12569446",
   "term": "Globalization",
   "selected": false
  },
@@ -81,8 +81,8 @@ export let categories = [
   "label": "Relations internationales",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11976886h/",
-  "id": "FRBNF11976886",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11976886h/",
+  "idRameau": "FRBNF11976886",
   "term": [
    "International relations",
    "World politics"
@@ -90,22 +90,22 @@ export let categories = [
   "selected": false
  },
  {
-  "label": "Identité",
+  "label": "idRameauentité",
 
 
-  "url": [
+  "uriRameau": [
    "http://catalogue.bnf.fr/ark:/12148/cb11957159h/",
    "http://catalogue.bnf.fr/ark:/12148/cb120917772/"
   ],
-  "id": [
+  "idRameau": [
    "FRBNF11957159",
    "FRBNF12091777"
   ],
   "term": [
-   "Identity (Psychology)",
-   "Group identity",
-   "Ethnic identity",
-   "Race identity"
+   "idRameauentity (Psychology)",
+   "Group idRameauentity",
+   "Ethnic idRameauentity",
+   "Race idRameauentity"
   ],
   "selected": false
  },
@@ -113,8 +113,8 @@ export let categories = [
   "label": "Nation, nationalisme",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11937474t/",
-  "id": "FRBNF11937474",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11937474t/",
+  "idRameau": "FRBNF11937474",
   "term": "Nationalism",
   "selected": false
  },
@@ -122,8 +122,8 @@ export let categories = [
   "label": "Guerre et conflit",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13318436b/",
-  "id": "FRBNF13318436",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13318436b/",
+  "idRameau": "FRBNF13318436",
   "term": "War",
   "selected": false
  },
@@ -131,8 +131,8 @@ export let categories = [
   "label": "Postcolonial",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb135350399/",
-  "id": "FRBNF13535039",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb135350399/",
+  "idRameau": "FRBNF13535039",
   "term": "Postcolonialism",
   "selected": false
  },
@@ -140,8 +140,8 @@ export let categories = [
   "label": "Démocratie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb133185567/",
-  "id": "FRBNF13318556",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb133185567/",
+  "idRameau": "FRBNF13318556",
   "term": "Democracy",
   "selected": false
  },
@@ -149,17 +149,17 @@ export let categories = [
   "label": "Espace public",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12011791z/",
-  "id": "FRBNF12011791",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12011791z/",
+  "idRameau": "FRBNF12011791",
   "term": "Space",
   "selected": false
  },
  {
-  "label": "Élections présidentielles",
+  "label": "Élections présidRameauentielles",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb120141853/",
-  "id": "FRBNF12014185",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb120141853/",
+  "idRameau": "FRBNF12014185",
   "term": "Election",
   "selected": false
  },
@@ -167,8 +167,8 @@ export let categories = [
   "label": "Écologie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb158291948/",
-  "id": "FRBNF15829194",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb158291948/",
+  "idRameau": "FRBNF15829194",
   "term": [
    "Ecology -- Political aspects",
    "Human ecology -- Political aspects"
@@ -179,8 +179,8 @@ export let categories = [
   "label": "Édition, presse et médias",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13318593f/",
-  "id": "FRBNF13318593",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13318593f/",
+  "idRameau": "FRBNF13318593",
   "term": "Developmental editing Editing",
   "selected": false
  },
@@ -188,8 +188,8 @@ export let categories = [
   "label": "TODO Press",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb133183691/",
-  "id": "FRBNF13318369",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb133183691/",
+  "idRameau": "FRBNF13318369",
   "term": "Press",
   "selected": false
  },
@@ -197,8 +197,8 @@ export let categories = [
   "label": "TODO Mass media",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119323312/",
-  "id": "FRBNF11932331",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119323312/",
+  "idRameau": "FRBNF11932331",
   "term": "Mass media",
   "selected": false
  },
@@ -206,8 +206,8 @@ export let categories = [
   "label": "Socialisme et Communisme",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12647612n/",
-  "id": "FRBNF12647612",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12647612n/",
+  "idRameau": "FRBNF12647612",
   "term": "Socialism",
   "selected": false
  },
@@ -215,8 +215,8 @@ export let categories = [
   "label": "Socialisme et Communisme",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb133408542/",
-  "id": "FRBNF13340854",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb133408542/",
+  "idRameau": "FRBNF13340854",
   "term": "Communism",
   "selected": false
  },
@@ -224,8 +224,8 @@ export let categories = [
   "label": "Travail et emploi",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119715347/",
-  "id": "FRBNF11971534",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119715347/",
+  "idRameau": "FRBNF11971534",
   "term": [
    "Employment",
    "Labor",
@@ -238,16 +238,16 @@ export let categories = [
   "label": "Universalisme",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb125597651/",
-  "id": "FRBNF12559765",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb125597651/",
+  "idRameau": "FRBNF12559765",
   "selected": false
  },
  {
   "label": "Droits humains",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13318689g/",
-  "id": "FRBNF13318689",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13318689g/",
+  "idRameau": "FRBNF13318689",
   "term": "Civil rights",
   "#text": " Human rights",
   "selected": false
@@ -256,8 +256,8 @@ export let categories = [
   "label": "Image, Iconographie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb126479296/",
-  "id": "FRBNF12647929",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb126479296/",
+  "idRameau": "FRBNF12647929",
   "term": [
    "Iconicity (Linguistics)",
    "Immagine, Iconografia"
@@ -269,8 +269,8 @@ export let categories = [
   "label": "Sexualité",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11933266p/",
-  "id": "FRBNF11933266",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11933266p/",
+  "idRameau": "FRBNF11933266",
   "term": "Sex",
   "#text": "Sexual behavior",
   "selected": false
@@ -279,8 +279,8 @@ export let categories = [
   "label": "Érotisme",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12650884k/",
-  "id": "FRBNF12650884",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12650884k/",
+  "idRameau": "FRBNF12650884",
   "term": "Erotica",
   "selected": false
  },
@@ -288,8 +288,8 @@ export let categories = [
   "label": "Métaphysique",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11934604g/",
-  "id": "FRBNF11934604",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11934604g/",
+  "idRameau": "FRBNF11934604",
   "term": "First philosophy",
   "#text": " Metaphysics",
   "selected": false
@@ -298,8 +298,8 @@ export let categories = [
   "label": "Mouvement social",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119477578/",
-  "id": "FRBNF11947757",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119477578/",
+  "idRameau": "FRBNF11947757",
   "term": "Protest movements",
   "#text": " Social movements",
   "selected": false
@@ -308,8 +308,8 @@ export let categories = [
   "label": "Psychanalyse",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11932657k/",
-  "id": "FRBNF11932657",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11932657k/",
+  "idRameau": "FRBNF11932657",
   "term": "Psychoanalysis",
   "selected": false
  },
@@ -317,8 +317,8 @@ export let categories = [
   "label": "Homosexualité",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119320348/",
-  "id": "FRBNF11932034",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119320348/",
+  "idRameau": "FRBNF11932034",
   "term": "Homosexuality",
   "selected": false
  },
@@ -326,8 +326,8 @@ export let categories = [
   "label": "Récit, voyage",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119327315/",
-  "id": "FRBNF11932731",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119327315/",
+  "idRameau": "FRBNF11932731",
   "term": "Travelers'writings",
   "selected": false
  },
@@ -335,8 +335,8 @@ export let categories = [
   "label": "Capitalisme",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119360614/",
-  "id": "FRBNF11936061",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119360614/",
+  "idRameau": "FRBNF11936061",
   "term": "Capitalism",
   "selected": false
  },
@@ -344,8 +344,8 @@ export let categories = [
   "label": "Entreprises",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119360614/",
-  "id": "FRBNF11936061",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119360614/",
+  "idRameau": "FRBNF11936061",
   "term": "Capitalism",
   "selected": false
  },
@@ -353,8 +353,8 @@ export let categories = [
   "label": "Multilinguisme",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11936549n/",
-  "id": "FRBNF11936549",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11936549n/",
+  "idRameau": "FRBNF11936549",
   "term": "Multilingualism",
   "selected": false
  },
@@ -362,8 +362,8 @@ export let categories = [
   "label": "Francophonie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11931487q/",
-  "id": "FRBNF11931487",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11931487q/",
+  "idRameau": "FRBNF11931487",
   "term": "French-speaking countries",
   "selected": false
  },
@@ -371,8 +371,8 @@ export let categories = [
   "label": "Diversité culturelle",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11940030m/",
-  "id": "FRBNF11940030",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11940030m/",
+  "idRameau": "FRBNF11940030",
   "term": "Multiculturalism",
   "selected": false
  },
@@ -380,8 +380,8 @@ export let categories = [
   "label": "Éducation et enseignement",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13318807v/",
-  "id": "FRBNF13318807",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13318807v/",
+  "idRameau": "FRBNF13318807",
   "term": "Education",
   "selected": false
  },
@@ -389,8 +389,8 @@ export let categories = [
   "label": "Éducation et enseignement",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11934463f/",
-  "id": "FRBNF11934463",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11934463f/",
+  "idRameau": "FRBNF11934463",
   "term": "Teaching",
   "selected": false
  },
@@ -410,8 +410,8 @@ export let categories = [
   "label": "Phénoménologie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11933094c/",
-  "id": "FRBNF11933094",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11933094c/",
+  "idRameau": "FRBNF11933094",
   "term": "Existential phenomenology Phenomenology",
   "selected": false
  },
@@ -419,8 +419,8 @@ export let categories = [
   "label": "Humanisme",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11957838g/",
-  "id": "FRBNF11957838",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11957838g/",
+  "idRameau": "FRBNF11957838",
   "term": "Humanism",
   "selected": false
  },
@@ -428,8 +428,8 @@ export let categories = [
   "label": "Technologies",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119338890/",
-  "id": "FRBNF11933889",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119338890/",
+  "idRameau": "FRBNF11933889",
   "term": "Technology",
   "selected": false
  },
@@ -437,16 +437,16 @@ export let categories = [
   "label": "Révoltes arabes",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb16536368c/",
-  "id": "FRBNF16536368",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb16536368c/",
+  "idRameau": "FRBNF16536368",
   "selected": false
  },
  {
   "label": "Internet",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12337059x/",
-  "id": "FRBNF12337059",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12337059x/",
+  "idRameau": "FRBNF12337059",
   "term": "Internet",
   "selected": false
  },
@@ -454,8 +454,8 @@ export let categories = [
   "label": "Imaginaire",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11932093s/",
-  "id": "FRBNF11932093",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11932093s/",
+  "idRameau": "FRBNF11932093",
   "term": "Imagination (Philosophy)",
   "selected": false
  },
@@ -463,8 +463,8 @@ export let categories = [
   "label": "Créativité",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11936171q/",
-  "id": "FRBNF11936171",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11936171q/",
+  "idRameau": "FRBNF11936171",
   "term": "Creative ability",
   "selected": false
  },
@@ -472,8 +472,8 @@ export let categories = [
   "label": "Patrimoine",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb133190710/",
-  "id": "FRBNF13319071",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb133190710/",
+  "idRameau": "FRBNF13319071",
   "term": "Cultural property",
   "selected": false
  },
@@ -481,8 +481,8 @@ export let categories = [
   "label": "Stéréotypes",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119781057/",
-  "id": "FRBNF11978105",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119781057/",
+  "idRameau": "FRBNF11978105",
   "term": "Stereotype (Psychology)",
   "selected": false
  },
@@ -490,8 +490,8 @@ export let categories = [
   "label": "Valeurs",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11936003z/",
-  "id": "FRBNF11936003",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11936003z/",
+  "idRameau": "FRBNF11936003",
   "term": "Values",
   "selected": false
  },
@@ -499,8 +499,8 @@ export let categories = [
   "label": "Utopie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119337395/",
-  "id": "FRBNF11933739",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119337395/",
+  "idRameau": "FRBNF11933739",
   "term": [
    "Dystopias",
    "Utopias"
@@ -511,8 +511,8 @@ export let categories = [
   "label": "Minorités",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119325052/",
-  "id": "FRBNF11932505",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119325052/",
+  "idRameau": "FRBNF11932505",
   "term": "Minorities",
   "selected": false
  },
@@ -520,8 +520,8 @@ export let categories = [
   "label": "Sujet",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11956929j/",
-  "id": "FRBNF11956929",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11956929j/",
+  "idRameau": "FRBNF11956929",
   "term": "Subject",
   "selected": false
  },
@@ -529,8 +529,8 @@ export let categories = [
   "label": "Publicité",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13318427c/",
-  "id": "FRBNF13318427",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13318427c/",
+  "idRameau": "FRBNF13318427",
   "term": [
    "Advertising",
    "Publicity"
@@ -541,8 +541,8 @@ export let categories = [
   "label": "Altérité",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11959060x/",
-  "id": "FRBNF11959060",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11959060x/",
+  "idRameau": "FRBNF11959060",
   "term": [
    "Other (Philosophy)",
    "Other minds (Theory of knowledge)"
@@ -553,8 +553,8 @@ export let categories = [
   "label": "Futur",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb124789914/",
-  "id": "FRBNF12478991",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb124789914/",
+  "idRameau": "FRBNF12478991",
   "term": "Future (Logic)",
   "selected": false
  },
@@ -562,8 +562,8 @@ export let categories = [
   "label": "Double, Dédoublement",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11948554x/",
-  "id": "FRBNF11948554",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11948554x/",
+  "idRameau": "FRBNF11948554",
   "term": [
    "Doubles in art",
    "Doubles in literature",
@@ -575,8 +575,8 @@ export let categories = [
   "label": "Traduction automatique",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11947452q/",
-  "id": "FRBNF11947452",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11947452q/",
+  "idRameau": "FRBNF11947452",
   "term": "Machine translating",
   "selected": false
  },
@@ -584,8 +584,8 @@ export let categories = [
   "label": "MOOC",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb16901246n/",
-  "id": "FRBNF16901246",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb16901246n/",
+  "idRameau": "FRBNF16901246",
   "term": "MOOCs (Web-based instruction)",
   "selected": false
  },
@@ -593,8 +593,8 @@ export let categories = [
   "label": "Allende, Isabel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12013110z",
-  "id": "FRBNF136078817",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12013110z",
+  "idRameau": "FRBNF136078817",
   "term": "Allende, Isabel (1942-....)",
   "selected": false
  },
@@ -602,8 +602,8 @@ export let categories = [
   "label": "Antonin, Artaud",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118892409",
-  "id": "FRBNF118892401",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118892409",
+  "idRameau": "FRBNF118892401",
   "term": "Artaud, Antonin (1896-1948)",
   "selected": false
  },
@@ -611,8 +611,8 @@ export let categories = [
   "label": "Arendt, Hannah",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118890622",
-  "id": "FRBNF118890628",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118890622",
+  "idRameau": "FRBNF118890628",
   "term": "Arendt, Hannah (1906-1975)",
   "selected": false
  },
@@ -620,8 +620,8 @@ export let categories = [
   "label": "Avery, Tex",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12536037q",
-  "id": "FRBNF125360377",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12536037q",
+  "idRameau": "FRBNF125360377",
   "term": "Avery, Tex (1908-1980)",
   "selected": false
  },
@@ -629,8 +629,8 @@ export let categories = [
   "label": "Bakounine, Mikhaïl",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11889937b",
-  "id": "FRBNF118899374",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11889937b",
+  "idRameau": "FRBNF118899374",
   "term": "Bakunin, Mihail Aleksandrovič (1814-1876)",
   "selected": false
  },
@@ -638,8 +638,8 @@ export let categories = [
   "label": "Barrès, Maurice",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118903382",
-  "id": "FRBNF118903381",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118903382",
+  "idRameau": "FRBNF118903381",
   "term": "Barrès, Maurice (1862-1923)",
   "selected": false
  },
@@ -647,8 +647,8 @@ export let categories = [
   "label": "Barthes, Roland",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118904281",
-  "id": "FRBNF118904280",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118904281",
+  "idRameau": "FRBNF118904280",
   "term": "Barthes, Roland (1915-1980)",
   "selected": false
  },
@@ -656,8 +656,8 @@ export let categories = [
   "label": "Beauvoir (de), Simone",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11890854p",
-  "id": "FRBNF118908542",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11890854p",
+  "idRameau": "FRBNF118908542",
   "term": "Beauvoir, Simone de (1908-1986)",
   "selected": false
  },
@@ -665,8 +665,8 @@ export let categories = [
   "label": "Beckett, Samuel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118908958",
-  "id": "FRBNF118908955",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118908958",
+  "idRameau": "FRBNF118908955",
   "term": "Beckett, Samuel (1906-1989)",
   "selected": false
  },
@@ -674,8 +674,8 @@ export let categories = [
   "label": "Bolzano, Bernard",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12027042g",
-  "id": "FRBNF120270424",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12027042g",
+  "idRameau": "FRBNF120270424",
   "term": "Bolzano, Bernard (1781-1848)",
   "selected": false
  },
@@ -683,8 +683,8 @@ export let categories = [
   "label": "Bourdieu, Pierre",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118934022",
-  "id": "FRBNF118934028",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118934022",
+  "idRameau": "FRBNF118934028",
   "term": "Bourdieu, Pierre (1930-2002)",
   "selected": false
  },
@@ -692,8 +692,8 @@ export let categories = [
   "label": "Cahun, Claude",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12375017b",
-  "id": "FRBNF123750179",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12375017b",
+  "idRameau": "FRBNF123750179",
   "term": "Cahun, Claude (1894-1954)",
   "selected": false
  },
@@ -701,8 +701,8 @@ export let categories = [
   "label": "Calle-Gruber, Mireille",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12027120f",
-  "id": "FRBNF120271202",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12027120f",
+  "idRameau": "FRBNF120271202",
   "term": "Calle-Gruber, Mireille (1945-....)",
   "selected": false
  },
@@ -710,8 +710,8 @@ export let categories = [
   "label": "Camus, Albert",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118949856",
-  "id": "FRBNF118949852",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118949856",
+  "idRameau": "FRBNF118949852",
   "term": "Camus, Albert (1913-1960)",
   "selected": false
  },
@@ -719,8 +719,8 @@ export let categories = [
   "label": "Cardon, Dominique",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb16206537h",
-  "id": "001 FRBNF162065372",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb16206537h",
+  "idRameau": "001 FRBNF162065372",
   "term": "Cardon, Dominique (1965-....)",
   "selected": false
  },
@@ -728,26 +728,26 @@ export let categories = [
   "label": "Castoriadis, Cornelius",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118955364",
-  "id": "FRBNF118955360",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118955364",
+  "idRameau": "FRBNF118955360",
   "term": "Castoriadis, Cornelius (1922-1997)",
   "selected": false
  },
  {
-  "label": "Chedid, Andrée",
+  "label": "ChedidRameau, Andrée",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118964859",
-  "id": "FRBNF118964854",
-  "term": "Chedid, Andrée (1920-2011)",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118964859",
+  "idRameau": "FRBNF118964854",
+  "term": "ChedidRameau, Andrée (1920-2011)",
   "selected": false
  },
  {
   "label": "Clausewitz (von), Carl",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11896966d",
-  "id": "FRBNF118969666",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11896966d",
+  "idRameau": "FRBNF118969666",
   "term": "Clausewitz, Carl von (1780-1831)",
   "selected": false
  },
@@ -755,8 +755,8 @@ export let categories = [
   "label": "Comte, Auguste",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11897482h",
-  "id": "FRBNF118974827",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11897482h",
+  "idRameau": "FRBNF118974827",
   "term": "Comte, Auguste (1798-1857)",
   "selected": false
  },
@@ -764,8 +764,8 @@ export let categories = [
   "label": "Condorcet",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118975118",
-  "id": "FRBNF118975110",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118975118",
+  "idRameau": "FRBNF118975110",
   "term": "Condorcet, Jean-Antoine-Nicolas de Caritat (1743-1794 ; marquis de)",
   "selected": false
  },
@@ -773,8 +773,8 @@ export let categories = [
   "label": "Daumal",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11898736d",
-  "id": "FRBNF118987365",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11898736d",
+  "idRameau": "FRBNF118987365",
   "term": "Daumal, René (1908-1944)",
   "selected": false
  },
@@ -782,8 +782,8 @@ export let categories = [
   "label": "Deguy, Michel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11899119d",
-  "id": "FRBNF118991196",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11899119d",
+  "idRameau": "FRBNF118991196",
   "term": "Deguy, Michel (1930-....)",
   "selected": false
  },
@@ -791,8 +791,8 @@ export let categories = [
   "label": "Delbo, Charlotte",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11899280r",
-  "id": "FRBNF118992800",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11899280r",
+  "idRameau": "FRBNF118992800",
   "term": "Delbo, Charlotte (1913-1985)",
   "selected": false
  },
@@ -800,26 +800,26 @@ export let categories = [
   "label": "Deleuze, Gilles",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118993325",
-  "id": "FRBNF118993329",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118993325",
+  "idRameau": "FRBNF118993329",
   "term": "Deleuze, Gilles (1925-1995)",
   "selected": false
  },
  {
-  "label": "Derrida, Jacques",
+  "label": "DerridRameaua, Jacques",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11899710z",
-  "id": "FRBNF118997103",
-  "term": "Derrida, Jacques (1930-2004)",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11899710z",
+  "idRameau": "FRBNF118997103",
+  "term": "DerridRameaua, Jacques (1930-2004)",
   "selected": false
  },
  {
   "label": "Desanti, Dominique",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118997448",
-  "id": "FRBNF118997441",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118997448",
+  "idRameau": "FRBNF118997441",
   "term": "Desanti, Dominique (1919-2011)",
   "selected": false
  },
@@ -827,8 +827,8 @@ export let categories = [
   "label": "Descartes",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11899775j",
-  "id": "FRBNF118997758",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11899775j",
+  "idRameau": "FRBNF118997758",
   "term": "Descartes, René (1596-1650)",
   "selected": false
  },
@@ -836,8 +836,8 @@ export let categories = [
   "label": "Duras, Marguerite",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119013498",
-  "id": "FRBNF11901349X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119013498",
+  "idRameau": "FRBNF11901349X",
   "term": "Duras, Marguerite (1914-1996)",
   "selected": false
  },
@@ -845,8 +845,8 @@ export let categories = [
   "label": "Eschyle",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb118881476",
-  "id": "FRBNF118881472",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb118881476",
+  "idRameau": "FRBNF118881472",
   "term": "Eschyle (0525?-0456 av. J.-C.)",
   "selected": false
  },
@@ -854,8 +854,8 @@ export let categories = [
   "label": "Fanon, Frantz",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb120165772",
-  "id": "FRBNF120165779",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb120165772",
+  "idRameau": "FRBNF120165779",
   "term": "Fanon, Frantz (1925-1961)",
   "selected": false
  },
@@ -863,8 +863,8 @@ export let categories = [
   "label": "Fichte",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11902725m",
-  "id": "FRBNF119027254",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11902725m",
+  "idRameau": "FRBNF119027254",
   "term": "Fichte, Johann Gottlieb (1762-1814)",
   "selected": false
  },
@@ -872,8 +872,8 @@ export let categories = [
   "label": "Foucault, Michel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11903202t",
-  "id": "FRBNF119032027",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11903202t",
+  "idRameau": "FRBNF119032027",
   "term": "Foucault, Michel (1926-1984)",
   "selected": false
  },
@@ -881,8 +881,8 @@ export let categories = [
   "label": "Freud, Sigmund",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119035855",
-  "id": "FRBNF119035856",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119035855",
+  "idRameau": "FRBNF119035856",
   "term": "Freud, Sigmund (1856-1939)",
   "selected": false
  },
@@ -890,8 +890,8 @@ export let categories = [
   "label": "Fukazaku, Kinji",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb14043205j",
-  "id": "FRBNF140432054",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb14043205j",
+  "idRameau": "FRBNF140432054",
   "term": "Fukasaku, Kinji (1930-2003)",
   "selected": false
  },
@@ -899,8 +899,8 @@ export let categories = [
   "label": "Gatti, Armand",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11904288m",
-  "id": "FRBNF119042886",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11904288m",
+  "idRameau": "FRBNF119042886",
   "term": "Gatti, Armand (1924-....)",
   "selected": false
  },
@@ -908,8 +908,8 @@ export let categories = [
   "label": "Genet, Jean",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11998463n",
-  "id": "FRBNF119984639",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11998463n",
+  "idRameau": "FRBNF119984639",
   "term": "Genet, Jean (1910-1986)",
   "selected": false
  },
@@ -917,26 +917,26 @@ export let categories = [
   "label": "Gennes (de), Pierre-Gilles",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12179651s",
-  "id": "FRBNF121796516",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12179651s",
+  "idRameau": "FRBNF121796516",
   "term": "Gennes, Pierre-Gilles de (1932-2007)",
   "selected": false
  },
  {
-  "label": "Gide, André",
+  "label": "GidRameaue, André",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11904849c",
-  "id": "FRBNF119048490",
-  "term": "Gide, André (1869-1951)",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11904849c",
+  "idRameau": "FRBNF119048490",
+  "term": "GidRameaue, André (1869-1951)",
   "selected": false
  },
  {
   "label": "Glissant, Édouard",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11905179m",
-  "id": "FRBNF119051796",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11905179m",
+  "idRameau": "FRBNF119051796",
   "term": "Glissant, Édouard (1928-2011)",
   "selected": false
  },
@@ -944,8 +944,8 @@ export let categories = [
   "label": "Godard, Jean-Luc",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11905213z",
-  "id": "FRBNF11905213X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11905213z",
+  "idRameau": "FRBNF11905213X",
   "term": "Godard, Jean-Luc (1930-....)",
   "selected": false
  },
@@ -953,8 +953,8 @@ export let categories = [
   "label": "Gorz, André",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11905453r",
-  "id": "FRBNF119054536",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11905453r",
+  "idRameau": "FRBNF119054536",
   "term": "Gorz, André (1923-2007)",
   "selected": false
  },
@@ -962,8 +962,8 @@ export let categories = [
   "label": "Grimaldi, Nicolas",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119059236",
-  "id": "FRBNF119059234",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119059236",
+  "idRameau": "FRBNF119059234",
   "term": "Grimaldi, Nicolas (1933-....)",
   "selected": false
  },
@@ -971,8 +971,8 @@ export let categories = [
   "label": "Habermas, Jürgen",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11906645x",
-  "id": "FRBNF11906645X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11906645x",
+  "idRameau": "FRBNF11906645X",
   "term": "Habermas, Jürgen (1929-....)",
   "selected": false
  },
@@ -980,26 +980,26 @@ export let categories = [
   "label": "Hadot, Pierre",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11906675v",
-  "id": "FRBNF119066759",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11906675v",
+  "idRameau": "FRBNF119066759",
   "term": "Hadot, Pierre (1922-2010)",
   "selected": false
  },
  {
-  "label": "Heidegger, Martin",
+  "label": "HeidRameauegger, Martin",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11907130r",
-  "id": "FRBNF119071304",
-  "term": "Heidegger, Martin (1889-1976)",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11907130r",
+  "idRameau": "FRBNF119071304",
+  "term": "HeidRameauegger, Martin (1889-1976)",
   "selected": false
  },
  {
   "label": "Herder, Johann Gottfried",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119073262",
-  "id": "FRBNF119073262",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119073262",
+  "idRameau": "FRBNF119073262",
   "term": "Herder, Johann Gottfried von (1744-1803)",
   "selected": false
  },
@@ -1007,8 +1007,8 @@ export let categories = [
   "label": "Herzl, Theodor",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119074370",
-  "id": "FRBNF119074371",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119074370",
+  "idRameau": "FRBNF119074371",
   "term": "Herzl, Theodor (1860-1904)",
   "selected": false
  },
@@ -1016,8 +1016,8 @@ export let categories = [
   "label": "Hitchcock",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11907571f",
-  "id": "FRBNF119075719",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11907571f",
+  "idRameau": "FRBNF119075719",
   "term": "Hitchcock, Alfred (1899-1980)",
   "selected": false
  },
@@ -1025,8 +1025,8 @@ export let categories = [
   "label": "Hobbes, Thomas",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11907586g",
-  "id": "FRBNF119075861",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11907586g",
+  "idRameau": "FRBNF119075861",
   "term": "Hobbes, Thomas (1588-1679)",
   "selected": false
  },
@@ -1034,8 +1034,8 @@ export let categories = [
   "label": "Husserl, Edmund",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11908089c",
-  "id": "FRBNF119080890",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11908089c",
+  "idRameau": "FRBNF119080890",
   "term": "Husserl, Edmund (1859-1938)",
   "selected": false
  },
@@ -1043,8 +1043,8 @@ export let categories = [
   "label": "Innerarity, Daniel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb15040085w",
-  "id": "FRBNF150400852",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb15040085w",
+  "idRameau": "FRBNF150400852",
   "term": "Innerarity, Daniel (1959-....)",
   "selected": false
  },
@@ -1052,8 +1052,8 @@ export let categories = [
   "label": "James, C.R.L.",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb120129954",
-  "id": "FRBNF120129950",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb120129954",
+  "idRameau": "FRBNF120129950",
   "term": "James, Cyril Lionel Robert (1901-1989)",
   "selected": false
  },
@@ -1061,8 +1061,8 @@ export let categories = [
   "label": "Jammes, Francis",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119085574",
-  "id": "FRBNF119085574",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119085574",
+  "idRameau": "FRBNF119085574",
   "term": "Jammes, Francis (1868-1938)",
   "selected": false
  },
@@ -1070,8 +1070,8 @@ export let categories = [
   "label": "Jarmush, Jim",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13750759d",
-  "id": "FRBNF13750759X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13750759d",
+  "idRameau": "FRBNF13750759X",
   "term": "Jarmusch, Jim (1953-....)",
   "selected": false
  },
@@ -1079,8 +1079,8 @@ export let categories = [
   "label": "Kafka, Frantz",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119093016",
-  "id": "FRBNF119093012",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119093016",
+  "idRameau": "FRBNF119093012",
   "term": "Kafka, Franz (1883-1924)",
   "selected": false
  },
@@ -1088,8 +1088,8 @@ export let categories = [
   "label": "Kant",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11909393p",
-  "id": "FRBNF119093934",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11909393p",
+  "idRameau": "FRBNF119093934",
   "term": "Kant, Immanuel (1724-1804)",
   "selected": false
  },
@@ -1097,8 +1097,8 @@ export let categories = [
   "label": "Kierkegaard, Sören",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11909736z",
-  "id": "FRBNF11909736X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11909736z",
+  "idRameau": "FRBNF11909736X",
   "term": "Kierkegaard, Søren (1813-1855)",
   "selected": false
  },
@@ -1106,8 +1106,8 @@ export let categories = [
   "label": "Kofman, Sarah",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119099235",
-  "id": "FRBNF119099232",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119099235",
+  "idRameau": "FRBNF119099232",
   "term": "Kofman, Sarah (1934-1994)",
   "selected": false
  },
@@ -1115,8 +1115,8 @@ export let categories = [
   "label": "Konrád, György",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119099622",
-  "id": "FRBNF119099620",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119099622",
+  "idRameau": "FRBNF119099620",
   "term": "Konrád, György (1933-....)",
   "selected": false
  },
@@ -1124,8 +1124,8 @@ export let categories = [
   "label": "Lacan, Jacques",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119104423",
-  "id": "FRBNF119104423",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119104423",
+  "idRameau": "FRBNF119104423",
   "term": "Lacan, Jacques (1901-1981)",
   "selected": false
  },
@@ -1133,8 +1133,8 @@ export let categories = [
   "label": "Laclos, Choderlos (de)",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11896727z",
-  "id": "FRBNF118967277",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11896727z",
+  "idRameau": "FRBNF118967277",
   "term": "Choderlos de Laclos, Pierre-Ambroise-François (1741-1803)",
   "selected": false
  },
@@ -1142,8 +1142,8 @@ export let categories = [
   "label": "Leduc, Violette",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11912057h",
-  "id": "FRBNF119120573",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11912057h",
+  "idRameau": "FRBNF119120573",
   "term": "Leduc, Violette (1907-1972)",
   "selected": false
  },
@@ -1151,8 +1151,8 @@ export let categories = [
   "label": "Levinas, Emmanuel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119128222",
-  "id": "FRBNF119128221",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119128222",
+  "idRameau": "FRBNF119128221",
   "term": "Levinas, Emmanuel (1906-1995)",
   "selected": false
  },
@@ -1160,17 +1160,17 @@ export let categories = [
   "label": "Lumet, Sydney",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13896863c",
-  "id": "FRBNF138968632",
-  "term": "Lumet, Sidney (1924-2011)",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13896863c",
+  "idRameau": "FRBNF138968632",
+  "term": "Lumet, SidRameauney (1924-2011)",
   "selected": false
  },
  {
   "label": "Luxemburg, Rosa",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12275704r",
-  "id": "FRBNF122757046",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12275704r",
+  "idRameau": "FRBNF122757046",
   "term": "Luxemburg, Rosa (1871-1919)",
   "selected": false
  },
@@ -1178,8 +1178,8 @@ export let categories = [
   "label": "Majdalani, Charif",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb150214803",
-  "id": "FRBNF150214805",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb150214803",
+  "idRameau": "FRBNF150214805",
   "term": "Maǧdalānī, Šarīf (1960-....)",
   "selected": false
  },
@@ -1187,8 +1187,8 @@ export let categories = [
   "label": "Mallarmé, Stéphane",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11914131k",
-  "id": "FRBNF119141311",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11914131k",
+  "idRameau": "FRBNF119141311",
   "term": "Mallarmé, Stéphane (1842-1898)",
   "selected": false
  },
@@ -1196,8 +1196,8 @@ export let categories = [
   "label": "Malraux, André",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11914167k",
-  "id": "FRBNF119141674",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11914167k",
+  "idRameau": "FRBNF119141674",
   "term": "Malraux, André (1901-1976)",
   "selected": false
  },
@@ -1205,8 +1205,8 @@ export let categories = [
   "label": "Marker, Chris",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119146282",
-  "id": "FRBNF119146283",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119146282",
+  "idRameau": "FRBNF119146283",
   "term": "Marker, Chris (1921-2012)",
   "selected": false
  },
@@ -1214,8 +1214,8 @@ export let categories = [
   "label": "Marx, Karl",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11914934t",
-  "id": "FRBNF119149347",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11914934t",
+  "idRameau": "FRBNF119149347",
   "term": "Marx, Karl (1818-1883)",
   "selected": false
  },
@@ -1223,8 +1223,8 @@ export let categories = [
   "label": "Maupassant (de), Guy",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11915226h",
-  "id": "FRBNF119152261",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11915226h",
+  "idRameau": "FRBNF119152261",
   "term": "Maupassant, Guy de (1850-1893)",
   "selected": false
  },
@@ -1232,8 +1232,8 @@ export let categories = [
   "label": "Mauriac, François",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11915247g",
-  "id": "FRBNF119152471",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11915247g",
+  "idRameau": "FRBNF119152471",
   "term": "Mauriac, François (1885-1970)",
   "selected": false
  },
@@ -1241,8 +1241,8 @@ export let categories = [
   "label": "Merleau-Ponty, Maurice",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11886967j",
-  "id": "FRBNF11886967X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11886967j",
+  "idRameau": "FRBNF11886967X",
   "term": "Merleau-Ponty, Maurice (1908-1961)",
   "selected": false
  },
@@ -1250,8 +1250,8 @@ export let categories = [
   "label": "Millet, Richard",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119161583",
-  "id": "FRBNF119161584",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119161583",
+  "idRameau": "FRBNF119161584",
   "term": "Millet, Richard (1953-....)",
   "selected": false
  },
@@ -1259,8 +1259,8 @@ export let categories = [
   "label": "Montaigne",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11916599s",
-  "id": "FRBNF119165999",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11916599s",
+  "idRameau": "FRBNF119165999",
   "term": "Montaigne, Michel de (1533-1592)",
   "selected": false
  },
@@ -1268,8 +1268,8 @@ export let categories = [
   "label": "Morin, Edgar",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119168717",
-  "id": "FRBNF119168714",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119168717",
+  "idRameau": "FRBNF119168714",
   "term": "Morin, Edgar (1921-....)",
   "selected": false
  },
@@ -1277,8 +1277,8 @@ export let categories = [
   "label": "Musil, Robert",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12158156g",
-  "id": "FRBNF121581563",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12158156g",
+  "idRameau": "FRBNF121581563",
   "term": "Musil, Robert (1880-1942)",
   "selected": false
  },
@@ -1286,8 +1286,8 @@ export let categories = [
   "label": "Ndiaye, Marie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12016218q",
-  "id": "FRBNF120162181",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12016218q",
+  "idRameau": "FRBNF120162181",
   "term": "Ndiaye, Marie (1967-....)",
   "selected": false
  },
@@ -1295,8 +1295,8 @@ export let categories = [
   "label": "Negri, Antonio",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119175124",
-  "id": "FRBNF119175121",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119175124",
+  "idRameau": "FRBNF119175121",
   "term": "Negri, Antonio (1933-....)",
   "selected": false
  },
@@ -1304,8 +1304,8 @@ export let categories = [
   "label": "Nietzsche",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb137409692",
-  "id": "FRBNF137409693",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb137409692",
+  "idRameau": "FRBNF137409693",
   "term": "Nietzsche, Carl Ludwig (1813-1849)",
   "selected": false
  },
@@ -1313,8 +1313,8 @@ export let categories = [
   "label": "Pasolini*Pier,Paolo",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119187049",
-  "id": "FRBNF119187045",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119187049",
+  "idRameau": "FRBNF119187045",
   "term": "Pasolini, Pier Paolo (1922-1975)",
   "selected": false
  },
@@ -1322,8 +1322,8 @@ export let categories = [
   "label": "Patočka, Jan",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11918768j",
-  "id": "FRBNF119187682",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11918768j",
+  "idRameau": "FRBNF119187682",
   "term": "Patočka, Jan (1907-1977)",
   "selected": false
  },
@@ -1331,8 +1331,8 @@ export let categories = [
   "label": "Pinter, Harold",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11919883z",
-  "id": "FRBNF119198839",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11919883z",
+  "idRameau": "FRBNF119198839",
   "term": "Pinter, Harold (1930-2008)",
   "selected": false
  },
@@ -1340,8 +1340,8 @@ export let categories = [
   "label": "Prévost (L’abbé)",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11920607b",
-  "id": "FRBNF119206079",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11920607b",
+  "idRameau": "FRBNF119206079",
   "term": "Prévost, Antoine François (1697-1763)",
   "selected": false
  },
@@ -1349,8 +1349,8 @@ export let categories = [
   "label": "Quentin Tarantino",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13167925h",
-  "id": "FRBNF131679251",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13167925h",
+  "idRameau": "FRBNF131679251",
   "term": "Tarantino, Quentin (1963-....)",
   "selected": false
  },
@@ -1358,8 +1358,8 @@ export let categories = [
   "label": "Renan, Ernest",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119214865",
-  "id": "FRBNF119214866",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119214865",
+  "idRameau": "FRBNF119214866",
   "term": "Renan, Ernest (1823-1892)",
   "selected": false
  },
@@ -1367,8 +1367,8 @@ export let categories = [
   "label": "Resnais, Alain",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11921604j",
-  "id": "FRBNF119216041",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11921604j",
+  "idRameau": "FRBNF119216041",
   "term": "Resnais, Alain (1922-2014)",
   "selected": false
  },
@@ -1376,8 +1376,8 @@ export let categories = [
   "label": "Ricoeur, Paul",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11921926p",
-  "id": "FRBNF119219265",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11921926p",
+  "idRameau": "FRBNF119219265",
   "term": "Ricoeur, Paul (1913-2005)",
   "selected": false
  },
@@ -1385,8 +1385,8 @@ export let categories = [
   "label": "Rimbaud",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119219976",
-  "id": "FRBNF119219977",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119219976",
+  "idRameau": "FRBNF119219977",
   "term": "Rimbaud, Arthur (1854-1891)",
   "selected": false
  },
@@ -1394,8 +1394,8 @@ export let categories = [
   "label": "Rocha, Glauber",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11968431d",
-  "id": "FRBNF119684314",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11968431d",
+  "idRameau": "FRBNF119684314",
   "term": "Rocha, Glauber (1939-1981)",
   "selected": false
  },
@@ -1403,8 +1403,8 @@ export let categories = [
   "label": "Rohmer, Éric",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11922412v",
-  "id": "FRBNF119224127",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11922412v",
+  "idRameau": "FRBNF119224127",
   "term": "Rohmer, Éric (1920-2010)",
   "selected": false
  },
@@ -1412,8 +1412,8 @@ export let categories = [
   "label": "Rousseau",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119228797",
-  "id": "FRBNF119228798",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119228797",
+  "idRameau": "FRBNF119228798",
   "term": "Rousseau, Jean-Jacques (1712-1778)",
   "selected": false
  },
@@ -1421,44 +1421,44 @@ export let categories = [
   "label": "Sartre, Jean-Paul",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11923735k",
-  "id": "FRBNF119237352",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11923735k",
+  "idRameau": "FRBNF119237352",
   "term": "Sartre, Jean-Paul (1905-1980)",
   "selected": false
  },
  {
-  "label": "Schmid, Jakob Robert",
+  "label": "SchmidRameau, Jakob Robert",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb126381787",
-  "id": "FRBNF126381787",
-  "term": "Schmid, Jakob Robert",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb126381787",
+  "idRameau": "FRBNF126381787",
+  "term": "SchmidRameau, Jakob Robert",
   "selected": false
  },
  {
   "label": "Shakespeare",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119246079",
-  "id": "FRBNF119246077",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119246079",
+  "idRameau": "FRBNF119246077",
   "term": "Shakespeare, William (1564-1616)",
   "selected": false
  },
  {
-  "label": "Sidney, Algernon",
+  "label": "SidRameauney, Algernon",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12295784n",
-  "id": "FRBNF122957844",
-  "term": "Sidney, Algernon (1622-1683)",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12295784n",
+  "idRameau": "FRBNF122957844",
+  "term": "SidRameauney, Algernon (1622-1683)",
   "selected": false
  },
  {
   "label": "Sieyès, Emmanuel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12041767q",
-  "id": "FRBNF120417671",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12041767q",
+  "idRameau": "FRBNF120417671",
   "term": "Sieyès, Emmanuel-Joseph (1748-1836)",
   "selected": false
  },
@@ -1466,8 +1466,8 @@ export let categories = [
   "label": "Simmel, Georg",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11924807v",
-  "id": "FRBNF119248078",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11924807v",
+  "idRameau": "FRBNF119248078",
   "term": "Simmel, Georg (1858-1918)",
   "selected": false
  },
@@ -1475,8 +1475,8 @@ export let categories = [
   "label": "Simon, Claude",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119891228",
-  "id": "FRBNF119891220",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119891228",
+  "idRameau": "FRBNF119891220",
   "term": "Simon, Claude (1913-2005)",
   "selected": false
  },
@@ -1484,8 +1484,8 @@ export let categories = [
   "label": "Smith, Adam",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119250114",
-  "id": "FRBNF119250111",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119250114",
+  "idRameau": "FRBNF119250111",
   "term": "Smith, Adam (1723-1790)",
   "selected": false
  },
@@ -1493,8 +1493,8 @@ export let categories = [
   "label": "Spinoza",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11925350v",
-  "id": "FRBNF119253506",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11925350v",
+  "idRameau": "FRBNF119253506",
   "term": "Spinoza, Baruch (1632-1677)",
   "selected": false
  },
@@ -1502,8 +1502,8 @@ export let categories = [
   "label": "Tarde, Gabriel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119260221",
-  "id": "FRBNF11926022X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119260221",
+  "idRameau": "FRBNF11926022X",
   "term": "Tarde, Gabriel (1843-1904)",
   "selected": false
  },
@@ -1511,8 +1511,8 @@ export let categories = [
   "label": "Tarkovski",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb122597943",
-  "id": "FRBNF122597944",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb122597943",
+  "idRameau": "FRBNF122597944",
   "term": "Tarkovskij, Andrej Arsenʹevič (1932-1986)",
   "selected": false
  },
@@ -1520,8 +1520,8 @@ export let categories = [
   "label": "Thiry, Marcel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11926469s",
-  "id": "FRBNF119264698",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11926469s",
+  "idRameau": "FRBNF119264698",
   "term": "Thiry, Marcel (1897-1977)",
   "selected": false
  },
@@ -1529,8 +1529,8 @@ export let categories = [
   "label": "Tocqueville (de), Alexis",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119267448",
-  "id": "FRBNF119267445",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119267448",
+  "idRameau": "FRBNF119267445",
   "term": "Tocqueville, Alexis de (1805-1859)",
   "selected": false
  },
@@ -1538,8 +1538,8 @@ export let categories = [
   "label": "Tönnies, Ferdinand",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119267370",
-  "id": "FRBNF119267370",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119267370",
+  "idRameau": "FRBNF119267370",
   "term": "Tönnies, Ferdinand (1855-1936)",
   "selected": false
  },
@@ -1547,8 +1547,8 @@ export let categories = [
   "label": "Varda, Agnès",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11927678j",
-  "id": "FRBNF119276782",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11927678j",
+  "idRameau": "FRBNF119276782",
   "term": "Varda, Agnès (1928-....)",
   "selected": false
  },
@@ -1556,8 +1556,8 @@ export let categories = [
   "label": "Vas Sant, Gus",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13607881b",
-  "id": "FRBNF136078817",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13607881b",
+  "idRameau": "FRBNF136078817",
   "term": "Van Sant, Gus (1952-....)",
   "selected": false
  },
@@ -1565,8 +1565,8 @@ export let categories = [
   "label": "Vigo, Jean",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb121201369",
-  "id": "FRBNF121201363",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb121201369",
+  "idRameau": "FRBNF121201363",
   "term": "Vigo, Jean (1905-1934)",
   "selected": false
  },
@@ -1574,8 +1574,8 @@ export let categories = [
   "label": "Vinaver, Michel",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119284338",
-  "id": "FRBNF119284334",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119284338",
+  "idRameau": "FRBNF119284334",
   "term": "Vinaver, Michel (1927-....)",
   "selected": false
  },
@@ -1583,8 +1583,8 @@ export let categories = [
   "label": "Virilio, Paul",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11928524k",
-  "id": "FRBNF119285240",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11928524k",
+  "idRameau": "FRBNF119285240",
   "term": "Virilio, Paul (1932-....)",
   "selected": false
  },
@@ -1592,8 +1592,8 @@ export let categories = [
   "label": "Voltaire",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11928669t",
-  "id": "FRBNF119286698",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11928669t",
+  "idRameau": "FRBNF119286698",
   "term": "Voltaire (1694-1778)",
   "selected": false
  },
@@ -1601,8 +1601,8 @@ export let categories = [
   "label": "Weber, Max",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11928969n",
-  "id": "FRBNF119289694",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11928969n",
+  "idRameau": "FRBNF119289694",
   "term": "Weber, Max (1864-1920)",
   "selected": false
  },
@@ -1610,8 +1610,8 @@ export let categories = [
   "label": "Welby, Victoria",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119877600",
-  "id": "FRBNF119877605",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119877600",
+  "idRameau": "FRBNF119877605",
   "term": "Welby, Victoria (1837-1912)",
   "selected": false
  },
@@ -1619,8 +1619,8 @@ export let categories = [
   "label": "Wilde, Oscar",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11929190h",
-  "id": "FRBNF119291909",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11929190h",
+  "idRameau": "FRBNF119291909",
   "term": "Wilde, Oscar (1854-1900)",
   "selected": false
  },
@@ -1628,8 +1628,8 @@ export let categories = [
   "label": "Wittig, Monique",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11929323x",
-  "id": "FRBNF119293237",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11929323x",
+  "idRameau": "FRBNF119293237",
   "term": "Wittig, Monique (1935-2003)",
   "selected": false
  },
@@ -1637,8 +1637,8 @@ export let categories = [
   "label": "Zeyer, Julius",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12055073w",
-  "id": "FRBNF120550732",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12055073w",
+  "idRameau": "FRBNF120550732",
   "term": "Zeyer, Julius (1841-1901)",
   "selected": false
  },
@@ -1646,8 +1646,8 @@ export let categories = [
   "label": "Zola, Émile",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119297200",
-  "id": "FRBNF119297207",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119297200",
+  "idRameau": "FRBNF119297207",
   "term": "Zola, Émile (1840-1902)",
   "selected": false
  },
@@ -1655,8 +1655,8 @@ export let categories = [
   "label": "Cinéma",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119361188",
-  "id": "FRBNF119361186",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119361188",
+  "idRameau": "FRBNF119361186",
   "term": "Cinéma",
   "selected": false
  },
@@ -1664,8 +1664,8 @@ export let categories = [
   "label": "Danse",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11931841h",
-  "id": "FRBNF11931841X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11931841h",
+  "idRameau": "FRBNF11931841X",
   "term": "Danse",
   "selected": false
  },
@@ -1673,8 +1673,8 @@ export let categories = [
   "label": "Musique",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb133183660",
-  "id": "FRBNF133183663",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb133183660",
+  "idRameau": "FRBNF133183663",
   "term": "Musique",
   "selected": false
  },
@@ -1682,8 +1682,8 @@ export let categories = [
   "label": "Peinture",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11932942c",
-  "id": "FRBNF119329427",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11932942c",
+  "idRameau": "FRBNF119329427",
   "term": "Peinture",
   "selected": false
  },
@@ -1691,8 +1691,8 @@ export let categories = [
   "label": "Photographie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11933113t",
-  "id": "FRBNF119331136",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11933113t",
+  "idRameau": "FRBNF119331136",
   "term": "Photographie",
   "selected": false
  },
@@ -1700,8 +1700,8 @@ export let categories = [
   "label": "Poésie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11933161p",
-  "id": "FRBNF119331613",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11933161p",
+  "idRameau": "FRBNF119331613",
   "term": "Poésie",
   "selected": false
  },
@@ -1709,8 +1709,8 @@ export let categories = [
   "label": "Roman",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11940505s",
-  "id": "Roman",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11940505s",
+  "idRameau": "Roman",
   "term": "FRBNF119405056",
   "selected": false
  },
@@ -1718,18 +1718,18 @@ export let categories = [
   "label": "Théâtre",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb13162689q",
-  "id": "FRBNF13162689X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb13162689q",
+  "idRameau": "FRBNF13162689X",
   "term": "Théâtre",
   "selected": false
  },
  {
-  "label": "Video",
+  "label": "VidRameaueo",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11933779d",
-  "id": "FRBNF119337790",
-  "term": "Vidéo",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11933779d",
+  "idRameau": "FRBNF119337790",
+  "term": "VidRameauéo",
   "selected": false
  },
  {
@@ -1741,8 +1741,8 @@ export let categories = [
   "es": "Artes y letras",
   "pt": "Artes e literatura",
   "sv": "Konst och litteratur",
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb12021811z",
-  "id": "FRBNF120218114",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb12021811z",
+  "idRameau": "FRBNF120218114",
   "term": "Arts et littérature",
   "selected": false
  },
@@ -1755,8 +1755,8 @@ export let categories = [
   "es": "Historia",
   "pt": "História",
   "sv": "Historia",
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119344445",
-  "id": "FRBNF119344443",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119344445",
+  "idRameau": "FRBNF119344443",
   "term": "Histoire",
   "selected": false
  },
@@ -1767,10 +1767,10 @@ export let categories = [
   "zh": "數位世界",
   "de": "Digitale Welten",
   "es": "Mundo numérico",
-  "pt": "Mundo numérido",
+  "pt": "Mundo numéridRameauo",
   "sv": "Den digitala världen",
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb133328054",
-  "id": "FRBNF133328055",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb133328054",
+  "idRameau": "FRBNF133328055",
   "term": "Société numérique",
   "selected": false
  },
@@ -1783,8 +1783,8 @@ export let categories = [
   "es": "Filosofía",
   "pt": "Filosofia",
   "sv": "Filosofi",
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119368422",
-  "id": "FRBNF11936842X",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119368422",
+  "idRameau": "FRBNF11936842X",
   "term": "Philosophie",
   "selected": false
  },
@@ -1797,8 +1797,8 @@ export let categories = [
   "es": "Política y sociedad",
   "pt": "Política e sociedade",
   "sv": "Politik och samhälle",
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11975806s",
-  "id": "FRBNF119758063",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11975806s",
+  "idRameau": "FRBNF119758063",
   "term": "Pensée politique et sociale",
   "selected": false
  },
@@ -1811,17 +1811,17 @@ export let categories = [
   "es": "Ciencias y medio ambiente",
   "pt": "Ciências e meio ambiente",
   "sv": "Vetenskap och miljö",
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119736042",
-  "id": "FRBNF119736049",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119736042",
+  "idRameau": "FRBNF119736049",
   "term": "Sciences de l'environnement",
   "selected": false
  },
  {
-  "label": "Video et son",
+  "label": "VidRameaueo et son",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119517649",
-  "id": "FRBNF119517646",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119517649",
+  "idRameau": "FRBNF119517646",
   "term": "Audiovisuel",
   "selected": false
  },
@@ -1829,8 +1829,8 @@ export let categories = [
   "label": "Afrique",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119308418",
-  "id": "FRBNF119308415",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119308418",
+  "idRameau": "FRBNF119308415",
   "term": "Afrique",
   "selected": false
  },
@@ -1838,8 +1838,8 @@ export let categories = [
   "label": "Amérique latine",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11930876x",
-  "id": "FRBNF119308760",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11930876x",
+  "idRameau": "FRBNF119308760",
   "term": "Amérique latine",
   "selected": false
  },
@@ -1847,8 +1847,8 @@ export let categories = [
   "label": "Asie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119765364",
-  "id": "FRBNF119765360",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119765364",
+  "idRameau": "FRBNF119765360",
   "term": "Asie",
   "selected": false
  },
@@ -1856,8 +1856,8 @@ export let categories = [
   "label": "Brésil",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119316758",
-  "id": "FRBNF119316757",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119316758",
+  "idRameau": "FRBNF119316757",
   "term": "Brésil",
   "selected": false
  },
@@ -1865,8 +1865,8 @@ export let categories = [
   "label": "Canada/Québec",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11933413n",
-  "id": "FRBNF119334132",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11933413n",
+  "idRameau": "FRBNF119334132",
   "term": "Canada",
   "selected": false
  },
@@ -1874,8 +1874,8 @@ export let categories = [
   "label": "Colombie",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11931746z",
-  "id": "FRBNF119317460",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11931746z",
+  "idRameau": "FRBNF119317460",
   "term": "Colombie",
   "selected": false
  },
@@ -1883,8 +1883,8 @@ export let categories = [
   "label": "États-Unis",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119313712",
-  "id": "FRBNF119313711",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119313712",
+  "idRameau": "FRBNF119313711",
   "term": "États-Unis",
   "selected": false
  },
@@ -1892,8 +1892,8 @@ export let categories = [
   "label": "Europe",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11931301w",
-  "id": "FRBNF119313017",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11931301w",
+  "idRameau": "FRBNF119313017",
   "term": "Europe",
   "selected": false
  },
@@ -1901,8 +1901,8 @@ export let categories = [
   "label": "France",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb119314762",
-  "id": "FRBNF119314763",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb119314762",
+  "idRameau": "FRBNF119314763",
   "term": "France",
   "selected": false
  },
@@ -1910,8 +1910,8 @@ export let categories = [
   "label": "Moyen Orient",
 
 
-  "url": "http://catalogue.bnf.fr/ark:/12148/cb11941591f",
-  "id": "FRBNF119415919",
+  "uriRameau": "http://catalogue.bnf.fr/ark:/12148/cb11941591f",
+  "idRameau": "FRBNF119415919",
   "term": "Moyen-Orient",
   "selected": false
  }
