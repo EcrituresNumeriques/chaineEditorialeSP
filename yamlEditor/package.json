@@ -1,0 +1,58 @@
+{
+  "name": "yamleditor",
+  "version": "0.1.0",
+  "description": "Yaml editor using a react form",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack-dev-server  --hot --inline --history-api-fallback",
+    "build:prod": "NODE_ENV=production webpack -p",
+    "analyse": "webpack --profile --json > stats.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EcrituresNumeriques/chaineEditorialeSP.git"
+  },
+  "author": "Arthur Juchereau",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/EcrituresNumeriques/chaineEditorialeSP/issues"
+  },
+  "homepage": "https://github.com/EcrituresNumeriques/chaineEditorialeSP#readme",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.1",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.7.0",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.28.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "react-hot-loader": "^1.3.1",
+    "react-router": "^3.0.2",
+    "style-loader": "^0.17.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.3.2",
+    "webpack-bundle-analyzer": "^2.7.0",
+    "webpack-dev-server": "^2.4.2",
+    "font-awesome-webpack": "0.0.5-beta.2",
+    "js-yaml": "^3.8.3",
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0"
+  },
+  "dependencies": {}
+}
