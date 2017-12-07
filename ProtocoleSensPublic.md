@@ -44,6 +44,7 @@ Le contenu de l'article est composé par :
 
 **Règles générales à suivre:**
   - si un titre ou un résumé comprend ":", le remplacer avec &#58; (les : ne sont pas admis)
+  - si un titre ou résumé doit intégré des termes en italiques, utiliser : `\<em\>Contenu en italiques\</em\>`. Ce qui correspond à du html "échappé". Autrement dit, la syntaxe markdown est interdite, et la syntaxe html doit être "échappée".
   - les `controlledKeywords` renvoient aux mots-clés de référence sur Sens public. Pour remplir les champs, se référer au document autoritesRAMEAU. dans le dosier Edition. ! Tous les mots-clés ne sont pas forcément inclus dans le doc de référence. Vous pouvez aussi en créer. Dans ce cas, il faut consulter la [base des autorités Rameau](http://catalogue.bnf.fr/recherche-autorite.do?pageRech=rat).
   - les `keyword_fr/en` (ou autre langue) renvoient aux mots-clés choisis par l'auteur. (Parfois, il peut s'agir des mêmes mots-clés que ceux de SP).
   - supprimer tout champ qui ne serait pas renseigné.
