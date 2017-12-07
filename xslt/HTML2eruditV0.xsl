@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--Ce script sert pour transformer des html créés avec pandoc templateHtmlEruditV0.html5 vers eruditschema. 
+<!--Ce script sert pour transformer des html créés avec pandoc templateHtmlEruditV0.html5 vers eruditschema.
 @todo:
 presque tout... ce n'est qu'une première version de test. par ex:
-- déclarations namespaces: 
+- déclarations namespaces:
     - actuellement il faut enlever toutes les déclaration du html pour que ça marche
     - comment déclarer correctement un input HTML
 
@@ -11,15 +11,12 @@ presque tout... ce n'est qu'une première version de test. par ex:
 - Titres niveaux 2 et 3 et suivants avec section (fonctionne pas)
 - conserver espaces insécables
 - images
-
 -->
-<xsl:stylesheet version="2.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <xsl:output method="xml"/>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="xml" doctype-public="http://retro.erudit.org/xsd/article/3.0.0/eruditarticle.xsd" encoding="UTF-8" indent="yes"></xsl:output>
+
     <xsl:template match="/">
-<!--            traiter les diff. attributs de la balise racine notamment : 
+<!--            traiter les diff. attributs de la balise racine notamment :
             1. idproprio à récupérer chez erudit
             2. typeArticle
         -->
@@ -28,6 +25,8 @@ presque tout... ce n'est qu'une première version de test. par ex:
                 xsi:schemaLocation="http://www.erudit.org/xsd/article http://www.erudit.org/xsd/article/3.0.0/eruditarticle.xsd"
                 qualtraitement="complet" idproprio="1904ear" typeart="essai" ordseq="1">
                 <xsl:attribute name="lang"><xsl:value-of select="//meta[@name='DC.language']/@content"/></xsl:attribute>
+
+
 <!--            valider l'attribut HTML < typeArticle dans YAML    <xsl:attribute name="typeart"><xsl:value-of select="//meta[@name='DC.type']/@content"/></xsl:attribute>-->
                 <admin>
                     <infoarticle>
@@ -35,7 +34,7 @@ presque tout... ce n'est qu'une première version de test. par ex:
 <!--Boucle grDescripteur pour récupérer les mots clés (DC.subject) -->
                         <grdescripteur lang="fr" scheme="http://rameau.bnf.fr">
                             <descripteur>meta-descripteur</descripteur>
-                          
+
                         </grdescripteur>
                         <nbpara><xsl:value-of select="count(//p)"/></nbpara>
                         <nbmot> <xsl:value-of select=
@@ -51,18 +50,21 @@ presque tout... ce n'est qu'une première version de test. par ex:
                         <nbrefbiblio><xsl:value-of select="count(//div[@class='references']/div)"/></nbrefbiblio>
                         <nbnote><xsl:value-of select="count(//a[@class='footnoteRef'])"/></nbnote>
                     </infoarticle>
-                    
+
                     <revue id="sp01868" lang="fr">
-                        
+
                         <titrerev><xsl:value-of select="//meta[@name='DC.source']/@content"/></titrerev>
-                      
+
                         <titrerevabr>sp</titrerevabr>
                         <idissnnum>2104-3272</idissnnum>
                         <directeur sexe="masculin">
 <!--pour v2.0, récupérer le nom du directeur depuis la source -->
                             <nompers>
-                                <prenom>Marcello</prenom>
-                                <nomfamille>Vitali-Rosati</nomfamille>
+                                <prenom>Marcello
+                                       <xsl:value-of select="//meta[@name='DC.source']/@content"/>
+                                </prenom>
+                                <nomfamille>Vitali-Rosati
+                                <xsl:value-of select="//meta[@name='DC.source']/@content"/></nomfamille>
                             </nompers>
                         </directeur>
                     </revue>
@@ -91,7 +93,7 @@ presque tout... ce n'est qu'une première version de test. par ex:
                     <diffnum>
                         <nomorg>Sens public</nomorg>
                     </diffnum>
-                   
+
                     <schema nom="Erudit Article" version="3.0.0" lang="fr"/>
                     <droitsauteur><xsl:value-of select="html/head/meta[@name='DC.rights']/@content"/></droitsauteur>
                 </admin>
@@ -103,7 +105,7 @@ presque tout... ce n'est qu'une première version de test. par ex:
 <!-- A revoir après revue du template pour traiter nom/prénom -->
                         <xsl:for-each select="html/head/meta[@name='author']">
 <!-- id à vérifier avec Erudit : vide ou à remplir selon comportement Quinoa -->
-                            <auteur id=""> 
+                            <auteur id="">
                             <nompers>
                                 <prenom><xsl:value-of select="@forname"/></prenom>
                                 <nomfamille><xsl:value-of select="@surname"/></nomfamille>
@@ -124,19 +126,19 @@ presque tout... ce n'est qu'une première version de test. par ex:
                         <xsl:for-each select="html/head/meta[@name='controlledKeyword']">
                             <motcle><xsl:value-of select="@content"/></motcle>
                         </xsl:for-each>
-                        
+
                     </grmotcle>
                 </liminaire>
-          
+
                 <xsl:apply-templates/>
-             
+
         </article>
     </xsl:template>
 
 <!--TEMPLATES CORPS -->
 
     <xsl:template match="body">
-        <corps>           
+        <corps>
             <xsl:for-each-group select="*" group-starting-with="h2">
                 <section1>
                     <xsl:apply-templates select="current-group()"/>
@@ -150,29 +152,29 @@ presque tout... ce n'est qu'une première version de test. par ex:
             <xsl:apply-templates/>
         </titre>
     </xsl:template>
-    
+
     <xsl:template match="p">
         <para>
             <alinea><xsl:apply-templates/></alinea>
         </para>
     </xsl:template>
-    
+
     <xsl:template match="em">
         <marquage typemarq="italique">
             <xsl:apply-templates/>
         </marquage>
     </xsl:template>
-    
+
     <xsl:template match="sup[../@class='footnoteRef']">
         <xsl:apply-templates/>
     </xsl:template>
-    
+
     <xsl:template match="sup">
         <exposant>
             <xsl:apply-templates/>
         </exposant>
     </xsl:template>
-    
+
 
 <!--
     <xsl:template match="h2[@id='bibliographie']">
@@ -186,7 +188,7 @@ presque tout... ce n'est qu'une première version de test. par ex:
             <xsl:apply-templates/>
         </grBiblio>
     </xsl:template>-->
-      
+
 
     <xsl:template match="figure">
         <figure>
@@ -194,22 +196,22 @@ presque tout... ce n'est qu'une première version de test. par ex:
             <xsl:apply-templates/>
             </objetmedia>
         </figure>
-        
+
     </xsl:template>
-    
+
     <xsl:template match="img">
         <image>
                 <xsl:apply-templates/>
-            </image>       
+            </image>
     </xsl:template>
- 
+
     <xsl:template match="div[@class='footnotes']">
         <partiesann><grnote>
         <xsl:apply-templates/>
         </grnote>
     </partiesann>
     </xsl:template>
-    
+
     <xsl:template match="div[@class='footnotes']/ol">
        <xsl:for-each select="li">
            <note>
@@ -218,9 +220,9 @@ presque tout... ce n'est qu'une première version de test. par ex:
                </xsl:attribute>
                <no> <xsl:value-of select="position()" /></no><alinea><xsl:apply-templates/></alinea></note>
            </xsl:for-each>
-        
+
     </xsl:template>
- 
+
     <xsl:template match="blockquote">
         <bloccitation>
             <alinea><xsl:apply-templates/></alinea>
@@ -237,14 +239,13 @@ presque tout... ce n'est qu'une première version de test. par ex:
     </xsl:template>
 
     <xsl:template match="head">
-        
+
     </xsl:template>
 
     <xsl:template match="node()|@*" mode="#all">
         <xsl:copy>
             <xsl:apply-templates select="node()|@*" mode="#current"/>
         </xsl:copy>
-    </xsl:template>    
+    </xsl:template>
 
 </xsl:stylesheet>
-
