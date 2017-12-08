@@ -2,14 +2,6 @@ import { categories } from './categories';
 import { rubriques } from './rubriques';
 export let init = {
   obj:{
-   "controlledKeywords": [
-    {
-     "label": '',
-     "uriRameau": '',
-     "idRameau": '',
-     "wikidata": ''
-    }
-   ],
    "journal": "Sens public",
    "issnnum": "2104-3272",
    "director": [
@@ -24,14 +16,6 @@ export let init = {
     }
    ],
    "redacteurDossier": [
-    {
-     "forname": '',
-     "surname": '',
-     "orcid": '',
-     "viaf": '',
-     "foaf": '',
-     "isni": ''
-    }
    ],
    "year": '',
    "month": '',
@@ -52,24 +36,9 @@ export let init = {
    "subtitle": '',
    "typeArticle": [],
    "authors": [
-    {
-     "forname": '',
-     "surname": '',
-     "orcid": '',
-     "viaf": '',
-     "foaf": '',
-     "isni": '',
-     "wikidata": ''
-    }
    ],
    "abstract": [
-    {
-     "lang": '',
-     "text": ''
-    }
    ],
-   "keyword_fr": "",
-   "keyword_en": "",
    "url_article_sp": '',
    "id_sp": '',
    "translator": [
@@ -85,11 +54,6 @@ export let init = {
      "lang": '',
      "titre": '',
      "url": ''
-    },
-    {
-     "lang": '',
-     "titre": '',
-     "url": ''
     }
    ],
    "articleslies": [
@@ -100,14 +64,6 @@ export let init = {
     }
    ],
    "reviewers": [
-    {
-     "forname": '',
-     "name": '',
-     "orcid": '',
-     "viaf": '',
-     "foaf": '',
-     "isni": ''
-    }
    ],
    "bibliography": '',
    "link-citations": true,
