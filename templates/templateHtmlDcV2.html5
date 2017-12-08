@@ -1,4 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"
+[<!ENTITY % Ruby.common.attlists "IGNORE" >]>
+ -->
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:dc="http://purl.org/dc/terms/"
@@ -14,25 +16,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc templateHtmlEruditV2" />
-
-
-<!--  FOAF -->
-<!-- 2 possibilités : soit on l'indique dans le head mais ce n'est pas html orthodoxe,
-soit au tout début du body, cf. plus bas -->
-  $if(authors)$
-  <foaf:Group>
-    <foaf:name>Authors</foaf:name>
-      $for(authors)$
-        <foaf:member>
-          <foaf:Person>
-            <foaf:familyName>$authors.surname$</foaf:familyName>
-            <foaf:firstName>$authors.forname$</foaf:firstName>
-          </foaf:Person>
-          <foaf:openid>"$authors.orcid$"</foaf:familyName>
-        </foaf:member>
-      $endfor$
-    </foaf:Group>
-  $endif$
 
 
 <!--  Dublin Core -->
@@ -89,7 +72,7 @@ $endif$
 
     $if(translator)$
     $for(translator)$
-        <meta name="DC.contributor.trl" content="$translator.forname$ $translator.surname$. Translator." />
+        <meta name="DC.contributor.trl" content="$translator.forname$ $translator.surname$" />
         <meta name="MARCREL.trl" content="$translator.forname$ $translator.surname$" />
     $endfor$
     $endif$
@@ -101,14 +84,11 @@ $endif$
     $endfor$
     $endif$
 
-    <!-- Table des matières à rajouter en métadonnées ?
     $if(toc)$
     $for(toc)$
     <meta name="DC.description.tableOfContents" content="$toc$"/>
     $endfor$
-    $endif$-->
-
-
+    $endif$
 
 
 <!-- citation : Indexation pour Google Scholar  -->
@@ -212,7 +192,7 @@ $endif$
 -->
 
 
-<!--Nos metadonnees-->
+<!--Mots clés contrôlés-->
 
 $if(controlledKeywords)$
 $for(controlledKeywords)$
@@ -220,27 +200,6 @@ $for(controlledKeywords)$
 $endfor$
 $endif$
 
-$if(director)$
-$for(director)$
-<meta name="director" content="$director.forname$ $director.surname$" forname="$director.forname$" surname="$director.surname$" orcid="$director.orcid$" />
-$endfor$
-$endif$
-
-$if(authors)$
-$for(authors)$
-<meta name="author" content="$authors.forname$ $authors.surname$" forname="$authors.forname$" surname="$authors.surname$" orcid="$authors.orcid$" />
-$endfor$
-$endif$
-
-$if(redacteurDossier)$
-$for(redacteurDossier)$
-<meta name="redacteurDossier" content="$redacteurDossier.forname$ $redacteurDossier.surname$" forname="$redacteurDossier.forname$" surname="$redacteurDossier.surname$" orcid="$redacteurDossier.orcid$" />
-$endfor$
-$endif$
-
-$if(year)$
-<meta name="year" content="$year$" />
-$endif$
 
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <style type="text/css">code{white-space: pre;}</style>
@@ -280,8 +239,26 @@ $for(authors)$
 <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-author">
 <span property="familyName">$authors.surname$</span>
 <span property="firstName">$authors.forname$</span>
-<span property="openid">"$authors.orcid$"</span>
+<span property="openid">$authors.orcid$</span>
 </div>
+$endfor$
+$endif$
+
+$if(director)$
+$for(director)$
+<div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-author">
+<span property="familyName">$director.surname$</span>
+<span property="firstName">$director.forname$</span>
+<span property="openid">$director.orcid$</span>
+$endfor$
+$endif$
+
+$if(redacteurDossier)$
+$for(redacteurDossier)$
+<div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-author">
+<span property="familyName">$redacteurDossier.surname$</span>
+<span property="firstName">$redacteurDossier.forname$</span>
+<span property="openid">$redacteurDossier.orcid$</span>
 $endfor$
 $endif$
 
