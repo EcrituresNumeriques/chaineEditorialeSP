@@ -12,6 +12,7 @@ export class TextInput extends React.Component {
         value: _.get(this.props.state, this.props.target, ""),
         element: this.props.element || 'input'
      };
+     this.handleTextChange = this.handleTextChange.bind(this);
   }
 
   componentDidMount(){
@@ -30,6 +31,7 @@ export class TextInput extends React.Component {
 
 
   handleTextChange(event) {
+    this.props.updateState(event.target.value,this.props.target);
     store.dispatch({type:"FORM_UPDATE",target:this.state.target, value:event.target.value});
   }
 
