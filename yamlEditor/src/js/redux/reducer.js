@@ -35,7 +35,7 @@ export const reducer = function(state,action){
 
 function decompileKeywords(state){
   //get all the typeArticle
-  let typeArticle = state.obj.typeArticle;
+  let typeArticle = state.obj.typeArticle?state.obj.typeArticle:[];
   let toEnable = typeArticle.map((a)=>(state.misc.rubriques.map((c)=>(c.label)).indexOf(a)));
   for(let i=0;i<toEnable.length;i++){
     if(toEnable[i] > -1){
@@ -44,7 +44,7 @@ function decompileKeywords(state){
   }
 
   //get all the controlled keywords
-  let controlledKeywords = state.obj.controlledKeywords;
+  let controlledKeywords = state.obj.controlledKeywords?state.obj.controlledKeywords:[];
   let toSelect = controlledKeywords.map((a)=>(state.misc.categories.map((c)=>(c.label)).indexOf(a.label)));
   for(let i=0;i<toSelect.length;i++){
     if(toSelect[i] > -1){
@@ -54,7 +54,7 @@ function decompileKeywords(state){
 
 
   //get all the uncontrolledKeywords
-  let keyword_fr = state.obj.keyword_fr.split(',');
+  let keyword_fr = state.obj.keyword_fr?state.obj.keyword_fr.split(','):[];
   for(let i=0;i<keyword_fr.length;i++){
     console.log(keyword_fr);
     state.misc.uncontrolledKeywords.push({label:keyword_fr[i]});
