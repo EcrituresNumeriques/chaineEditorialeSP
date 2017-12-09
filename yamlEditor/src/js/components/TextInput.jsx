@@ -9,7 +9,7 @@ export class TextInput extends React.Component {
         title:this.props.title,
         placeholder:this.props.placeholder || this.props.title,
         target : this.props.target,
-        value: _.get(store.getState().obj, this.props.target, ""),
+        value: _.get(this.props.state, this.props.target, ""),
         element: this.props.element || 'input'
      };
   }

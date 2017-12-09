@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { TextInput } from './TextInput.jsx';
 import { SelectInput } from './SelectInput.jsx';
 import { Resumes} from './Resumes.jsx';
@@ -13,19 +13,49 @@ import { Keywords} from './Keywords.jsx';
 import { Types} from './Types.jsx';
 require('./../../logo.png')
 
-export function App(){
-  return(
-    <section>
-      <TextInput target="id_sp" title="Identifiant" placeholder="SPxxxx" />
-      <TextInput target="title" title="Titre" />
-      <TextInput target="subtitle" title="Sous-titre" />
-      <Date target="date" title="Date"/>
-      <Resumes/>
-      <Dossier />
-      <Authors />
-      <Reviewers />
-      <Keywords/>
-      <Rubriques/>
-    </section>
-  )
+
+export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = props.yaml?props.yaml:{};
+    this.updateState = this.updateState.bind(this);
+  }
+
+  componentWillReceiveProps(nextProp){
+      console.log("need to update");
+      this.updateState(nextProp.yaml);
+  }
+
+  componentWillUpdate(NextProp, NextState){
+    //just a check
+    console.log("newState",NextState);
+  }
+
+  updateState(value,target = undefined){
+    //No target, update the whole state
+    if(!target){
+      this.setState(value);
+    }
+    //Update only the key
+    else{
+      this.setState({[target]:value});
+    }
+  }
+
+  render(){
+    return(
+      <section>
+        <TextInput target="id_sp" title="Identifiant" placeholder="SPxxxx" state={this.state} onChange={this.updateState}/>
+        <TextInput target="title" title="Titre" />
+        <TextInput target="subtitle" title="Sous-titre" />
+        <Date target="date" title="Date"/>
+        <Resumes/>
+        <Dossier />
+        <Authors />
+        <Reviewers />
+        <Keywords/>
+        <Rubriques/>
+      </section>
+    )
+  }
 }

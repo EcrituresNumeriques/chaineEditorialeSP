@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.js';
-import { App } from './components/App.jsx';
+import App from './components/App.jsx';
 import _ from 'lodash';
 
 
@@ -19,13 +19,19 @@ let SexyYamlType = new YAML.Type('!sexy', {
 });
 let SEXY_SCHEMA = YAML.Schema.create([ SexyYamlType ]);
 
+let yamlObj = {};
+
+function writeToConsole(js){
+  console.log("export",js);
+}
+
 function renderApp(){
   render(
     <Provider store={store}>
-      <App />
+      <App yaml={yamlObj} exportChange={writeToConsole}/>
     </Provider>,
     document.querySelector('.app'));
-  }
+}
 
 export function handleDOMchanges() {
   let active_element = "react";
@@ -44,6 +50,7 @@ export function handleDOMchanges() {
 
   function updateYAML(){
     yaml.value = YAML.safeDump(store.getState().obj);
+    yamlObj = store.getState().obj;
     //console.log('updating Yaml');
   }
 
@@ -54,6 +61,7 @@ export function handleDOMchanges() {
 
   function YAMLupdate(){
     let obj = YAML.load(yaml.value, { schema: SEXY_SCHEMA });
+    yamlObj = obj;
     store.dispatch({type:"YAML_UPDATE",obj:obj});
   }
 
