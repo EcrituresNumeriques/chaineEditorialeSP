@@ -15,24 +15,12 @@ export class TextInput extends React.Component {
      this.handleTextChange = this.handleTextChange.bind(this);
   }
 
-  componentDidMount(){
-    let context = this;
-    this.setState({unsubscribe : store.subscribe(function(){
-      let value = _.get(store.getState().obj, context.props.target, undefined);
-      if(typeof(value) != "undefined" && context.state.value != value){
-        context.setState({value:value});
-      }
-    })});
+  componentWillReceiveProps(nextProp){
+    this.setState({value:_.get(nextProp.state, this.props.target, "")})
   }
-
-  componentWillUnmount(){
-    this.state.unsubscribe();
-  }
-
 
   handleTextChange(event) {
     this.props.updateState(event.target.value,this.props.target);
-    store.dispatch({type:"FORM_UPDATE",target:this.state.target, value:event.target.value});
   }
 
   render() {

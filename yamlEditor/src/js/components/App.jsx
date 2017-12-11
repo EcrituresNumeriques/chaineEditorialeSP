@@ -22,22 +22,21 @@ export default class App extends Component {
   }
 
   componentWillReceiveProps(nextProp){
-      //console.log("need to update");
       this.updateState(nextProp.yaml);
   }
 
-  componentWillUpdate(NextProp, NextState){
-    //just a check
-    //console.log("newState",NextState);
+  componentWillUpdate(nextProp,nextState){
+    this.props.exportChange(nextState);
   }
 
   updateState(value,target = undefined){
-    //No target, update the whole state
+    //No target, update the whole state, don't export
     if(!target){
       this.setState(value);
     }
-    //Update only the key
+    //Update only the key changed, plus export the new state
     else{
+      //console.log("changing key",target,value);
       this.setState({[target]:value});
     }
   }
@@ -49,6 +48,7 @@ export default class App extends Component {
         <TextInput target="title" title="Titre" state={this.state} updateState={this.updateState} />
         <TextInput target="subtitle" title="Sous-titre" state={this.state} updateState={this.updateState} />
         <Date target="date" title="Date" state={this.state} updateState={this.updateState} />
+        <TextInput target="url_article_sp" title="URL sens public" placeholder="http://sens-public.org/articleXXXX.html" state={this.state} updateState={this.updateState} />
         <Resumes state={this.state} updateState={this.updateState} />
         <Dossier state={this.state} updateState={this.updateState} />
         <Authors state={this.state} updateState={this.updateState} />

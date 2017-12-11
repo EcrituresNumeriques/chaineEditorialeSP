@@ -1,10 +1,9 @@
 import YAML from 'js-yaml';
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { store } from './redux/store.js';
 import App from './components/App.jsx';
 import _ from 'lodash';
+import {init} from './redux/init.js';
 
 
 let yaml = document.querySelector("#source");
@@ -19,62 +18,26 @@ let SexyYamlType = new YAML.Type('!sexy', {
 });
 let SEXY_SCHEMA = YAML.Schema.create([ SexyYamlType ]);
 
-let yamlObj = {};
-
-function writeToConsole(js){
-  console.log("export",js);
+function updateYAML(js){
+  yaml.value = YAML.safeDump(js);
 }
 
-function renderApp(){
+function YAMLupdate(){
+  console.log("updating YAML");
+  let jsObj = YAML.load(yaml.value, { schema: SEXY_SCHEMA });
+  renderApp(jsObj);
+}
+
+function renderApp(jsObj){
   render(
-    <Provider store={store}>
-      <App yaml={yamlObj} exportChange={writeToConsole}/>
-    </Provider>,
+      <App yaml={jsObj} exportChange={updateYAML}/>,
     document.querySelector('.app'));
 }
 
 export function handleDOMchanges() {
-  let active_element = "react";
-  renderApp()
-  objUpdate()
-
-  store.subscribe(renderApp);
-  store.subscribe(objUpdate);
-
+  renderApp(init.obj)
   yaml.addEventListener("input",_.debounce(YAMLupdate,500));
-  yaml.addEventListener("click",function(){active_element = "yaml"});
-  //js.addEventListener("input",_.debounce(JSupdate,500));
-  //js.addEventListener("click",function(){active_element = "js"});
-  reactForm.addEventListener("click",function(){active_element = "react"});
-
-
-  function updateYAML(){
-    yaml.value = YAML.safeDump(store.getState().obj);
-    yamlObj = store.getState().obj;
-    //console.log('updating Yaml');
-  }
-
-  //function updateJS(){
-  //  js.value = JSON.stringify(store.getState().obj,false,1);
-  //  //console.log('updating JS');
-  //}
-
-  function YAMLupdate(){
-    let obj = YAML.load(yaml.value, { schema: SEXY_SCHEMA });
-    yamlObj = obj;
-    store.dispatch({type:"YAML_UPDATE",obj:obj});
-  }
-
-//  function JSupdate(){
-//    let obj = JSON.parse(js.value);
-//    store.dispatch({type:"JS_UPDATE",obj:obj});
-//  }
-
-
-  function objUpdate(){
-    if(active_element != "yaml"){updateYAML();}
-//    if(active_element != "js"){updateJS();}
-  }
+  updateYAML(init.obj);
 }
 
 //Drag and drop module

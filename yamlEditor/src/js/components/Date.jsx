@@ -1,6 +1,5 @@
 import React from 'react'
 import _ from 'lodash'
-import { store } from '../redux/store.js'
 
 export class Date extends React.Component {
   constructor(props) {
@@ -8,23 +7,9 @@ export class Date extends React.Component {
     this.state = {
         title:this.props.title,
         placeholder:this.props.placeholder || this.props.title,
-        value: this.dateDecode(_.get(store.getState().obj, this.props.target, "")),
+        value: this.dateDecode(_.get(this.props.state, this.props.target, "")),
         element: this.props.element || 'input'
      };
-  }
-
-  componentDidMount(){
-    let context = this;
-    this.setState({unsubscribe : store.subscribe(function(){
-      let value = _.get(store.getState().obj, context.props.target, undefined);
-      if(typeof(value) != "undefined" && context.state.value != value){
-        context.setState({value:context.dateDecode(value)});
-      }
-    })});
-  }
-
-  componentWillUnmount(){
-    this.state.unsubscribe();
   }
 
   dateEncode(date){
@@ -37,10 +22,10 @@ export class Date extends React.Component {
 
   handleTextChange(event) {
     let date = event.target.value.split("-");
-    store.dispatch({type:"FORM_UPDATE",target:"date", value:this.dateEncode(event.target.value)});
-    store.dispatch({type:"FORM_UPDATE",target:"year", value:date[0]});
-    store.dispatch({type:"FORM_UPDATE",target:"month", value:date[1]});
-    store.dispatch({type:"FORM_UPDATE",target:"day", value:date[2]});
+    this.props.updateState(this.dateEncode(event.target.value),"date");
+    this.props.updateState(date[0],"year");
+    this.props.updateState(date[1],"month");
+    this.props.updateState(date[2],"day");
   }
 
   render() {
