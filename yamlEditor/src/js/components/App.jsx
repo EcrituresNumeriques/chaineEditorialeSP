@@ -44,7 +44,7 @@ export default class App extends Component {
   render(){
     return(
       <section>
-        <TextInput target="id_sp" title="Identifiant" placeholder="SPxxxx" state={this.state} updateState={this.updateState} />
+        <TextInput target="id_sp" alias={[{target:'bibtex',prefix:'',suffix:'.bib'}]} title="Identifiant" placeholder="SPxxxx" state={this.state} updateState={this.updateState} />
         <TextInput target="title" title="Titre" state={this.state} updateState={this.updateState} />
         <TextInput target="subtitle" title="Sous-titre" state={this.state} updateState={this.updateState} />
         <Date target="date" title="Date" state={this.state} updateState={this.updateState} />

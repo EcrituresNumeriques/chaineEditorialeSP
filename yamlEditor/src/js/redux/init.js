@@ -2,8 +2,22 @@ import { categories } from './categories';
 import { rubriques } from './rubriques';
 export let init = {
   obj:{
-   "journal": "Sens public",
+   "id_sp": '',
+   "bibtex":'',
+   "title": "test",
+   "subtitle": '',
+   "year": '',
+   "month": '',
+   "day": '',
+   "date": '',
+   "url_article_sp": '',
+   "publisher": "Département des littératures de langue française",
+   "prod": "Sens Public",
+   "prodnum": "Sens Public",
+   "diffnum": "Érudit",
+   "rights": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
    "issnnum": "2104-3272",
+   "journal": "Sens public",
    "director": [
     {
      "forname": "Marcello",
@@ -15,32 +29,19 @@ export let init = {
      "isni": ''
     }
    ],
+   "abstract": [
+   ],
+   "authors": [
+   ],
    "redacteurDossier": [
    ],
-   "year": '',
-   "month": '',
-   "day": '',
-   "date": '',
    "dossier": [
     {
      "title": '',
      "id": ''
     }
    ],
-   "publisher": "Département des littératures de langue française",
-   "prod": "Sens Public",
-   "prodnum": "Sens Public",
-   "diffnum": "Érudit",
-   "rights": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
-   "title": "test",
-   "subtitle": '',
    "typeArticle": [],
-   "authors": [
-   ],
-   "abstract": [
-   ],
-   "url_article_sp": '',
-   "id_sp": '',
    "translator": [
     {
      "forname": '',

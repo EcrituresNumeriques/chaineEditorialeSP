@@ -21,6 +21,11 @@ export class TextInput extends React.Component {
 
   handleTextChange(event) {
     this.props.updateState(event.target.value,this.props.target);
+    if(this.props.alias){
+      for(let i=0;i<this.props.alias.length;i++){
+        this.props.updateState(this.props.alias[i].prefix+event.target.value+this.props.alias[i].suffix,this.props.alias[i].target);
+      }
+    }
   }
 
   render() {
