@@ -22,7 +22,8 @@ export default class YamlEditor extends Component {
     this.state = {obj:_.get(props,'yaml',{}),misc:init.misc};
     this.updateState = this.updateState.bind(this);
     this.updateMisc = this.updateMisc.bind(this);
-    this.updateKeyword = this.updateKeyword.bind(this);
+    this.addKeyword = this.addKeyword.bind(this);
+    this.removeKeyword = this.removeKeyword.bind(this);
   }
 
   componentWillReceiveProps(nextProp){
@@ -45,7 +46,7 @@ export default class YamlEditor extends Component {
       this.setState((state)=>_.set(state, 'obj.'+target, value));
     }
   }
-  updateMisc(value,target,type){
+  updateMisc(value,target,type = undefined){
     //Update only the key changed, plus export the new state
       //console.log("changing key",target,value);
       this.setState((state)=>_.set(state, 'misc.'+target, value));
@@ -73,11 +74,20 @@ export default class YamlEditor extends Component {
         });
       }
   }
-  updateKeyword(value){
+  addKeyword(values){
     //Update only the key changed, plus export the new state
-      console.log("searching keyword",value);
-      this.setState((state)=>_.set(state, 'misc.'+target, value));
-      this.setState((state)=>_.set(state,'obj.controlledKeywords',state.misc.categories.filter((category)=>category.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;})));;
+      console.log("adding",this.state.misc.keyword_fr,this.state.misc.keyword_en);
+      this.setState(function(state){
+        state.obj.keywords_fr.push(this.state.misc.keyword_fr);
+        state.obj.keywords_en.push(this.state.misc.keyword_en);
+        state.misc.keyword_fr = "";
+        state.misc.keyword_en = "";
+        return state;
+      });
+  }
+  removeKeyword(index){
+    //Update only the key changed, plus export the new state
+      console.log("removing",index);
   }
 
 
@@ -95,7 +105,7 @@ export default class YamlEditor extends Component {
         <Authors state={this.state.obj} updateState={this.updateState} />
         <Reviewers state={this.state.obj} updateState={this.updateState} />
         <ControlledKeywords state={this.state.misc} updateMisc={this.updateMisc} />
-        <Keywords state={this.state.obj} updateState={this.updateState} />
+        <Keywords state={this.state} updateMisc={this.updateMisc} addKeyword={this.addKeyword} removeKeyword={this.removeKeyword} />
         <Rubriques state={this.state.misc} updateMisc={this.updateMisc} />
       </section>
     )

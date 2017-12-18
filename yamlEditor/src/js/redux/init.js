@@ -67,6 +67,8 @@ export let init = {
    "reviewers": [
    ],
    "bibliography": '',
+   "keywords_fr":[],
+   "keywords_en":[],
    "link-citations": true,
    "nocite": ''
  },
