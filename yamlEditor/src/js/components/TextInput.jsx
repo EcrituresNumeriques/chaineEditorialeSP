@@ -1,6 +1,5 @@
 import React from 'react'
 import _ from 'lodash'
-import { store } from '../redux/store.js'
 
 export class TextInput extends React.Component {
   constructor(props) {

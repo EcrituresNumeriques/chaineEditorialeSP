@@ -1,6 +1,5 @@
 import React from 'react'
 import _ from 'lodash'
-import { store } from '../redux/store.js'
 
 export class SelectInput extends React.Component {
   constructor(props) {

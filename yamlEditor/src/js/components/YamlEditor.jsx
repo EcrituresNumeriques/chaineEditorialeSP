@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { TextInput } from './TextInput.jsx';
-import { SelectInput } from './SelectInput.jsx';
 import { Resumes} from './Resumes.jsx';
 import { Authors } from './Authors.jsx';
 import { Dossier } from './Dossier.jsx';
 import { Reviewers } from './Reviewers.jsx';
-import { Collaborateurs} from './Collaborateurs.jsx';
-import { MotsClefs} from './MotsClefs.jsx';
 import { Date} from './Date.jsx';
 import { Rubriques} from './Rubriques.jsx';
 import { ControlledKeywords} from './ControlledKeywords.jsx';

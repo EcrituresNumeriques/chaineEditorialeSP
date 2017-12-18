@@ -1,5 +1,4 @@
 import { TextInput } from './TextInput.jsx';
-import { SelectInput } from './SelectInput.jsx';
 import React from 'react';
 import _ from 'lodash';
 
