@@ -11,13 +11,14 @@ import { Date} from './Date.jsx';
 import { Rubriques} from './Rubriques.jsx';
 import { Keywords} from './Keywords.jsx';
 import { Types} from './Types.jsx';
+import _ from 'lodash';
 require('./../../logo.png')
 
 
 export default class App extends Component {
   constructor(props){
     super(props);
-    this.state = props.yaml?props.yaml:{};
+    this.state = props.yaml || {};
     this.updateState = this.updateState.bind(this);
   }
 
@@ -37,7 +38,7 @@ export default class App extends Component {
     //Update only the key changed, plus export the new state
     else{
       //console.log("changing key",target,value);
-      this.setState({[target]:value});
+      this.setState((state)=>_.set(state, target, value));
     }
   }
 
