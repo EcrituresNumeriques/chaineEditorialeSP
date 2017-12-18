@@ -1,7 +1,7 @@
 import YAML from 'js-yaml';
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App.jsx';
+import YamlEditor from './components/YamlEditor.jsx';
 import _ from 'lodash';
 import {init} from './redux/init.js';
 
@@ -30,7 +30,7 @@ function YAMLupdate(){
 
 function renderApp(jsObj){
   render(
-      <App yaml={jsObj} exportChange={updateYAML}/>,
+      <YamlEditor yaml={jsObj} exportChange={updateYAML}/>,
     document.querySelector('.app'));
 }
 

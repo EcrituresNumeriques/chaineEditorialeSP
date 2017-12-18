@@ -16,7 +16,7 @@ import _ from 'lodash';
 require('./../../logo.png')
 
 
-export default class App extends Component {
+export default class YamlEditor extends Component {
   constructor(props){
     super(props);
     this.state = props.yaml || {};
