@@ -33,13 +33,13 @@ export let init = {
    ],
    "authors": [
    ],
-   "redacteurDossier": [
-   ],
    "dossier": [
     {
      "title": '',
      "id": ''
     }
+   ],
+   "redacteurDossier": [
    ],
    "typeArticle": [],
    "translator": [
