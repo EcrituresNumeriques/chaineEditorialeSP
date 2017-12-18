@@ -5,7 +5,7 @@ export function Keywords(props){
   let keywords_fr = _.get(props.state,"obj.keywords_fr",[]);
   let keywords_en = _.get(props.state,"obj.keywords_en",[]);
   let uncontrolledKeywords = [];
-  for(let i=0;i<keywords_fr.length && i<keywords_en.length;i++){
+  for(let i=0;i<keywords_fr.length || i<keywords_en.length;i++){
     uncontrolledKeywords.push({fr:_.get(keywords_fr,"["+i+"]",""),en:_.get(keywords_en,"["+i+"]","")});
   }
   return(

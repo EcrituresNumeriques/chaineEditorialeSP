@@ -78,6 +78,15 @@ export default class YamlEditor extends Component {
     //Update only the key changed, plus export the new state
       console.log("adding",this.state.misc.keyword_fr,this.state.misc.keyword_en);
       this.setState(function(state){
+        //Padd arrays in case they are not the same length
+        while(state.obj.keywords_en.length < state.obj.keywords_fr.length){
+          state.obj.keywords_en.push("");
+        }
+        while(state.obj.keywords_fr.length < state.obj.keywords_en.length){
+          state.obj.keywords_fr.push("");
+        }
+
+        //Add new keyword
         state.obj.keywords_fr.push(this.state.misc.keyword_fr);
         state.obj.keywords_en.push(this.state.misc.keyword_en);
         state.misc.keyword_fr = "";
