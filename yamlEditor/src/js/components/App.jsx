@@ -9,6 +9,7 @@ import { Collaborateurs} from './Collaborateurs.jsx';
 import { MotsClefs} from './MotsClefs.jsx';
 import { Date} from './Date.jsx';
 import { Rubriques} from './Rubriques.jsx';
+import { ControlledKeywords} from './ControlledKeywords.jsx';
 import { Keywords} from './Keywords.jsx';
 import { Types} from './Types.jsx';
 import _ from 'lodash';
@@ -54,6 +55,7 @@ export default class App extends Component {
         <Dossier state={this.state} updateState={this.updateState} />
         <Authors state={this.state} updateState={this.updateState} />
         <Reviewers state={this.state} updateState={this.updateState} />
+        <ControlledKeywords state={this.state} updateState={this.updateState} />
         <Keywords state={this.state} updateState={this.updateState} />
         <Rubriques state={this.state} updateState={this.updateState} />
       </section>

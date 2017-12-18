@@ -1,6 +1,5 @@
 import { TextInput } from './TextInput.jsx';
 import { SelectInput } from './SelectInput.jsx';
-import { store } from '../redux/store.js';
 import React from 'react';
 import _ from 'lodash';
 

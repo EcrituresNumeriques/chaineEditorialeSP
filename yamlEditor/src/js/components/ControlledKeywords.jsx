@@ -3,7 +3,7 @@ import { store } from '../redux/store.js'
 import React from 'react'
 import _ from 'lodash'
 
-export function Keywords(){
+export function ControlledKeywords(){
   let uncontrolledKeywords = _.get(store.getState().misc,"uncontrolledKeywords",[]);
   let categories = _.get(store.getState().misc,"categories",[]);
   let selected = categories.filter(function(category){
@@ -11,7 +11,11 @@ export function Keywords(){
   });
   return(
       <section className="group">
-        <h1><i className="fa fa-tag" aria-hidden="true"></i> Mots clés</h1>
+        <h1><i className="fa fa-tag" aria-hidden="true"></i> Mots clés Controllés</h1>
+        <datalist id="keywordsFR">
+          {categories.map((o,i)=>(<option key={"keywordsFR"+i} value={o.label}/>))}
+        </datalist>
+        {selected.map((o,i)=>(<Keyword key={"keywords"+i} index={i} object={o} controlled={true} />))}
         {uncontrolledKeywords.map((o,i)=>(<Keyword key={"keywords"+i} index={i} object={o} controlled={false} />))}
         <InputKeyword />
       </section>
@@ -77,8 +81,7 @@ class InputKeyword extends React.Component{
   render() {
     return(
       <div className="keywords">
-        <input type="text" id="kwFR" placeholder="mot clé" onBlur={this.checkValueFR.bind(this)}/>
-        <input type="text" id="kwEN" placeholder="Keyword" onBlur={this.checkValueFR.bind(this)}/>
+        <input type="text" id="kwFR" placeholder="mot clé" list="keywordsFR" onBlur={this.checkValueFR.bind(this)}/>
         <i className="fa fa-check validate" aria-hidden="true" data-id={this.props.index} onClick={this.addKeyword.bind(this)}></i>
       </div>
     )
