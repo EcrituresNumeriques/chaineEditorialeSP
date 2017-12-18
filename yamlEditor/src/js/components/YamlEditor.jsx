@@ -23,7 +23,6 @@ export default class YamlEditor extends Component {
     this.updateState = this.updateState.bind(this);
     this.updateMisc = this.updateMisc.bind(this);
     this.updateKeyword = this.updateKeyword.bind(this);
-    this.updateControlledKeyword = this.updateControlledKeyword.bind(this);
   }
 
   componentWillReceiveProps(nextProp){
@@ -73,13 +72,6 @@ export default class YamlEditor extends Component {
             return state;
         });
       }
-  }
-  updateControlledKeyword(value,target){
-    //Update only the key changed, plus export the new state
-      this.setState((state)=>_.set(state, 'misc.'+target, value));
-
-      //Update the state obj
-      //this.setState((state)=>_.set(state,'obj.controlledKeywords',state.misc.categories.filter((category)=>category.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;})));;
   }
   updateKeyword(value){
     //Update only the key changed, plus export the new state
