@@ -1,13 +1,9 @@
-import { store } from '../redux/store.js'
 import React from 'react'
 import _ from 'lodash'
 
-export function Keywords(){
-  let uncontrolledKeywords = _.get(store.getState().misc,"uncontrolledKeywords",[]);
-  let categories = _.get(store.getState().misc,"categories",[]);
-  let selected = categories.filter(function(category){
-    return category.selected === true;
-  });
+export function Keywords(props){
+  let keywords_fr = _.get(props.state,"keywords_fr",[]);
+  let keywords_en = _.get(props.state,"keywords_en",[]);
   return(
       <section className="group">
         <h1><i className="fa fa-tag" aria-hidden="true"></i> Mots clés</h1>
