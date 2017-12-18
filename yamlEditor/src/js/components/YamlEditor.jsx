@@ -66,6 +66,13 @@ export default class YamlEditor extends Component {
           return state;
         });
       }
+      else if (type=="removeControlled") {
+        console.log("removing",target,value);
+        this.setState(function(state){
+            state.obj.controlledKeywords = state.misc.categories.filter((c)=>c.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;});
+            return state;
+        });
+      }
   }
   updateControlledKeyword(value,target){
     //Update only the key changed, plus export the new state
