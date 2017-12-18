@@ -1,9 +1,8 @@
-import { CheckBoxInput } from './CheckBoxInput.jsx'
 import React from 'react'
 import _ from 'lodash'
 
 export function Rubriques(props){
-  let rubriques = _.get(props.state,"misc.rubriques",[]);
+  let rubriques = _.get(props.state,"rubriques",[]);
   return(
       <section className="group">
         <h1><i className="fa fa-check-square-o" aria-hidden="true"></i> Catégories</h1>
@@ -11,9 +10,12 @@ export function Rubriques(props){
       </section>
     )
   }
-
+  
   function Rubrique(props){
     return(
-        <CheckBoxInput target={"rubriques["+props.index+"].selected"} title={props.label} value={props.value} updateMisc={props.updateMisc}/>
+      <section className="reactForm">
+        <input type="checkbox" className="icheckbox" checked={props.value} onChange={(e)=>props.updateMisc(e.target.checked,"rubriques["+props.index+"].selected","rubriques")}/>
+        <label className="lcheckbox">{props.label}</label>
+      </section>
     )
   }

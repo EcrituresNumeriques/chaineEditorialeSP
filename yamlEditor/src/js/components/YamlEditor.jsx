@@ -22,6 +22,8 @@ export default class YamlEditor extends Component {
     this.state = {obj:_.get(props,'yaml',{}),misc:init.misc};
     this.updateState = this.updateState.bind(this);
     this.updateMisc = this.updateMisc.bind(this);
+    this.updateKeyword = this.updateKeyword.bind(this);
+    this.updateControlledKeyword = this.updateControlledKeyword.bind(this);
   }
 
   componentWillReceiveProps(nextProp){
@@ -36,6 +38,7 @@ export default class YamlEditor extends Component {
     //No target, update the whole state, don't export
     if(!target){
       this.setState({obj:value});
+      //Need to decompile rubriques/MotsClefs
     }
     //Update only the key changed, plus export the new state
     else{
@@ -51,7 +54,34 @@ export default class YamlEditor extends Component {
       if(type=="rubriques"){
         this.setState((state)=>_.set(state,'obj.typeArticle',state.misc.rubriques.filter((r)=>(r.selected)).map(r=>r.label)));
       }
+      else if(type=="controlledKeywords"){
+        //Check if a controlled keyword match the search
+        this.setState(function(state){
+          let toSet = state.misc.categories.filter((c)=>(c.label==value));
+          if(toSet.length > 0){
+            toSet.map(c=>c.selected=true);
+            state.misc.keywordSearch = "";
+            state.obj.controlledKeywords = state.misc.categories.filter((c)=>c.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;});
+          }
+          return state;
+        });
+      }
   }
+  updateControlledKeyword(value,target){
+    //Update only the key changed, plus export the new state
+      this.setState((state)=>_.set(state, 'misc.'+target, value));
+
+      //Update the state obj
+      //this.setState((state)=>_.set(state,'obj.controlledKeywords',state.misc.categories.filter((category)=>category.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;})));;
+  }
+  updateKeyword(value){
+    //Update only the key changed, plus export the new state
+      console.log("searching keyword",value);
+      this.setState((state)=>_.set(state, 'misc.'+target, value));
+      this.setState((state)=>_.set(state,'obj.controlledKeywords',state.misc.categories.filter((category)=>category.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;})));;
+  }
+
+
 
   render(){
     return(
@@ -65,9 +95,9 @@ export default class YamlEditor extends Component {
         <Dossier state={this.state.obj} updateState={this.updateState} />
         <Authors state={this.state.obj} updateState={this.updateState} />
         <Reviewers state={this.state.obj} updateState={this.updateState} />
-        <ControlledKeywords state={this.state.obj} updateState={this.updateState} />
+        <ControlledKeywords state={this.state.misc} updateMisc={this.updateMisc} />
         <Keywords state={this.state.obj} updateState={this.updateState} />
-        <Rubriques state={this.state} updateState={this.updateState} updateMisc={this.updateMisc} />
+        <Rubriques state={this.state.misc} updateMisc={this.updateMisc} />
       </section>
     )
   }
