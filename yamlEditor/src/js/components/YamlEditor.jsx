@@ -94,6 +94,11 @@ export default class YamlEditor extends Component {
   removeKeyword(index){
     //Update only the key changed, plus export the new state
       console.log("removing",index);
+      this.setState(function(state){
+        state.obj.keywords_fr.splice(index,1);
+        state.obj.keywords_en.splice(index,1);
+        return state;
+      });
   }
 
 
