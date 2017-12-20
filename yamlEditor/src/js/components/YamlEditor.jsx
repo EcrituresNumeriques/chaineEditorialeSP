@@ -36,6 +36,24 @@ export default class YamlEditor extends Component {
     if(!target){
       this.setState({obj:value});
       //Need to decompile rubriques/MotsClefs
+      this.setState(function(state){
+        //set all rubriques to not selected then select from yaml
+        state.misc.rubriques.map((r)=>(r.selected=false));
+        state.obj.typeArticle.map(function(r){
+          state.misc.rubriques.filter((o)=>(o.label==r)).map((o)=>(o.selected=true));
+          return r;
+        });
+        //Set all controlled keyword to not selected then select from yaml
+        state.misc.categories.map((c)=>(c.selected=false));
+        state.obj.controlledKeywords.map(c=>c.label).map(function(c){
+          state.misc.categories.filter((o)=>(o.label==c)).map((o)=>(o.selected=true));
+          return c;
+        });
+        return state;
+      });
+
+
+
     }
     //Update only the key changed, plus export the new state
     else{
@@ -54,21 +72,20 @@ export default class YamlEditor extends Component {
       else if(type=="controlledKeywords"){
         //Check if a controlled keyword match the search
         this.setState(function(state){
-          let toSet = state.misc.categories.filter((c)=>(c.label==value));
-          if(toSet.length > 0){
-            toSet.map(c=>c.selected=true);
-            state.misc.keywordSearch = "";
-            state.obj.controlledKeywords = state.misc.categories.filter((c)=>c.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;});
-          }
-          return state;
-        });
+            let toSet = state.misc.categories.filter((c)=>(c.label==value));
+            if(toSet.length > 0){
+              toSet.map(c=>c.selected=true);
+              state.misc.keywordSearch = "";
+              state.obj.controlledKeywords = state.misc.categories.filter((c)=>c.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;});
+            }
+            return state;
+          });
       }
       else if (type=="removeControlled") {
-        console.log("removing",target,value);
         this.setState(function(state){
             state.obj.controlledKeywords = state.misc.categories.filter((c)=>c.selected).map((o)=>(Object.assign({},o))).map(function(o){delete o.selected;return o;});
             return state;
-        });
+          });
       }
   }
   addKeyword(values){

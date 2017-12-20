@@ -88,7 +88,8 @@ function saveTextAsFile()
     let textToWrite = "---\n"+yaml.value+"\n---"
     let textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
 
-    let fileNameToSaveAs = _.get(store.getState().obj,"id_sp","default");
+    let jsObj = YAML.load(yaml.value, { schema: SEXY_SCHEMA });
+    let fileNameToSaveAs = _.get(jsObj,"id_sp","default");
     if(fileNameToSaveAs == ""){fileNameToSaveAs = "default"}
     fileNameToSaveAs += ".yaml";
 
