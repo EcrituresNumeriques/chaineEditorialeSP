@@ -6,7 +6,7 @@ export function ControlledKeywords(props){
   categories = categories.map((o)=>(Object.assign({},o))).map(function(c,i){c.id=i;return c;});
   return(
       <section className="group">
-        <h1><i className="fa fa-tag" aria-hidden="true"></i> Mots clés Controlés</h1>
+        <h1><i className="fa fa-tag" aria-hidden="true"></i> Mots clés Contrôlés</h1>
         <datalist id="keywordsFR">
           {categories.map((o,i)=>(<option key={"keywordsFR"+i} value={o.label}/>))}
         </datalist>
