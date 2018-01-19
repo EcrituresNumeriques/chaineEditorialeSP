@@ -3,7 +3,7 @@ import { rubriques } from './rubriques';
 export let init = {
   obj:{
    "id_sp": '',
-   "bibtex":'',
+   "bibliography": '',
    "title": "test",
    "subtitle": '',
    "year": '',
@@ -66,7 +66,6 @@ export let init = {
    ],
    "reviewers": [
    ],
-   "bibliography": '',
    "keywords_fr":[],
    "keywords_en":[],
    "link-citations": true,
