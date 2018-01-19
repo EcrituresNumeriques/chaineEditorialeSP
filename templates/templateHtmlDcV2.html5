@@ -294,15 +294,18 @@ $endif$
 
 <div class="keywords" vocab="http://purl.org/dc/terms/">
 $if(controlledKeywords)$
+<div class="$controlledKeywords.label$">
 $for(controlledKeywords)$
   <span property="subject" class="label">$controlledKeywords.label$</span>,
   <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
   <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
   <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>,
   $endfor$
+  </div>
   $endif$
 </div>
 </div>
+
 
 $body$
 $for(include-after)$
