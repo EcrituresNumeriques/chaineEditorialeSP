@@ -101,8 +101,8 @@ export default class YamlEditor extends Component {
         }
 
         //Add new keyword
-        state.obj.keywords_fr.push(this.state.misc.keyword_fr);
-        state.obj.keywords_en.push(this.state.misc.keyword_en);
+        state.obj.keywords_fr.push(this.state.misc.keyword_fr || "");
+        state.obj.keywords_en.push(this.state.misc.keyword_en || "");
         state.misc.keyword_fr = "";
         state.misc.keyword_en = "";
         return state;
@@ -123,7 +123,7 @@ export default class YamlEditor extends Component {
   render(){
     return(
       <section>
-        <TextInput target="id_sp" alias={[{target:'bibtex',prefix:'',suffix:'.bib'}]} title="Identifiant" placeholder="SPxxxx" state={this.state.obj} updateState={this.updateState} />
+        <TextInput target="id_sp" alias={[{target:'bibliography',prefix:'',suffix:'.bib'}]} title="Identifiant" placeholder="SPxxxx" state={this.state.obj} updateState={this.updateState} />
         <TextInput target="title" title="Titre" state={this.state.obj} updateState={this.updateState} />
         <TextInput target="subtitle" title="Sous-titre" state={this.state.obj} updateState={this.updateState} />
         <Date target="date" title="Date" state={this.state.obj} updateState={this.updateState} />

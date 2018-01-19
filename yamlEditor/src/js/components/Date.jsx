@@ -20,6 +20,10 @@ export class Date extends React.Component {
     return date.split("/").join("-");
   }
 
+  componentWillReceiveProps(nextProp){
+    this.setState({value:this.dateDecode(_.get(nextProp.state, this.props.target, ""))})
+  }
+
   handleTextChange(event) {
     let date = event.target.value.split("-");
     this.props.updateState(this.dateEncode(event.target.value),"date");
