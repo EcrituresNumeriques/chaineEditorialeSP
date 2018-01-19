@@ -38,12 +38,21 @@ $endif$
     <meta name="DC.language" scheme="RFC3066" content="$lang$" />
     <meta name="DC.type" content="journalArticle" />
 
+$if(director)$
+$for(director)$
+    <meta name="director" content="$director.forname$ $director.surname$" />
+    <meta name="DC.contributor.drt" content="$director.forname$ $director.surname$" />
+    <meta name="MARCREL.drt" content="$director.forname$ $director.surname$" />
+$endfor$
+$endif$
+
 $if(authors)$
 $for(authors)$
     <meta name="author" content="$for(authors)$$authors.forname$ $authors.surname$$sep$, $endfor$" />
-    <meta name="DC.creator" content="$authors.forname$ $authors.surname$" />
-   $endfor$
+    <meta name="DC.creator" content="$for(authors)$$authors.forname$ $authors.surname$$sep$, $endfor$" />
+$endfor$
 $endif$
+
 $if(abstract)$
 $for(abstract)$
     <meta name="description" xml:lang="$abstract.lang$" lang="$abstract.lang$" content="$abstract.text$" />
@@ -192,15 +201,6 @@ $endif$
 -->
 
 
-<!--Mots clés contrôlés-->
-
-$if(controlledKeywords)$
-$for(controlledKeywords)$
-<meta name="controlledKeyword" content="$controlledKeywords.label$" uriRameau="$controlledKeywords.uriRameau$" idRameau="$controlledKeywords.idRameau$" wikidata="$controlledKeywords.wikidata$" />
-$endfor$
-$endif$
-
-
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <style type="text/css">code{white-space: pre;}</style>
 $if(quotes)$
@@ -236,29 +236,37 @@ $endif$
 
 $if(authors)$
 $for(authors)$
+<div property="http://purl.org/dc/terms/creator">
 <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-author">
 <span property="familyName">$authors.surname$</span>
 <span property="firstName">$authors.forname$</span>
 <span property="openid">$authors.orcid$</span>
+</div>
 </div>
 $endfor$
 $endif$
 
 $if(director)$
 $for(director)$
-<div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-author">
+<div property="http://purl.org/dc/terms/contributor.drt">
+<div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-director">
 <span property="familyName">$director.surname$</span>
 <span property="firstName">$director.forname$</span>
 <span property="openid">$director.orcid$</span>
+</div>
+</div>
 $endfor$
 $endif$
 
 $if(redacteurDossier)$
 $for(redacteurDossier)$
-<div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-author">
+<div property="http://purl.org/dc/terms/contributor.edt">
+<div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-redactor">
 <span property="familyName">$redacteurDossier.surname$</span>
 <span property="firstName">$redacteurDossier.forname$</span>
 <span property="openid">$redacteurDossier.orcid$</span>
+</div>
+</div>
 $endfor$
 $endif$
 
@@ -281,8 +289,14 @@ $endif$
     <span property="publisher">$publisher$</span><br />
     <span property="issn">$issnnum$</span> ;<br />
   </span>
-</div>
 
+<div class="keywords" vocab="http://purl.org/dc/terms/">
+  <span property="subject" class="label">$controlledKeywords.label$</span>,
+  <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
+  <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
+  <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>,
+</div>
+</div>
 
 $body$
 $for(include-after)$
