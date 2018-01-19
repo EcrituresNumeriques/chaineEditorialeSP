@@ -48,8 +48,8 @@ $endif$
 
 $if(authors)$
 $for(authors)$
-    <meta name="author" content="$for(authors)$$authors.forname$ $authors.surname$$sep$, $endfor$" />
-    <meta name="DC.creator" content="$for(authors)$$authors.forname$ $authors.surname$$sep$, $endfor$" />
+    <meta name="author" content="$authors.forname$ $authors.surname$" />
+    <meta name="DC.creator" content="$authors.forname$ $authors.surname$" />
 $endfor$
 $endif$
 
@@ -92,6 +92,8 @@ $endif$
         <meta name="MARCREL.edt" content="$redacteurDossier.forname$ $redacteurDossier.surname$" />
     $endfor$
     $endif$
+
+
 
     $if(toc)$
     $for(toc)$
@@ -278,7 +280,7 @@ $endif$
   <span property="author">$authors.forname$ $authors.surname$</span><br />
   $endfor$
   $endif$
-      <div property="isPartOf" typeof="PublicationIssue" resource="#issue">
+      <div property="isPartOf" typeof="" resource="#issue">
     <span typeof="Periodical" resource="#periodical">
       <span property="name">$journal$</span>,
     </span>
@@ -291,16 +293,25 @@ $endif$
   </span>
 
 <div class="keywords" vocab="http://purl.org/dc/terms/">
+$if(controlledKeywords)$
+$for(controlledKeywords)$
+<div class="$controlledKeywords.label$">
   <span property="subject" class="label">$controlledKeywords.label$</span>,
   <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
   <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
   <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>,
+  </div>
+  $endfor$
+  $endif$
 </div>
 </div>
 
+<div class="article">
 $body$
 $for(include-after)$
 $include-after$
 $endfor$
+</div>
+
 </body>
 </html>
