@@ -285,8 +285,8 @@ $endif$
       <span property="name">$journal$</span>,
     </span>
     <span property="datePublished">$date$</span>,
-    $if(dossier.title)$
-    $for(dossier.title)$
+    $if(dossier)$
+    $for(dossier)$
     <span property="isPartOf" typeof="PublicationVolume" resource="#periodical">$dossier.title$</span>
     $endfor$
     $endif$
