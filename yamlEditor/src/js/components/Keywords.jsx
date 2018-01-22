@@ -2,11 +2,11 @@ import React from 'react'
 import _ from 'lodash'
 
 export function Keywords(props){
-  let keywords_fr = _.get(props.state,"obj.keywords_fr",[]);
-  let keywords_en = _.get(props.state,"obj.keywords_en",[]);
+  let keyword_fr = _.get(props.state,"obj.keyword_fr",[]);
+  let keyword_en = _.get(props.state,"obj.keyword_en",[]);
   let uncontrolledKeywords = [];
-  for(let i=0;i<keywords_fr.length || i<keywords_en.length;i++){
-    uncontrolledKeywords.push({fr:_.get(keywords_fr,"["+i+"]",""),en:_.get(keywords_en,"["+i+"]","")});
+  for(let i=0;i<keyword_fr.length || i<keyword_en.length;i++){
+    uncontrolledKeywords.push({fr:_.get(keyword_fr,"["+i+"]",""),en:_.get(keyword_en,"["+i+"]","")});
   }
   return(
       <section className="group">

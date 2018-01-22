@@ -4,7 +4,7 @@ export let init = {
   obj:{
    "id_sp": '',
    "bibliography": '',
-   "title": "test",
+   "title": "",
    "subtitle": '',
    "year": '',
    "month": '',
@@ -66,8 +66,8 @@ export let init = {
    ],
    "reviewers": [
    ],
-   "keywords_fr":[],
-   "keywords_en":[],
+   "keyword_fr":[],
+   "keyword_en":[],
    "link-citations": true,
    "nocite": ''
  },
