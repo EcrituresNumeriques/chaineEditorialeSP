@@ -303,7 +303,7 @@ $for(controlledKeywords)$
   <span property="subject" class="label">$controlledKeywords.label$</span>,
   <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
   <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
-  <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>,
+  <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>
   </div>
   $endfor$
   $endif$
