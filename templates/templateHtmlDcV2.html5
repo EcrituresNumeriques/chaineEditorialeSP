@@ -280,12 +280,16 @@ $endif$
   <span property="author">$authors.forname$ $authors.surname$</span><br />
   $endfor$
   $endif$
-      <div property="isPartOf" typeof="" resource="#issue">
+      <div property="isPartOf" typeof="PublicationIssue" resource="#issue">
     <span typeof="Periodical" resource="#periodical">
       <span property="name">$journal$</span>,
     </span>
     <span property="datePublished">$date$</span>,
-    <span property="isPartOf" typeof="PublicationVolume" resource="#periodical">$dossier$</span>
+    $if(dossier)$
+    $for(dossier)$
+    <span property="isPartOf" typeof="PublicationVolume" resource="#periodical">$dossier.title$</span>
+    $endfor$
+    $endif$
   </div>
   <span resource="#periodical">
     <span property="publisher">$publisher$</span><br />
