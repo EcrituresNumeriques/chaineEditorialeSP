@@ -93,16 +93,16 @@ export default class YamlEditor extends Component {
       console.log("adding",this.state.misc.keyword_fr,this.state.misc.keyword_en);
       this.setState(function(state){
         //Padd arrays in case they are not the same length
-        while(state.obj.keywords_en.length < state.obj.keywords_fr.length){
-          state.obj.keywords_en.push("");
+        while(state.obj.keyword_en.length < state.obj.keyword_fr.length){
+          state.obj.keyword_en.push("");
         }
-        while(state.obj.keywords_fr.length < state.obj.keywords_en.length){
-          state.obj.keywords_fr.push("");
+        while(state.obj.keyword_fr.length < state.obj.keyword_en.length){
+          state.obj.keyword_fr.push("");
         }
 
         //Add new keyword
-        state.obj.keywords_fr.push(this.state.misc.keyword_fr || "");
-        state.obj.keywords_en.push(this.state.misc.keyword_en || "");
+        state.obj.keyword_fr.push(this.state.misc.keyword_fr || "");
+        state.obj.keyword_en.push(this.state.misc.keyword_en || "");
         state.misc.keyword_fr = "";
         state.misc.keyword_en = "";
         return state;
@@ -112,8 +112,8 @@ export default class YamlEditor extends Component {
     //Update only the key changed, plus export the new state
       console.log("removing",index);
       this.setState(function(state){
-        state.obj.keywords_fr.splice(index,1);
-        state.obj.keywords_en.splice(index,1);
+        state.obj.keyword_fr.splice(index,1);
+        state.obj.keyword_en.splice(index,1);
         return state;
       });
   }

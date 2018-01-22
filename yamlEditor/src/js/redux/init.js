@@ -66,8 +66,8 @@ export let init = {
    ],
    "reviewers": [
    ],
-   "keywords_fr":[],
-   "keywords_en":[],
+   "keyword_fr":[],
+   "keyword_en":[],
    "link-citations": true,
    "nocite": ''
  },
