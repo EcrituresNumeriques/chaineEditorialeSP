@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:dc="http://purl.org/dc/terms/"
       xmlns:foaf="http://xmlns.com/foaf/0.1/"
-      version="XHTML+RDFa 1.0" $if(lang)$ xml:lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+      $if(lang)$ xml:lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
 
 <head>
      <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
@@ -14,7 +14,6 @@
      <link rel="schema.prism" href="http://prismstandard.org/namespaces/basic/2.0/"/>
 
      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     <meta http-equiv="Content-Style-Type" content="text/css" />
      <meta name="generator" content="pandoc templateHtmlEruditV2" />
 
 
@@ -25,23 +24,20 @@
      <meta name="DC.type" content="journalArticle" />
      <meta name="DC.title" content="$title$" />
      <meta name="DC.publisher" content="$publisher$" />
-     <meta name="DC.language" scheme="RFC3066" content="$lang$" />
-     <meta name="DC.date" scheme="W3CDTF" content="$date$" />
+     <meta name="DC.language" content="$lang$" />
+     <meta name="DC.date" content="$date$" />
      <meta name="DC.rights" content="$rights$" />
      <meta name="DC.source" content="$journal$" />
      <meta name="DC.relation.isPartOf" content="$dossier$" />
 
-  $if(lang)$
-     <meta http-equiv="Content-language" content="$lang$" />
-  $endif$
   $if(url_article_sp)$
      <meta name="url" content="$url_article_sp$" />
   $endif$
   $if(url_article_sp)$
-     <meta name="DC.identifier" scheme="URI" content="$url_article_sp$" />
+     <meta name="DC.identifier" content="$url_article_sp$" />
   $endif$
   $if(issnnum)$
-     <meta name="DC.identifier" scheme="ISSN" content="$issnnum$" />
+     <meta name="DC.identifier" content="$issnnum$" />
   $endif$
 
 <!--Utilisation de MARCREL pour spécifier le rôle du "contributeur" en Dublin core
@@ -163,16 +159,16 @@ Schema spécialisé pour les revues et journaux-->
 <!---RDFa pour ajout des métadonnées DC --------->
      <meta property="dc:format" content="text/html" />
   $if(url_article_sp)$
-     <meta property="dc:identifier" scheme="URI" content="$url_article_sp$" />
+     <meta property="dc:identifier" content="$url_article_sp$" />
   $endif$
   $if(issnnum)$
-     <meta property="dc:identifier" scheme="ISSN" content="$issnnum$" />
+     <meta property="dc:identifier" content="$issnnum$" />
   $endif$
      <meta property="dc:title" content="$title$" />
      <meta property="dc:publisher" content="$publisher$" />
-     <meta property="dc:language" scheme="RFC3066" content="$lang$" />
+     <meta property="dc:language" content="$lang$" />
      <meta property="dc:type" content="journalArticle" />
-     <meta property="dcterm:created" scheme="W3CDTF" content="$date$" />
+     <meta property="dcterm:created" content="$date$" />
      <meta property="dc:rights" content="$rights$" />
      <meta property="dc:relation.isPartOf" content="$dossier$" />
      <meta property="dc:source" content="$journal$" />
@@ -249,7 +245,7 @@ Schema spécialisé pour les revues et journaux-->
   $if(authors)$
   $for(authors)$
      <div property="http://purl.org/dc/terms/creator">
-      <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-author">
+      <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" class="foaf-author">
        <span property="familyName">$authors.surname$</span>
        <span property="firstName">$authors.forname$</span>
        <span property="openid">$authors.orcid$</span>
@@ -262,7 +258,7 @@ Schema spécialisé pour les revues et journaux-->
   $if(redacteurDossier)$
   $for(redacteurDossier)$
      <div property="http://purl.org/dc/terms/contributor.edt">
-      <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-redactor">
+      <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" class="foaf-redactor">
        <span property="familyName">$redacteurDossier.surname$</span>
        <span property="firstName">$redacteurDossier.forname$</span>
        <span property="openid">$redacteurDossier.orcid$</span>
@@ -275,7 +271,7 @@ Schema spécialisé pour les revues et journaux-->
   $if(director)$
   $for(director)$
      <div property="http://purl.org/dc/terms/contributor.drt">
-      <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" id="foaf-director">
+      <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" class="foaf-director">
        <span property="familyName">$director.surname$</span>
        <span property="firstName">$director.forname$</span>
        <span property="openid">$director.orcid$</span>
