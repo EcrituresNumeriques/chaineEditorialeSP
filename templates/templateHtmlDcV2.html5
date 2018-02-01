@@ -17,7 +17,7 @@
      <meta name="generator" content="pandoc templateHtmlEruditV2" />
 
 
-<!--Métadonnées Dublin Core -->
+<!--Metadonnees Dublin Core -->
 
      <meta name="DC.type" content="Text" />
      <meta name="DC.format" content="text/html" />
@@ -40,7 +40,7 @@
      <meta name="DC.identifier" content="$issnnum$" />
   $endif$
 
-<!--Utilisation de MARCREL pour spécifier le rôle du "contributeur" en Dublin core
+<!--Utilisation de MARCREL pour specifier le role du "contributeur" en Dublin core
     drt = director -->
   $if(director)$
   $for(director)$
@@ -58,7 +58,7 @@
   $endfor$
   $endif$
 
-<!--Résumés -->
+<!--Resumes -->
   $if(abstract)$
   $for(abstract)$
      <meta name="description" xml:lang="$abstract.lang$" lang="$abstract.lang$" content="$abstract.text$" />
@@ -66,7 +66,7 @@
   $endfor$
   $endif$
 
-<!--Mots clés auteurs -->
+<!--Mots cles auteurs -->
   $if(keyword_fr)$
      <meta name="keywords" xml:lang="fr" lang="fr" content="$for(keyword_fr)$$keyword_fr$$sep$, $endfor$" />
   $endif$
@@ -75,14 +75,14 @@
      <meta name="keywords" xml:lang="en" lang="en" content="$for(keyword_en)$$keyword_en$$sep$, $endfor$" />
   $endif$
 
-<!--  Mots clés éditeurs -->
+<!--  Mots cles editeurs -->
   $if(controlledKeywords)$
   $for(controlledKeywords)$
      <meta name="DC.subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
   $endfor$
   $endif$
 
-<!--  traducteur avec spécification MARCREL -->
+<!--  traducteur avec specification MARCREL -->
   $if(translator)$
   $for(translator)$
      <meta name="DC.contributor.trl" content="$translator.forname$ $translator.surname$" />
@@ -90,7 +90,7 @@
   $endfor$
   $endif$
 
-<!--  rédacteur avec spécification MARCREL -->
+<!--  redacteur avec specification MARCREL -->
   $if(redacteurDossier)$
   $for(redacteurDossier)$
      <meta name="DC.contributor.edt" content="$redacteurDossier.forname$ $redacteurDossier.surname$" />
@@ -117,7 +117,7 @@
      <meta name="citation_online_date" content="$date$" />
      <meta name="citation_issn" content="$issnnum$" />
      <meta name="citation_isbn" content="$issnnum$" />
-<!--si numéro de dossier existe
+<!--si numero de dossier existe
     <meta name="citation_issue" content="$dossiernum$" />
 -->
      <meta name="citation_language" content="$lang$" />
@@ -143,7 +143,7 @@
 
 
 <!--PRISM schema - Publishing Requirements for Industry Standard Metadata
-Schema spécialisé pour les revues et journaux-->
+Schema specialise pour les revues et journaux-->
      <meta name="prism.url" content="$url_article_sp$"/>
      <meta name="prism.publicationName" content="$journal$"/>
      <meta name="prism.corporateEntity" content="$publisher$"/>
@@ -156,7 +156,7 @@ Schema spécialisé pour les revues et journaux-->
      <meta name="prism.teaser" content="$abstract.fr$"/>
 
 
-<!---RDFa pour ajout des métadonnées DC --------->
+<!--RDFa pour ajout des metadonnees DC-->
      <meta property="dc:format" content="text/html" />
   $if(url_article_sp)$
      <meta property="dc:identifier" content="$url_article_sp$" />
@@ -189,7 +189,7 @@ Schema spécialisé pour les revues et journaux-->
   $endfor$
   $endif$
 
-<!-- Si on veut rajouter les dates de soumission et acceptation des articles (à rajouter d'abord dans le yaml)
+<!-- Si on veut rajouter les dates de soumission et acceptation des articles (a rajouter d'abord dans le yaml)
 
   $if(dateSubmitted)$
   $for(dateSubmitted)$
@@ -204,12 +204,12 @@ Schema spécialisé pour les revues et journaux-->
   $endif$
 -->
 
-<!---Fin des métadonnées dans le Head----->
+<!--Fin des metadonnees dans le Head-->
 
-<!---Balise Title pour affichage titre dans le navigateur----->
+<!--Balise Title pour affichage titre dans le navigateur-->
      <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
 
-<!---style et lien vers CSS--->
+<!--style et lien vers CSS-->
      <style type="text/css">code{white-space: pre;}</style>
   $if(quotes)$
      <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
@@ -230,7 +230,7 @@ Schema spécialisé pour les revues et journaux-->
   $endfor$
 </head>
 
-<!---corps du document--->
+<!--corps du document-->
 <body>
   $for(include-before)$
   $include-before$
@@ -240,8 +240,11 @@ Schema spécialisé pour les revues et journaux-->
   $toc$
      </div>
   $endif$
+  
+ <!--indexations FOAF-->
 
-<!---indexation FOAF pour auteur de l'article--->
+<div class="indexations-foaf">
+<!--indexation FOAF pour auteur de l'article-->
   $if(authors)$
   $for(authors)$
      <div property="http://purl.org/dc/terms/creator">
@@ -254,7 +257,7 @@ Schema spécialisé pour les revues et journaux-->
   $endfor$
   $endif$
 
-<!---indexation FOAF pour rédacteur du dossier--->
+<!--indexation FOAF pour redacteur du dossier-->
   $if(redacteurDossier)$
   $for(redacteurDossier)$
      <div property="http://purl.org/dc/terms/contributor.edt">
@@ -267,7 +270,7 @@ Schema spécialisé pour les revues et journaux-->
   $endfor$
   $endif$
 
-<!---indexation FOAF pour directeur de la revue--->
+<!--indexation FOAF pour directeur de la revue-->
   $if(director)$
   $for(director)$
      <div property="http://purl.org/dc/terms/contributor.drt">
@@ -279,42 +282,42 @@ Schema spécialisé pour les revues et journaux-->
      </div>
   $endfor$
   $endif$
+</div>
 
-
-<!---Intégration schema "ScholarlyArticle"--->
+<!--Integration schema "ScholarlyArticle"-->
      <div vocab="http://schema.org/" typeof="ScholarlyArticle" resource="#article" id="schema-scholarly-article">
 
        <span property="name">$title$</span><br />
 
-<!---Indexation auteur de l'article--->
+<!--Indexation auteur de l'article-->
   $if(authors)$
   $for(authors)$
        <span property="author">$authors.forname$ $authors.surname$</span><br />
   $endfor$
   $endif$
 
-<!---Indexation éditeur--->
+<!--Indexation editeur-->
        <span resource="#periodical">
          <span property="publisher">$publisher$</span><br />
          <span property="issn">$issnnum$</span> ;<br />
        </span>
 
-<!---Indexation revue--->
+<!--Indexation revue-->
        <div property="isPartOf" typeof="PublicationIssue" resource="#issue">
          <span typeof="Periodical" resource="#periodical">
          <span property="name">$journal$</span>,
          </span>
          <span property="datePublished">$date$</span>,
 
-<!---Indexation dossier--->
+<!--Indexation dossier-->
   $if(dossier)$
   $for(dossier)$
-         <span property="isPartOf" typeof="PublicationVolume" resource="#periodical">$dossier.title$</span>
+          <span property="isPartOf" typeof="PublicationVolume" resource="#periodical" class="titre_dossier">$dossier.title$</span>
   $endfor$
   $endif$
        </div>
 
-<!---Indexation mots clés contrôlés--->
+<!--Indexation mots cles controles-->
        <div class="keywords" vocab="http://purl.org/dc/terms/">
   $if(controlledKeywords)$
   $for(controlledKeywords)$
@@ -330,7 +333,7 @@ Schema spécialisé pour les revues et journaux-->
      </div>
 
 
-<!---Corps de l'article--->
+<!--Corps de l'article-->
 <div class="article">
   $body$
   $for(include-after)$
