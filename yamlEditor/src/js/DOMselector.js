@@ -85,13 +85,14 @@ function destroyClickedElement(event)
 }
 function saveTextAsFile()
 {
+    console.log("click");
     let textToWrite = "---\n"+yaml.value+"\n---"
     let textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
-
     let jsObj = YAML.load(yaml.value, { schema: SEXY_SCHEMA });
     let fileNameToSaveAs = _.get(jsObj,"id_sp","default");
     if(fileNameToSaveAs == ""){fileNameToSaveAs = "default"}
     fileNameToSaveAs += ".yaml";
+    console.log(jsObj,fileNameToSaveAs);
 
     let downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
@@ -100,16 +101,21 @@ function saveTextAsFile()
     {
         // Chrome allows the link to be clicked
         // without actually adding it to the DOM.
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-    }
-    else
-    {
+        //downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+
         // Firefox requires the link to be added to the DOM
         // before it can be clicked.
+
+        //add to DOM + download
         downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
         downloadLink.onclick = destroyClickedElement;
         downloadLink.style.display = "none";
         document.body.appendChild(downloadLink);
+    }
+    else
+    {
+
+        console.log("no download");
     }
 
     downloadLink.click();

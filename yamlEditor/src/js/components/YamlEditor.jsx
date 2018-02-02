@@ -45,6 +45,7 @@ export default class YamlEditor extends Component {
         });
         //Set all controlled keyword to not selected then select from yaml
         state.misc.categories.map((c)=>(c.selected=false));
+        if(!state.obj.controlledKeywords){state.obj.controlledKeywords = []}
         state.obj.controlledKeywords.map(c=>c.label).map(function(c){
           state.misc.categories.filter((o)=>(o.label==c)).map((o)=>(o.selected=true));
           return c;

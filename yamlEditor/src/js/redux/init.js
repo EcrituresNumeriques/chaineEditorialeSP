@@ -68,6 +68,7 @@ export let init = {
    ],
    "keyword_fr":[],
    "keyword_en":[],
+   "controlledKeywords":[],
    "link-citations": true,
    "nocite": ''
  },
