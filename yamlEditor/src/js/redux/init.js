@@ -35,7 +35,7 @@ export let init = {
    ],
    "dossier": [
     {
-     "title": '',
+     "title": 'Varia',
      "id": ''
     }
    ],
