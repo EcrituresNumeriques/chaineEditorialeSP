@@ -4,6 +4,8 @@ import _ from 'lodash'
 export function Keywords(props){
   let keyword_fr = _.get(props.state,"obj.keyword_fr",[]);
   let keyword_en = _.get(props.state,"obj.keyword_en",[]);
+  if(!Array.isArray(keyword_en)){keyword_en = keyword_en.split(',');props.updateState(keyword_en,'keyword_en')}
+  if(!Array.isArray(keyword_fr)){keyword_fr = keyword_fr.split(',');props.updateState(keyword_fr,'keyword_fr')}
   let uncontrolledKeywords = [];
   for(let i=0;i<keyword_fr.length || i<keyword_en.length;i++){
     uncontrolledKeywords.push({fr:_.get(keyword_fr,"["+i+"]",""),en:_.get(keyword_en,"["+i+"]","")});

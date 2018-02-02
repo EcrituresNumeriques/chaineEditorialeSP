@@ -134,7 +134,7 @@ export default class YamlEditor extends Component {
         <Authors state={this.state.obj} updateState={this.updateState} />
         <Reviewers state={this.state.obj} updateState={this.updateState} />
         <ControlledKeywords state={this.state.misc} updateMisc={this.updateMisc} />
-        <Keywords state={this.state} updateMisc={this.updateMisc} addKeyword={this.addKeyword} removeKeyword={this.removeKeyword} />
+        <Keywords state={this.state} updateMisc={this.updateMisc} addKeyword={this.addKeyword} removeKeyword={this.removeKeyword} updateState={this.updateState}/>
         <Rubriques state={this.state.misc} updateMisc={this.updateMisc} />
       </section>
     )
