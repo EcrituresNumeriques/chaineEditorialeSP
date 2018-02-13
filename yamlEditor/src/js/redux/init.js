@@ -66,8 +66,8 @@ export let init = {
    ],
    "reviewers": [
    ],
-   "keyword_fr":[],
-   "keyword_en":[],
+   "keyword_fr":'',
+   "keyword_en":'',
    "controlledKeywords":[],
    "link-citations": true,
    "nocite": ''
@@ -75,6 +75,8 @@ export let init = {
  misc:{
    rubriques:[...[],...rubriques],
    categories:[...[],...categories],
-   uncontrolledKeywords:[]
+   uncontrolledKeywords:[],
+   "keywords_fr":[],
+   "keywords_en":[],
  }
 };
