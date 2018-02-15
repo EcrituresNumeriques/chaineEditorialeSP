@@ -5,10 +5,10 @@ export function Keywords(props){
   let keyword_fr = _.get(props.state,"obj.keyword_fr",'');
   let keyword_en = _.get(props.state,"obj.keyword_en",'');
 
-  if(!Array.isArray(keyword_en)){keyword_en = keyword_en == '' ? []:keyword_en.split(',')}
-  else{props.updateState(keyword_en.join(','),'keyword_en')}
-  if(!Array.isArray(keyword_fr)){keyword_fr = keyword_fr == '' ? []:keyword_fr.split(',')}
-  else{props.updateState(keyword_en.join(','),'keyword_fr')}
+  if(!Array.isArray(keyword_en)){keyword_en = keyword_en == '' ? []:keyword_en.split(', ')}
+  else{props.updateState(keyword_en.join(', '),'keyword_en')}
+  if(!Array.isArray(keyword_fr)){keyword_fr = keyword_fr == '' ? []:keyword_fr.split(', ')}
+  else{props.updateState(keyword_en.join(', '),'keyword_fr')}
 
   //If imported, add in misc state
   if(props.state.misc.keywords_fr.length != keyword_fr.length){props.updateMisc(keyword_fr,'keywords_fr');}

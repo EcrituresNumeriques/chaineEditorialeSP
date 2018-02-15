@@ -90,8 +90,8 @@ export default class YamlEditor extends Component {
       }
       else if (type=='uncontrolledKeywords'){
         this.setState(function(state){
-          state.obj.keyword_fr = state.misc.keywords_fr.join(',');
-          state.obj.keyword_en = state.misc.keywords_en.join(',');
+          state.obj.keyword_fr = state.misc.keywords_fr.join(', ');
+          state.obj.keyword_en = state.misc.keywords_en.join(', ');
           return state;
         });
       }
@@ -111,8 +111,8 @@ export default class YamlEditor extends Component {
         //Add new keyword
         state.misc.keywords_fr.push(this.state.misc.keyword_fr || "");
         state.misc.keywords_en.push(this.state.misc.keyword_en || "");
-        state.obj.keyword_fr = state.misc.keywords_fr.join(',');
-        state.obj.keyword_en = state.misc.keywords_en.join(',');
+        state.obj.keyword_fr = state.misc.keywords_fr.join(', ');
+        state.obj.keyword_en = state.misc.keywords_en.join(', ');
         state.misc.keyword_fr = "";
         state.misc.keyword_en = "";
         return state;
@@ -124,8 +124,8 @@ export default class YamlEditor extends Component {
       this.setState(function(state){
         state.misc.keywords_fr.splice(index,1);
         state.misc.keywords_en.splice(index,1);
-        state.obj.keyword_fr = state.misc.keywords_fr.join(',');
-        state.obj.keyword_en = state.misc.keywords_en.join(',');
+        state.obj.keyword_fr = state.misc.keywords_fr.join(', ');
+        state.obj.keyword_en = state.misc.keywords_en.join(', ');
         return state;
       });
   }
