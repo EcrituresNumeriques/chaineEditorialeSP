@@ -1,5 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
+const removeMd = require('remove-markdown');
 
 export class TextInput extends React.Component {
   constructor(props) {
@@ -22,7 +23,9 @@ export class TextInput extends React.Component {
     this.props.updateState(event.target.value,this.props.target);
     if(this.props.alias){
       for(let i=0;i<this.props.alias.length;i++){
-        this.props.updateState(this.props.alias[i].prefix+event.target.value+this.props.alias[i].suffix,this.props.alias[i].target);
+        let value = event.target.value
+        if(this.props.alias[i].filterMD){value = removeMd(value)}
+        this.props.updateState(this.props.alias[i].prefix+value+this.props.alias[i].suffix,this.props.alias[i].target);
       }
     }
   }

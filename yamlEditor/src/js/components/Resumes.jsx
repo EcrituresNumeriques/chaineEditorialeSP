@@ -18,7 +18,7 @@ export function Resumes(props){
 function Resume(props){
   return(
     <section className="group">
-      <TextInput target={"abstract["+props.index+"].text"} title="Résumé" element="textArea"  state={props.state} updateState={props.updateState}/>
+      <TextInput target={"abstract["+props.index+"].text_f"} alias={[{target:"abstract["+props.index+"].text",prefix:'',suffix:'',filterMD:true}]} title="Résumé" element="textArea"  state={props.state} updateState={props.updateState}/>
       <SelectInput target={"abstract["+props.index+"].lang"} title="Language" placeholder="Choisir la langue du résumé" options={['fr','en','it']}  state={props.state} updateState={props.updateState}/>
     </section>
   )

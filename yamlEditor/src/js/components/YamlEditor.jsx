@@ -136,8 +136,8 @@ export default class YamlEditor extends Component {
     return(
       <section>
         <TextInput target="id_sp" alias={[{target:'bibliography',prefix:'',suffix:'.bib'}]} title="Identifiant" placeholder="SPxxxx" state={this.state.obj} updateState={this.updateState} />
-        <TextInput target="title" title="Titre" state={this.state.obj} updateState={this.updateState} />
-        <TextInput target="subtitle" title="Sous-titre" state={this.state.obj} updateState={this.updateState} />
+        <TextInput target="title_f" alias={[{target:'title',prefix:'',suffix:'',filterMD:true}]} title="Titre" state={this.state.obj} updateState={this.updateState} />
+        <TextInput target="subtitle_f" alias={[{target:'subtitle',prefix:'',suffix:'',filterMD:true}]} title="Sous-titre" state={this.state.obj} updateState={this.updateState} />
         <Date target="date" title="Date" state={this.state.obj} updateState={this.updateState} />
         <TextInput target="url_article_sp" title="URL sens public" placeholder="http://sens-public.org/articleXXXX.html" state={this.state.obj} updateState={this.updateState} />
         <Resumes state={this.state.obj} updateState={this.updateState} />

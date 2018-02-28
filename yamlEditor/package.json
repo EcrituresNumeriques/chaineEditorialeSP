@@ -54,5 +54,7 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "remove-markdown": "^0.2.2"
+  }
 }
