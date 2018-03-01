@@ -2,21 +2,21 @@ import React from 'react'
 import _ from 'lodash'
 
 export function Keywords(props){
-  let keyword_fr = _.get(props.state,"obj.keyword_fr",'');
-  let keyword_en = _.get(props.state,"obj.keyword_en",'');
+  let keyword_fr_f = _.get(props.state,"obj.keyword_fr_f",'');
+  let keyword_en_f = _.get(props.state,"obj.keyword_en_f",'');
 
-  if(!Array.isArray(keyword_en)){keyword_en = keyword_en == '' ? []:keyword_en.split(', ')}
-  else{props.updateState(keyword_en.join(', '),'keyword_en')}
-  if(!Array.isArray(keyword_fr)){keyword_fr = keyword_fr == '' ? []:keyword_fr.split(', ')}
-  else{props.updateState(keyword_en.join(', '),'keyword_fr')}
+  if(!Array.isArray(keyword_en_f)){keyword_en_f = keyword_en_f == '' ? []:keyword_en_f.split(', ')}
+  else{props.updateState(keyword_en_f.join(', '),'keyword_en_f')}
+  if(!Array.isArray(keyword_fr_f)){keyword_fr_f = keyword_fr_f == '' ? []:keyword_fr_f.split(', ')}
+  else{props.updateState(keyword_en_f.join(', '),'keyword_fr_f')}
 
   //If imported, add in misc state
-  if(props.state.misc.keywords_fr.length != keyword_fr.length){props.updateMisc(keyword_fr,'keywords_fr');}
-  if(props.state.misc.keywords_en.length != keyword_en.length){props.updateMisc(keyword_en,'keywords_en');}
+  if(props.state.misc.keywords_fr.length != keyword_fr_f.length){props.updateMisc(keyword_fr_f,'keywords_fr');}
+  if(props.state.misc.keywords_en.length != keyword_en_f.length){props.updateMisc(keyword_en_f,'keywords_en');}
 
   let uncontrolledKeywords = [];
-  for(let i=0;i<keyword_fr.length || i<keyword_en.length;i++){
-    uncontrolledKeywords.push({fr:_.get(keyword_fr,"["+i+"]",""),en:_.get(keyword_en,"["+i+"]","")});
+  for(let i=0;i<keyword_fr_f.length || i<keyword_en_f.length;i++){
+    uncontrolledKeywords.push({fr:_.get(keyword_fr_f,"["+i+"]",""),en:_.get(keyword_en_f,"["+i+"]","")});
   }
   return(
       <section className="group">
@@ -43,8 +43,8 @@ export function Keywords(props){
 function InputKeyword(props){
     return(
       <div className="keywords">
-        <input type="text" id="kwFR" placeholder="mot clé" value={_.get(props.state,"keyword_fr","")} onInput={(e)=>props.updateMisc(e.target.value,'keyword_fr')}/>
-        <input type="text" id="kwEN" placeholder="Keyword" value={_.get(props.state,"keyword_en","")} onInput={(e)=>props.updateMisc(e.target.value,'keyword_en')}/>
+        <input type="text" id="kwFR" placeholder="mot clé" value={_.get(props.state,"keyword_fr_f","")} onInput={(e)=>props.updateMisc(e.target.value,'keyword_fr_f')}/>
+        <input type="text" id="kwEN" placeholder="Keyword" value={_.get(props.state,"keyword_en_f","")} onInput={(e)=>props.updateMisc(e.target.value,'keyword_en_f')}/>
         <i className="fa fa-check validate" aria-hidden="true" onClick={()=>props.addKeyword()}></i>
       </div>
     )

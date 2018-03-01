@@ -68,6 +68,8 @@ export let init = {
    ],
    "reviewers": [
    ],
+   "keyword_fr_f":'',
+   "keyword_en_f":'',
    "keyword_fr":'',
    "keyword_en":'',
    "controlledKeywords":[],
