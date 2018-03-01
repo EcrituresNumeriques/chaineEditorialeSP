@@ -4,7 +4,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{}
-\chead{$title$}
+\chead{$title_f$}
 \rhead{}
 \lfoot{}
 \cfoot{\thepage}
@@ -218,12 +218,12 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
-$if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$if(title_f)$
+\title{$title_f$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
-$if(subtitle)$
+$if(subtitle_f)$
 \providecommand{\subtitle}[1]{}
-\subtitle{$subtitle$}
+\subtitle{$subtitle_f$}
 $endif$
 $if(authors)$
 \author{$for(authors)$$authors.forname$ $authors.surname$$sep$ \and $endfor$}
@@ -240,9 +240,9 @@ $endif$
 \begin{center}
 \includegraphics[width=50mm]{media/logo.png}\\
 \vspace*{1cm}
-\Huge $title$\\
-$if(subtitle)$
-\vspace*{0.5cm}\huge $subtitle$\\
+\Huge $title_f$\\
+$if(subtitle_f)$
+\vspace*{0.5cm}\huge $subtitle_f$\\
 $endif$
 \vspace*{1cm} \LARGE $if(authors)$
 $for(authors)$$authors.forname$ $authors.surname$$sep$,  $endfor$
@@ -272,23 +272,23 @@ $for(abstract)$
 
 \begin{abstract}
 
-$abstract.text$
+$abstract.text_f$
 \end{abstract}
 
 $endfor$
 $endif$
 
 \thispagestyle{empty}
-$if(keyword_fr)$
+$if(keyword_fr_f)$
 \textbf{Mots-clés}:
-$keyword_fr$
+$keyword_fr_f$
 $endif$
 
 
 \thispagestyle{empty}
-$if(keyword_en)$
+$if(keyword_en_f)$
 \textbf{Keywords}:
-$keyword_en$
+$keyword_en_f$
 $endif$
 
 

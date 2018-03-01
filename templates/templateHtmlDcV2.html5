@@ -22,6 +22,7 @@
      <meta name="DC.type" content="Text" />
      <meta name="DC.format" content="text/html" />
      <meta name="DC.type" content="journalArticle" />
+     <meta name="DC.type" class="typeArticle" content="$typeArticle$" />
      <meta name="DC.title" content="$title$" />
      <meta name="DC.publisher" content="$publisher$" />
      <meta name="DC.language" content="$lang$" />
@@ -312,7 +313,7 @@ Schema specialise pour les revues et journaux-->
 <!--Indexation dossier-->
   $if(dossier)$
   $for(dossier)$
-          <span property="isPartOf" typeof="PublicationVolume" resource="#periodical" class="titre_dossier">$dossier.title$</span>
+          <span property="isPartOf" typeof="PublicationVolume" resource="#periodical" class="titreDossier">$dossier.title$</span>
   $endfor$
   $endif$
        </div>
