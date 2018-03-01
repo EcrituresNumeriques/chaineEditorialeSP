@@ -11,6 +11,7 @@ import { Keywords} from './Keywords.jsx';
 import _ from 'lodash';
 import {init} from '../redux/init.js';
 require('./../../logo.png')
+const removeMd = require('remove-markdown');
 
 
 export default class YamlEditor extends Component {
@@ -90,15 +91,17 @@ export default class YamlEditor extends Component {
       }
       else if (type=='uncontrolledKeywords'){
         this.setState(function(state){
-          state.obj.keyword_fr = state.misc.keywords_fr.join(', ');
-          state.obj.keyword_en = state.misc.keywords_en.join(', ');
+          state.obj.keyword_fr_f = state.misc.keywords_fr.join(', ');
+          state.obj.keyword_en_f = state.misc.keywords_en.join(', ');
+          state.obj.keyword_fr = removeMd(state.misc.keywords_fr.join(', '));
+          state.obj.keyword_en = removeMd(state.misc.keywords_en.join(', '));
           return state;
         });
       }
   }
   addKeyword(values){
     //Update only the key changed, plus export the new state
-      console.log("adding",this.state.misc.keyword_fr,this.state.misc.keyword_en);
+      console.log("adding",this.state.misc.keyword_fr_f,this.state.misc.keyword_en_f);
       this.setState(function(state){
         //Padd arrays in case they are not the same length
         while(state.misc.keywords_en.length < state.misc.keywords_fr.length){
@@ -109,12 +112,14 @@ export default class YamlEditor extends Component {
         }
 
         //Add new keyword
-        state.misc.keywords_fr.push(this.state.misc.keyword_fr || "");
-        state.misc.keywords_en.push(this.state.misc.keyword_en || "");
-        state.obj.keyword_fr = state.misc.keywords_fr.join(', ');
-        state.obj.keyword_en = state.misc.keywords_en.join(', ');
-        state.misc.keyword_fr = "";
-        state.misc.keyword_en = "";
+        state.misc.keywords_fr.push(this.state.misc.keyword_fr_f || "");
+        state.misc.keywords_en.push(this.state.misc.keyword_en_f || "");
+        state.obj.keyword_fr_f = state.misc.keywords_fr.join(', ');
+        state.obj.keyword_en_f = state.misc.keywords_en.join(', ');
+        state.obj.keyword_fr = removeMd(state.misc.keywords_fr.join(', '));
+        state.obj.keyword_en = removeMd(state.misc.keywords_en.join(', '));
+        state.misc.keyword_fr_f = "";
+        state.misc.keyword_en_f = "";
         return state;
       });
   }
@@ -124,8 +129,10 @@ export default class YamlEditor extends Component {
       this.setState(function(state){
         state.misc.keywords_fr.splice(index,1);
         state.misc.keywords_en.splice(index,1);
-        state.obj.keyword_fr = state.misc.keywords_fr.join(', ');
-        state.obj.keyword_en = state.misc.keywords_en.join(', ');
+        state.obj.keyword_fr_f = state.misc.keywords_fr.join(', ');
+        state.obj.keyword_en_f = state.misc.keywords_en.join(', ');
+        state.obj.keyword_fr = removeMd(state.misc.keywords_fr.join(', '));
+        state.obj.keyword_en = removeMd(state.misc.keywords_en.join(', '));
         return state;
       });
   }

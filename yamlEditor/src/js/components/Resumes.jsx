@@ -10,7 +10,7 @@ export function Resumes(props){
     <section>
       <h1><i className="fa fa-file-text-o" aria-hidden="true"></i> Résumés</h1>
       {resumes.map((o,i)=>(<Resume key={i} index={i} state={props.state} updateState={props.updateState}/>))}
-      <p className="addToArray" onClick={function(){props.updateState({"lang":'',"text":''},"abstract["+targetNewResume+"]")}}><i className="fa fa-plus" aria-hidden="true"></i> Ajouter un résumé dans une autre langue</p>
+      <p className="addToArray" onClick={function(){props.updateState({"lang":'',"text":'',"text_f":''},"abstract["+targetNewResume+"]")}}><i className="fa fa-plus" aria-hidden="true"></i> Ajouter un résumé dans une autre langue</p>
     </section>
   )
 }
