@@ -1,6 +1,4 @@
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"
-[<!ENTITY % Ruby.common.attlists "IGNORE" >]>
- -->
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:dc="http://purl.org/dc/terms/"
@@ -24,9 +22,13 @@
      <meta name="DC.type" content="journalArticle" />
      <meta name="DC.type" class="typeArticle" content="$typeArticle$" />
      <meta name="DC.title" content="$title$" />
-     <meta name="DC.publisher" content="$publisher$" />
+     <meta name="DC.publisher" class="editeur" content="$publisher$" />
+     <meta name="DC.publisher" class="producteur" content="$prod$" />
+     <meta name="DC.publisher" class="producteurNum" content="$prodnum$" />
+     <meta name="DC.publisher" class="diffuseur" content="$diffnum$" />
      <meta name="DC.language" content="$lang$" />
      <meta name="DC.date" content="$date$" />
+     <meta name="DC.date" class="year" content="$year$" />
      <meta name="DC.rights" content="$rights$" />
      <meta name="DC.source" content="$journal$" />
      <meta name="DC.relation.isPartOf" content="$dossier$" />
@@ -241,7 +243,7 @@ Schema specialise pour les revues et journaux-->
   $toc$
      </div>
   $endif$
-  
+
  <!--indexations FOAF-->
 
 <div class="indexations-foaf">
@@ -288,7 +290,12 @@ Schema specialise pour les revues et journaux-->
 <!--Integration schema "ScholarlyArticle"-->
      <div vocab="http://schema.org/" typeof="ScholarlyArticle" resource="#article" id="schema-scholarly-article">
 
-       <span property="name">$title$</span><br />
+       <span property="name">$title_f$</span><br />
+$if(subtitle_f)$
+$for(subtitle_f)$
+       <span property="name">$subtitle_f$</span><br />
+$endfor$
+$endif$
 
 <!--Indexation auteur de l'article-->
   $if(authors)$
@@ -316,22 +323,58 @@ Schema specialise pour les revues et journaux-->
           <span property="isPartOf" typeof="PublicationVolume" resource="#periodical" class="titreDossier">$dossier.title$</span>
   $endfor$
   $endif$
+
+
+<!--Indexation resumes-->
+    <div class="description">
+       $if(abstract)$
+       $for(abstract)$
+          <div property="description" class="resume" lang="$abstract.lang$">$abstract.text_f$</div>
+       $endfor$
+       $endif$
+    </div>
+
        </div>
 
 <!--Indexation mots cles controles-->
        <div class="keywords" vocab="http://purl.org/dc/terms/">
   $if(controlledKeywords)$
   $for(controlledKeywords)$
-         <div class="$controlledKeywords.label$">
-           <span property="subject" class="label">$controlledKeywords.label$</span>,
-           <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
-           <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
-           <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>
+         <div class="$controlledKeywords.term$">
+           <span property="subject" class="motcleLabel">$controlledKeywords.term$</span>,
+           <span property="subject" class="motcleID">$controlledKeywords.id$</span>,
+           <span property="subject" class="motcleURL">$controlledKeywords.url$</span>,
+           $if(controlledKeywords.fr)$
+           $for(controlledKeywords.fr)$
+           <span property="subject" class="motcleFR">$controlledKeywords.fr$</span>,
+           $endfor$
+           $endif$
+           $if(controlledKeywords.en)$
+           $for(controlledKeywords.en)$
+           <span property="subject" class="motcleEN">$controlledKeywords.en$</span>
+           $endfor$
+           $endif$
          </div>
   $endfor$
   $endif$
        </div>
      </div>
+
+     <!--Indexation mots cles auteurs-->
+            <div class="authorKeywords_fr" vocab="http://purl.org/dc/terms/">
+       $if(keyword_fr_f)$
+       $for(keyword_fr_f)$
+                <span property="subject">$keyword_fr_f$</span>
+       $endfor$
+       $endif$
+            </div>
+            <div class="authorKeywords_en">
+       $if(keyword_en_f)$
+       $for(keyword_en_f)$
+                <span property="subject">$keyword_en_f$</span>
+       $endfor$
+       $endif$
+            </div>
 
 
 <!--Corps de l'article-->
