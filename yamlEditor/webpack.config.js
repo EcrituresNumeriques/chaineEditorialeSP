@@ -63,6 +63,19 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(json)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'json/[name].[ext]',
+                            outputPath: 'json/',
+                            publicPath: 'json/'
+                        }
+                    }
+                ]
+            },
+            {
               test : /\.(woff2?|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
               use: [
                   {

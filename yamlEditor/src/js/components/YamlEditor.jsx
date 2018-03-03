@@ -10,6 +10,7 @@ import { ControlledKeywords} from './ControlledKeywords.jsx';
 import { Keywords} from './Keywords.jsx';
 import _ from 'lodash';
 import {init} from '../redux/init.js';
+require('./../redux/rubriques.json');
 require('./../../logo.png')
 const removeMd = require('remove-markdown');
 
@@ -22,6 +23,32 @@ export default class YamlEditor extends Component {
     this.updateMisc = this.updateMisc.bind(this);
     this.addKeyword = this.addKeyword.bind(this);
     this.removeKeyword = this.removeKeyword.bind(this);
+    const that = this;
+
+    //load rubriques if provided
+    if(props.rubriques){
+        fetch(props.rubriques)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(rubriques) {
+            that.updateMisc(rubriques,'rubriques','rubriques');
+        });
+    }
+
+    //load keywords if provided
+    if(props.keywords){
+        fetch(props.keywords)
+        .then(function(response) {
+            return response.json();
+            //return {}
+        })
+        .then(function(keywords) {
+            console.log(keywords);
+            //that.updateMisc(keywords,'rubriques','rubriques');
+        });
+    }
+
   }
 
   componentWillReceiveProps(nextProp){
