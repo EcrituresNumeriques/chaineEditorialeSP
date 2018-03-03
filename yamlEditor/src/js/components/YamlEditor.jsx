@@ -53,12 +53,10 @@ export default class YamlEditor extends Component {
 
             //fr
             const uncontrolled_fr = uncontrolled.filter(k => k.language == "fr").map(k => k.name);
-            console.log(uncontrolled_fr);
             that.updateMisc(uncontrolled_fr,'uncontrolled_fr');
 
             //en
             const uncontrolled_en = uncontrolled.filter(k => k.language == "en").map(k => k.name);
-            console.log(uncontrolled_en);
             that.updateMisc(uncontrolled_en,'uncontrolled_en');
         });
     }
@@ -188,7 +186,7 @@ export default class YamlEditor extends Component {
         <TextInput target="subtitle_f" alias={[{target:'subtitle',prefix:'',suffix:'',filterMD:true}]} title="Sous-titre" state={this.state.obj} updateState={this.updateState} />
         <Date target="date" title="Date" state={this.state.obj} updateState={this.updateState} />
         <TextInput target="url_article_sp" title="URL sens public" placeholder="http://sens-public.org/articleXXXX.html" state={this.state.obj} updateState={this.updateState} />
-        <Resumes state={this.state.obj} misc={this.state.misc} updateState={this.updateState} />
+        <Resumes state={this.state.obj}  updateState={this.updateState} />
         <Dossier state={this.state.obj} updateState={this.updateState} />
         <Authors state={this.state.obj} updateState={this.updateState} />
         <Reviewers state={this.state.obj} updateState={this.updateState} />
