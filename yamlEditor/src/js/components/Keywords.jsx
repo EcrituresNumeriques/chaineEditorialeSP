@@ -21,6 +21,14 @@ export function Keywords(props){
   return(
       <section className="group">
         <h1><i className="fa fa-tag" aria-hidden="true"></i> Mots clés</h1>
+        <datalist id="keywordsUCFR">
+          {props.state.misc.uncontrolled_fr && props.state.misc.uncontrolled_fr.map((o,i)=>(<option key={"keywordsUCFR"+i} value={o}/>))}
+        </datalist>
+        <datalist id="keywordsUCEN">
+          {props.state.misc.uncontrolled_en && props.state.misc.uncontrolled_en.map((o,i)=>(<option key={"keywordsUCeN"+i} value={o}/>))}
+        </datalist>
+
+
         {uncontrolledKeywords.map((o,i)=>(<Keyword key={"keywords"+i} index={i} object={o} removeKeyword={props.removeKeyword} updateMisc={props.updateMisc}/>))}
         <InputKeyword state={props.state.misc} addKeyword={props.addKeyword} updateMisc={props.updateMisc}/>
       </section>
@@ -43,8 +51,8 @@ export function Keywords(props){
 function InputKeyword(props){
     return(
       <div className="keywords">
-        <input type="text" id="kwFR" placeholder="mot clé" value={_.get(props.state,"keyword_fr_f","")} onInput={(e)=>props.updateMisc(e.target.value,'keyword_fr_f')}/>
-        <input type="text" id="kwEN" placeholder="Keyword" value={_.get(props.state,"keyword_en_f","")} onInput={(e)=>props.updateMisc(e.target.value,'keyword_en_f')}/>
+        <input type="text" id="kwFR" placeholder="mot clé" list="keywordsUCFR" value={_.get(props.state,"keyword_fr_f","")} onInput={(e)=>props.updateMisc(e.target.value,'keyword_fr_f')}/>
+        <input type="text" id="kwEN" placeholder="Keyword" list="keywordsUCEN" value={_.get(props.state,"keyword_en_f","")} onInput={(e)=>props.updateMisc(e.target.value,'keyword_en_f')}/>
         <i className="fa fa-check validate" aria-hidden="true" onClick={()=>props.addKeyword()}></i>
       </div>
     )
