@@ -78,7 +78,7 @@ export let init = {
  },
  misc:{
    rubriques:[...[],...rubriques],
-   categories:[...[],...categories],
+   categories:[],
    uncontrolledKeywords:[],
    "keywords_fr":[],
    "keywords_en":[],

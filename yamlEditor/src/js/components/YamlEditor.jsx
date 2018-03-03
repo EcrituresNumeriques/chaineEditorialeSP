@@ -44,8 +44,9 @@ export default class YamlEditor extends Component {
             //return {}
         })
         .then(function(keywords) {
-            console.log(keywords);
-            //that.updateMisc(keywords,'rubriques','rubriques');
+            //console.log(keywords);
+            let controlled = keywords.filter(k => k.aligned).map(function(k){k.selected=false;return k});
+            that.updateMisc(controlled,'categories');
         });
     }
 
@@ -74,8 +75,8 @@ export default class YamlEditor extends Component {
         //Set all controlled keyword to not selected then select from yaml
         state.misc.categories.map((c)=>(c.selected=false));
         if(!state.obj.controlledKeywords){state.obj.controlledKeywords = []}
-        state.obj.controlledKeywords.map(c=>c.label).map(function(c){
-          state.misc.categories.filter((o)=>(o.label==c)).map((o)=>(o.selected=true));
+        state.obj.controlledKeywords.map(c=>c.name).map(function(c){
+          state.misc.categories.filter((o)=>(o.name==c)).map((o)=>(o.selected=true));
           return c;
         });
         return state;
@@ -101,7 +102,7 @@ export default class YamlEditor extends Component {
       else if(type=="controlledKeywords"){
         //Check if a controlled keyword match the search
         this.setState(function(state){
-            let toSet = state.misc.categories.filter((c)=>(c.label==value));
+            let toSet = state.misc.categories.filter((c)=>(c.name==value));
             if(toSet.length > 0){
               toSet.map(c=>c.selected=true);
               state.misc.keywordSearch = "";
