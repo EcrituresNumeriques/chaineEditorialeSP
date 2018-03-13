@@ -11,8 +11,10 @@ import { Keywords} from './Keywords.jsx';
 import _ from 'lodash';
 import {init} from '../redux/init.js';
 require('./../redux/rubriques.json');
+require('./../redux/transformKeywords.json');
 require('./../../logo.png')
 const removeMd = require('remove-markdown');
+const ST = require('stjs');
 
 
 export default class YamlEditor extends Component {
@@ -44,20 +46,54 @@ export default class YamlEditor extends Component {
             //return {}
         })
         .then(function(keywords) {
-            //mot clés controllés
-            let controlled = keywords.filter(k => k.aligned).map(function(k){k.selected=false;return k});
-            that.updateMisc(controlled,'categories');
 
-            //mot clés non-controllés
-            const uncontrolled = keywords.filter(k => !k.aligned);
+            if(props.transformKeywords){
 
-            //fr
-            const uncontrolled_fr = uncontrolled.filter(k => k.language == "fr").map(k => k.name);
-            that.updateMisc(uncontrolled_fr,'uncontrolled_fr');
+                fetch(props.transformKeywords)
+                .then(function(response) {
+                    return response.json();
+                    //return {}
+                })
+                .then(function(transformKeywords) {
+                    //mot clés controllés
+                    const controlled = ST.select(keywords.filter(o=>o.aligned))
+                    	.transformWith(transformKeywords.categories)
+                    	.root();
+                    that.updateMisc(controlled,'categories');
 
-            //en
-            const uncontrolled_en = uncontrolled.filter(k => k.language == "en").map(k => k.name);
-            that.updateMisc(uncontrolled_en,'uncontrolled_en');
+                    //non controllés
+                    const uncontrolled = ST.select(keywords.filter(o => !o.aligned))
+                        .transformWith(transformKeywords.keywords)
+                        .root();
+
+                        console.log(uncontrolled)
+                    //fr
+                    const uncontrolled_fr = uncontrolled.filter(k => k.language == "fr").map(k => k.label);
+                    that.updateMisc(uncontrolled_fr,'uncontrolled_fr');
+
+                    //en
+                    const uncontrolled_en = uncontrolled.filter(k => k.language == "en").map(k => k.label);
+                    that.updateMisc(uncontrolled_en,'uncontrolled_en');
+                });
+            }
+
+            else{
+                //mot clés controllés
+                let controlled = keywords.filter(k => k.aligned).map(function(k){k.selected=false;return k});
+                that.updateMisc(controlled,'categories');
+
+                //mot clés non-controllés
+                const uncontrolled = keywords.filter(k => !k.aligned);
+
+                //fr
+                const uncontrolled_fr = uncontrolled.filter(k => k.language == "fr").map(k => k.label);
+                that.updateMisc(uncontrolled_fr,'uncontrolled_fr');
+
+                //en
+                const uncontrolled_en = uncontrolled.filter(k => k.language == "en").map(k => k.label);
+                that.updateMisc(uncontrolled_en,'uncontrolled_en');
+            }
+
         });
     }
 
@@ -86,8 +122,8 @@ export default class YamlEditor extends Component {
         //Set all controlled keyword to not selected then select from yaml
         state.misc.categories.map((c)=>(c.selected=false));
         if(!state.obj.controlledKeywords){state.obj.controlledKeywords = []}
-        state.obj.controlledKeywords.map(c=>c.name).map(function(c){
-          state.misc.categories.filter((o)=>(o.name==c)).map((o)=>(o.selected=true));
+        state.obj.controlledKeywords.map(c=>c.label).map(function(c){
+          state.misc.categories.filter((o)=>(o.label==c)).map((o)=>(o.selected=true));
           return c;
         });
         return state;
@@ -113,7 +149,7 @@ export default class YamlEditor extends Component {
       else if(type=="controlledKeywords"){
         //Check if a controlled keyword match the search
         this.setState(function(state){
-            let toSet = state.misc.categories.filter((c)=>(c.name==value));
+            let toSet = state.misc.categories.filter((c)=>(c.label==value));
             if(toSet.length > 0){
               toSet.map(c=>c.selected=true);
               state.misc.keywordSearch = "";

@@ -1,0 +1,16 @@
+{
+    "categories":{
+        "{{#each $root}}":{
+            "label" : "{{#? this.name}}",
+            "uriRameau" : "{{#? this.data.urirameau}}",
+            "idrameau" : "{{#? this.data.idrameau}}",
+            "term" : "{{#? this.term}}"
+         }
+     },
+     "keywords":{
+         "{{#each $root}}":{
+             "label" : "{{#? this.name}}",
+             "language": "{{#? this.language}}"
+          }
+     }
+ }

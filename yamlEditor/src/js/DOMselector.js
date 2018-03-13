@@ -30,7 +30,7 @@ function YAMLupdate(){
 
 function renderApp(jsObj){
   render(
-      <YamlEditor yaml={jsObj} exportChange={updateYAML} rubriques='/json/rubriques.json'
+      <YamlEditor yaml={jsObj} exportChange={updateYAML} rubriques='/json/rubriques.json' transformKeywords='/json/transformKeywords.json'
       keywords='https://sphub.ecrituresnumeriques.ca/api/keywords/'
     />,
     document.querySelector('.app'));
