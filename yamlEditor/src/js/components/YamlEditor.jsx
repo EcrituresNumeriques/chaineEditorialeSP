@@ -66,7 +66,6 @@ export default class YamlEditor extends Component {
                         .transformWith(transformKeywords.keywords)
                         .root();
 
-                        console.log(uncontrolled)
                     //fr
                     const uncontrolled_fr = uncontrolled.filter(k => k.language == "fr").map(k => k.label);
                     that.updateMisc(uncontrolled_fr,'uncontrolled_fr');
