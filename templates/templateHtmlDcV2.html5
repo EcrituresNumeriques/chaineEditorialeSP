@@ -78,18 +78,22 @@
      <meta name="keywords" xml:lang="en" lang="en" content="$for(keyword_en)$$keyword_en$$sep$, $endfor$" />
   $endif$
 
-<!--  Mots cles editeurs -->
   $if(controlledKeywords)$
   $for(controlledKeywords)$
-     <meta name="DC.subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
+  $if(controlledKeywords.label)$
+  <meta name="DC.subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
+  $endif$
+  $if(controlledKeywords.fr)$
+  <meta name="DC.subject" xml:lang="fr" lang="fr" content="$controlledKeywords.fr$" />
+  $endif$
   $endfor$
   $endif$
 
 <!--  traducteur avec specification MARCREL -->
   $if(translator)$
   $for(translator)$
-     <meta name="DC.contributor.trl" content="$translator.forname$ $translator.surname$" />
-     <meta name="MARCREL.trl" content="$translator.forname$ $translator.surname$" />
+  <meta name="DC.contributor.trl" content="$translator.forname$ $translator.surname$" />
+  <meta name="MARCREL.trl" content="$translator.forname$ $translator.surname$" />
   $endfor$
   $endif$
 
@@ -187,8 +191,14 @@ Schema specialise pour les revues et journaux-->
 
   $if(controlledKeywords)$
   $for(controlledKeywords)$
-     <meta property="dc:subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
-     <link rel="dc:subject" href="$controlledKeywords.uriRameau$"/>
+  $if(controlledKeywords.label)$
+  <meta property="dc:subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
+  <link rel="dc:subject" href="$controlledKeywords.uriRameau$"/>
+  $endif$
+  $if(controlledKeywords.fr)$
+  <meta property="dc:subject" xml:lang="fr" lang="fr" content="$controlledKeywords.fr$" />
+  <link rel="dc:subject" href="$controlledKeywords.url$"/>
+  $endif$
   $endfor$
   $endif$
 
@@ -218,9 +228,7 @@ Schema specialise pour les revues et journaux-->
      <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
   $endif$
   $if(highlighting-css)$
-     <style type="text/css">
-  $highlighting-css$
-     </style>
+     <style type="text/css">$highlighting-css$</style>
   $endif$
   $for(css)$
      <link rel="stylesheet" href="$css$" type="text/css" />
@@ -325,7 +333,7 @@ $endif$
   $endif$
 
 
-<!--Indexation resumes-->
+<!-- Indexation resumes -->
     <div class="description">
        $if(abstract)$
        $for(abstract)$
@@ -336,29 +344,30 @@ $endif$
 
        </div>
 
-<!--Indexation mots cles controles-->
-       <div class="keywords" vocab="http://purl.org/dc/terms/">
-  $if(controlledKeywords)$
-  $for(controlledKeywords)$
-         <div class="$controlledKeywords.term$">
-           <span property="subject" class="motcleLabel">$controlledKeywords.term$</span>,
-           <span property="subject" class="motcleID">$controlledKeywords.id$</span>,
-           <span property="subject" class="motcleURL">$controlledKeywords.url$</span>,
-           $if(controlledKeywords.fr)$
-           $for(controlledKeywords.fr)$
-           <span property="subject" class="motcleFR">$controlledKeywords.fr$</span>,
-           $endfor$
-           $endif$
-           $if(controlledKeywords.en)$
-           $for(controlledKeywords.en)$
-           <span property="subject" class="motcleEN">$controlledKeywords.en$</span>
-           $endfor$
-           $endif$
-         </div>
-  $endfor$
-  $endif$
-       </div>
-     </div>
+<!-- Indexation mots cles controles -->
+$if(controlledKeywords)$
+<div class="keywords" vocab="http://purl.org/dc/terms/">
+$for(controlledKeywords)$
+$if(controlledKeywords.label)$
+  <div class="$controlledKeywords.label$">
+    <span property="subject" class="label">$controlledKeywords.label$</span>,
+    <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
+    <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
+    <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>
+  </div>
+$endif$
+$if(controlledKeywords.fr)$
+  <div class="$controlledKeywords.fr$">
+    <span property="subject" class="label">$controlledKeywords.fr$</span>,
+     <span property="subject" class="idRameau">$controlledKeywords.id$</span>,
+     <span property="subject" class="uriRameau">$controlledKeywords.url$</span>,
+  </div>
+$endif$
+$endfor$
+</div>
+$endif$
+
+</div> <!-- end Integration schema "ScholarlyArticle"-->
 
      <!--Indexation mots cles auteurs-->
             <div class="authorKeywords_fr" vocab="http://purl.org/dc/terms/">
