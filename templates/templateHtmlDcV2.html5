@@ -22,12 +22,14 @@
      <meta name="DC.type" content="journalArticle" />
      <meta name="DC.type" class="typeArticle" content="$typeArticle$" />
      <meta name="DC.title" content="$title$" />
+     <meta name="DC.title.Main" content="$title$" />
+     <meta name="DC.title.Subtitle" content="$subtitle$" />
      <meta name="DC.publisher" class="editeur" content="$publisher$" />
      <meta name="DC.publisher" class="producteur" content="$prod$" />
      <meta name="DC.publisher" class="producteurNum" content="$prodnum$" />
      <meta name="DC.publisher" class="diffuseur" content="$diffnum$" />
      <meta name="DC.language" content="$lang$" />
-     <meta name="DC.date" content="$date$" />
+     <meta name="DC.date" class="completeDate" content="$date$" />
      <meta name="DC.date" class="year" content="$year$" />
      <meta name="DC.rights" content="$rights$" />
      <meta name="DC.source" content="$journal$" />
@@ -40,7 +42,7 @@
      <meta name="DC.identifier" content="$url_article_sp$" />
   $endif$
   $if(issnnum)$
-     <meta name="DC.identifier" content="$issnnum$" />
+     <meta name="DC.identifier" class="issn" content="$issnnum$" />
   $endif$
 
 <!--Utilisation de MARCREL pour specifier le role du "contributeur" en Dublin core
@@ -262,6 +264,7 @@ Schema specialise pour les revues et journaux-->
       <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" class="foaf-author">
        <span property="familyName">$authors.surname$</span>
        <span property="firstName">$authors.forname$</span>
+       <span property="gender">$director.gender$</span>
        <span property="openid">$authors.orcid$</span>
       </div>
      </div>
@@ -275,6 +278,7 @@ Schema specialise pour les revues et journaux-->
       <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" class="foaf-redactor">
        <span property="familyName">$redacteurDossier.surname$</span>
        <span property="firstName">$redacteurDossier.forname$</span>
+       <span property="gender">$director.gender$</span>
        <span property="openid">$redacteurDossier.orcid$</span>
       </div>
      </div>
@@ -288,6 +292,7 @@ Schema specialise pour les revues et journaux-->
       <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" class="foaf-director">
        <span property="familyName">$director.surname$</span>
        <span property="firstName">$director.forname$</span>
+       <span property="gender">$director.gender$</span>
        <span property="openid">$director.orcid$</span>
       </div>
      </div>
@@ -349,7 +354,7 @@ $if(controlledKeywords)$
 <div class="keywords" vocab="http://purl.org/dc/terms/">
 $for(controlledKeywords)$
 $if(controlledKeywords.label)$
-  <div class="$controlledKeywords.label$">
+  <div class="$controlledKeywords.label$" lang="">
     <span property="subject" class="label">$controlledKeywords.label$</span>,
     <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
     <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
@@ -357,7 +362,7 @@ $if(controlledKeywords.label)$
   </div>
 $endif$
 $if(controlledKeywords.fr)$
-  <div class="$controlledKeywords.fr$">
+  <div class="$controlledKeywords.fr$" lang="fr">
     <span property="subject" class="label">$controlledKeywords.fr$</span>,
      <span property="subject" class="idRameau">$controlledKeywords.id$</span>,
      <span property="subject" class="uriRameau">$controlledKeywords.url$</span>,
@@ -370,14 +375,14 @@ $endif$
 </div> <!-- end Integration schema "ScholarlyArticle"-->
 
      <!--Indexation mots cles auteurs-->
-            <div class="authorKeywords_fr" vocab="http://purl.org/dc/terms/">
+            <div class="authorKeywords_fr" vocab="http://purl.org/dc/terms/" lang="fr">
        $if(keyword_fr_f)$
        $for(keyword_fr_f)$
                 <span property="subject">$keyword_fr_f$</span>
        $endfor$
        $endif$
             </div>
-            <div class="authorKeywords_en">
+   <div class="authorKeywords_en" ocab="http://purl.org/dc/terms/" lang="en">
        $if(keyword_en_f)$
        $for(keyword_en_f)$
                 <span property="subject">$keyword_en_f$</span>
