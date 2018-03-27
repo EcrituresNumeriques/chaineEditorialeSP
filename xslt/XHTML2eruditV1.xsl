@@ -5,14 +5,14 @@
   xmlns="http://www.erudit.org/xsd/article">
 
   <xsl:template match="/">
-
     <article xmlns:xlink="http://www.w3.org/1999/xlink"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns="http://www.erudit.org/xsd/article"
-      xsi:schemaLocation="http://www.erudit.org/xsd/article schema-erudit.xsd"
+      xsi:schemaLocation="http://www.erudit.org/xsd/article http://www.erudit.org/xsd/article/3.0.0/eruditarticle.xsd"
       qualtraitement="complet" idproprio="">
       <xsl:choose>
-        <xsl:when test="meta[normalize-space(@name) = 'prism.genre']/normalize-space(@content) = 'essai | Essai' ">
+        <xsl:when
+          test="meta[normalize-space(@name) = 'prism.genre']/normalize-space(@content) = 'essai | Essai'">
           <xsl:attribute name="typeart">article</xsl:attribute>
         </xsl:when>
         <xsl:otherwise>
@@ -20,7 +20,7 @@
         </xsl:otherwise>
       </xsl:choose>
       <xsl:attribute name="lang">
-        <xsl:value-of select="html/head/meta[normalize-space(@name)='DC.language']/@content"/>
+        <xsl:value-of select="html/head/meta[normalize-space(@name) = 'DC.language']/@content"/>
       </xsl:attribute>
       <xsl:for-each select="div[normalize-space(@resource) = '#issue']">
         <xsl:if test="span[normalize-space(@class) = 'titreDossier'] = 'varia'">
@@ -29,27 +29,24 @@
           </xsl:attribute>
         </xsl:if>
       </xsl:for-each>
-      <xsl:attribute name="ordseq">
-      </xsl:attribute>
+      <xsl:attribute name="ordseq"> </xsl:attribute>
 
       <admin>
         <infoarticle>
-          <xsl:for-each select="html/body//div[normalize-space(@class)='keywords']">
-          <grdescripteur>
-            <xsl:if test=".//span[normalize-space(@class)='idRameau']">
-            <xsl:attribute name="scheme">http://rameau.bnf.fr</xsl:attribute>
-            </xsl:if>
-            <xsl:if test="normalize-space(@lang)">
+          <xsl:for-each select="html/body//div[normalize-space(@class) = 'keywords']">
+            <grdescripteur>
               <xsl:attribute name="lang">
-                <xsl:value-of select="normalize-space(@lang)"/>
+                <xsl:value-of select="//meta[normalize-space(@name) = 'DC.language']/@content"/>
               </xsl:attribute>
-            </xsl:if>
-            <xsl:for-each select="./div">
-              <descripteur>
-                 <xsl:apply-templates select="span[normalize-space(@class)='label']"/>
-              </descripteur>
-            </xsl:for-each>
-          </grdescripteur>
+              <xsl:if test=".//span[normalize-space(@class) = 'idRameau']">
+                <xsl:attribute name="scheme">http://rameau.bnf.fr</xsl:attribute>
+              </xsl:if>
+              <xsl:for-each select="./div">
+                <descripteur>
+                  <xsl:apply-templates select="span[normalize-space(@class) = 'label']"/>
+                </descripteur>
+              </xsl:for-each>
+            </grdescripteur>
           </xsl:for-each>
           <nbpara>
             <xsl:value-of
@@ -89,61 +86,70 @@
           </titrerev>
           <titrerevabr>sp</titrerevabr>
           <idissnnum>
-            <xsl:value-of select="html/head/meta[normalize-space(@name) = 'DC.identifier' and normalize-space(@class) = 'issn']/@content"/>
-         </idissnnum>
-          
-          
-          <xsl:for-each select="html/body/div[normalize-space(@class)='indexations-foaf']//div[normalize-space(@class)='foaf-director']">
+            <xsl:value-of
+              select="html/head/meta[normalize-space(@name) = 'DC.identifier' and normalize-space(@class) = 'issn']/@content"
+            />
+          </idissnnum>
+
+
+          <xsl:for-each
+            select="html/body/div[normalize-space(@class) = 'indexations-foaf']//div[normalize-space(@class) = 'foaf-director']">
             <directeur>
-              <xsl:if test="span[normalize-space(@property)='gender']='male'">
+              <xsl:if test="span[normalize-space(@property) = 'gender'] = 'male'">
                 <xsl:attribute name="sexe">
                   <xsl:value-of>masculin</xsl:value-of>
                 </xsl:attribute>
               </xsl:if>
-              <xsl:if test="span[normalize-space(@property)='gender']='female'">
+              <xsl:if test="span[normalize-space(@property) = 'gender'] = 'female'">
                 <xsl:attribute name="sexe">
                   <xsl:value-of>feminin</xsl:value-of>
                 </xsl:attribute>
               </xsl:if>
               <nompers>
                 <prenom>
-                  <xsl:value-of select="span[normalize-space(@property)='firstName']"/>
+                  <xsl:value-of select="span[normalize-space(@property) = 'firstName']"/>
                 </prenom>
                 <nomfamille>
-                  <xsl:apply-templates select="span[normalize-space(@property)='familyName']" />
+                  <xsl:apply-templates select="span[normalize-space(@property) = 'familyName']"/>
                 </nomfamille>
               </nompers>
-              </directeur>
+            </directeur>
           </xsl:for-each>
-         
-          <xsl:for-each select="html/body/div[normalize-space(@class)='indexations-foaf']//div[normalize-space(@class)='foaf-redactor']">
-            <redacteurchef typerc="invite">
-                <xsl:if test="span[normalize-space(@property)='gender']='male'">
+
+          <xsl:if
+            test="html/body/div[normalize-space(@class) = 'indexations-foaf']//div[normalize-space(@class) = 'foaf-redactor']/span[normalize-space(@property) = 'firstName']/text()">
+            <xsl:for-each
+              select="html/body/div[normalize-space(@class) = 'indexations-foaf']//div[normalize-space(@class) = 'foaf-redactor']">
+              <redacteurchef typerc="invite">
+                <xsl:if test="span[normalize-space(@property) = 'gender'] = 'male'">
                   <xsl:attribute name="sexe">
-                  <xsl:value-of>masculin</xsl:value-of>
+                    <xsl:value-of>masculin</xsl:value-of>
                   </xsl:attribute>
                 </xsl:if>
-                <xsl:if test="span[normalize-space(@property)='gender']='female'">
+                <xsl:if test="span[normalize-space(@property) = 'gender'] = 'female'">
                   <xsl:attribute name="sexe">
-                  <xsl:value-of>feminin</xsl:value-of>
+                    <xsl:value-of>feminin</xsl:value-of>
                   </xsl:attribute>
                 </xsl:if>
-              <nompers>
-                <prenom>
-                  <xsl:value-of select="span[normalize-space(@property)='firstName']"/>
-                </prenom>
-                <nomfamille>
-                  <xsl:apply-templates select="span[normalize-space(@property)='familyName']" />
-                </nomfamille>
-              </nompers>
-            </redacteurchef>
-          </xsl:for-each>
+                <nompers>
+                  <prenom>
+                    <xsl:value-of select="span[normalize-space(@property) = 'firstName']"/>
+                  </prenom>
+                  <nomfamille>
+                    <xsl:apply-templates select="span[normalize-space(@property) = 'familyName']"/>
+                  </nomfamille>
+                </nompers>
+              </redacteurchef>
+            </xsl:for-each>
+          </xsl:if>
+
         </revue>
-        
+
         <numero id="">
           <pub>
             <annee>
-              <xsl:value-of select="html/head/meta[normalize-space(@name) = 'DC.date' and normalize-space(@class) = 'year']/@content"/>
+              <xsl:value-of
+                select="html/head/meta[normalize-space(@name) = 'DC.date' and normalize-space(@class) = 'year']/@content"/>
             </annee>
           </pub>
           <pubnum>
@@ -189,13 +195,13 @@
 
       <liminaire>
         <grtitre>
-          <xsl:if
-            test="
+          <xsl:if test="
               html/head/meta[normalize-space(@name) = 'DC.title']">
             <surtitre>
               <xsl:value-of
-                select="html/body//
-                span[normalize-space(@class) = 'titreDossier']"
+                select="
+                  html/body//
+                  span[normalize-space(@class) = 'titreDossier']"
               />
             </surtitre>
           </xsl:if>
@@ -210,82 +216,57 @@
             <xsl:apply-templates select="html/head/title/node()"/>
           </titre>
         </grtitre>
-        
+
         <grauteur>
-            <xsl:for-each select="html/body//div[normalize-space(@class) = 'foaf-author']">
-              <auteur>
-                  <xsl:if test="html/body/div[normalize-space(@class)='indexations-foaf']//div[normalize-space(@class)='foaf-author']//span[normalize-space(@property)='gender']='male'">
-                    <xsl:attribute name="sexe">
-                    <xsl:value-of>masculin</xsl:value-of>
-                    </xsl:attribute>
-                  </xsl:if>
-                  <xsl:if test="html/body/div[normalize-space(@class)='indexations-foaf']//div[normalize-space(@class)='foaf-author']//span[normalize-space(@property)='gender']='female'">
-                    <xsl:attribute name="sexe">
-                    <xsl:value-of>feminin</xsl:value-of>
-                    </xsl:attribute>
-                  </xsl:if>
-                <nompers>
-                  <prenom>
-                    <xsl:apply-templates select="span[normalize-space(@property)='firstName']"/>
-                  </prenom>
-                  <nomfamille>
-                    <xsl:apply-templates select="span[normalize-space(@property)='familyName']" />
-                  </nomfamille>
-                </nompers>
-              </auteur>
-            </xsl:for-each>
+          <xsl:for-each select="html/body//div[normalize-space(@class) = 'foaf-author']">
+            <auteur>
+              <xsl:if
+                test="html/body/div[normalize-space(@class) = 'indexations-foaf']//div[normalize-space(@class) = 'foaf-author']//span[normalize-space(@property) = 'gender'] = 'male'">
+                <xsl:attribute name="sexe">
+                  <xsl:value-of>masculin</xsl:value-of>
+                </xsl:attribute>
+              </xsl:if>
+              <xsl:if
+                test="html/body/div[normalize-space(@class) = 'indexations-foaf']//div[normalize-space(@class) = 'foaf-author']//span[normalize-space(@property) = 'gender'] = 'female'">
+                <xsl:attribute name="sexe">
+                  <xsl:value-of>feminin</xsl:value-of>
+                </xsl:attribute>
+              </xsl:if>
+              <nompers>
+                <prenom>
+                  <xsl:apply-templates select="span[normalize-space(@property) = 'firstName']"/>
+                </prenom>
+                <nomfamille>
+                  <xsl:apply-templates select="span[normalize-space(@property) = 'familyName']"/>
+                </nomfamille>
+              </nompers>
+            </auteur>
+          </xsl:for-each>
         </grauteur>
 
-        <xsl:if
-          test="html/body//div[normalize-space(@class) = 'authorKeywords_fr']">
+        <xsl:if test="html/body//div[normalize-space(@class) = 'authorKeywords_fr']">
           <grmotcle lang="fr">
-            <xsl:for-each select="html/body//div[normalize-space(@class) = 'authorKeywords_fr']/span[normalize-space(@property) = 'subject']">
-            <motcle>
-              <xsl:apply-templates/>
-            </motcle>
-            </xsl:for-each>
-          </grmotcle>
-        </xsl:if>
-        
-        <xsl:if
-          test="html/body//div[normalize-space(@class) = 'authorKeywords_en']">
-          <grmotcle lang="en">
-            <xsl:for-each select="html/body//div[normalize-space(@class) = 'authorKeywords_en']/span[normalize-space(@property) = 'subject']">
+            <xsl:for-each
+              select="html/body//div[normalize-space(@class) = 'authorKeywords_fr']/span[normalize-space(@property) = 'subject']">
               <motcle>
                 <xsl:apply-templates/>
               </motcle>
             </xsl:for-each>
           </grmotcle>
         </xsl:if>
-      
-        <!-- 
-        <xsl:if
-          test="
-            html/head/meta[normalize-space(@name) = 'DC.subject']
-            [normalize-space(@lang) = 'fr']">
-          <grmotcle lang="fr">
-            <xsl:apply-templates
-              select="
-                html/head/meta[normalize-space(@name) = 'DC.subject']
-                [normalize-space(@lang) = 'fr']"
-              mode="liminaire"/>
+
+        <xsl:if test="html/body//div[normalize-space(@class) = 'authorKeywords_en']">
+          <grmotcle lang="en">
+            <xsl:for-each
+              select="html/body//div[normalize-space(@class) = 'authorKeywords_en']/span[normalize-space(@property) = 'subject']">
+              <motcle>
+                <xsl:apply-templates/>
+              </motcle>
+            </xsl:for-each>
           </grmotcle>
         </xsl:if>
 
-        <xsl:if
-          test="
-            html/head/meta[normalize-space(@name) = 'DC.subject']
-            [normalize-space(@lang) = 'en']">
-          <grmotcle lang="en">
-            <xsl:apply-templates
-              select="
-                html/head/meta[normalize-space(@name) = 'DC.subject']
-                [normalize-space(@lang) = 'en']"
-              mode="liminaire"/>
-          </grmotcle>
-        </xsl:if>
-        
-         -->
+       
         <xsl:apply-templates select="html/head/meta[not(normalize-space(@name) = 'DC.subject')]"
           mode="liminaire"/>
       </liminaire>
@@ -305,37 +286,36 @@
     </resume>
   </xsl:template>
 
-<!--  <xsl:template match="meta[normalize-space(@name) = 'DC.subject']" mode="liminaire">
-    <motcle>
-      <xsl:apply-templates select="@content"/>
-    </motcle>
-  </xsl:template>-->
-
+ 
   <xsl:template match="div[normalize-space(@class) = 'article']">
     <corps>
-      <xsl:variable name="premEnf" select="*[1][not(self::h2[@id!='bibliographie'])]"/>
-    <xsl:if test="$premEnf">
-      <xsl:variable name="longPropre">
-        <xsl:call-template name="compte">
-          <xsl:with-param name="de" select="$premEnf"/>
-          <xsl:with-param name="jusque" select="' h2 '"/>
-        </xsl:call-template>
-      </xsl:variable>
-      <section1>
-        <xsl:apply-templates select="child::*[position() &lt;= $longPropre]"/>
-      </section1>
-    </xsl:if>
-      <xsl:apply-templates select="h2[normalize-space(@id)!='bibliographie']"/>
+      <xsl:variable name="premEnf" select="*[1][not(self::h2[@id != 'bibliographie'])]"/>
+      <xsl:if test="$premEnf">
+        <xsl:variable name="longPropre">
+          <xsl:call-template name="compte">
+            <xsl:with-param name="de" select="$premEnf"/>
+            <xsl:with-param name="jusque" select="' h2 '"/>
+          </xsl:call-template>
+        </xsl:variable>
+        <section1>
+          <xsl:apply-templates select="child::*[position() &lt;= $longPropre]"/>
+        </section1>
+      </xsl:if>
+      <xsl:apply-templates select="h2[normalize-space(@id) != 'bibliographie']"/>
     </corps>
-    <xsl:if test="h2[normalize-space(@id)='bibliographie'] | div[normalize-space(@class) = 'references'] | div[normalize-space(@class)='footnotes']">
-    <partiesann>
-      <xsl:apply-templates select="div[normalize-space(@class) = 'references']"/>
-      <xsl:apply-templates select="div[normalize-space(@class) = 'footnotes']"/>
-    </partiesann>
+    <xsl:if
+      test="h2[normalize-space(@id) = 'bibliographie'] | div[normalize-space(@class) = 'references'] | div[normalize-space(@class) = 'footnotes']">
+      <partiesann>
+        <xsl:attribute name="lang">
+          <xsl:value-of select="//meta[normalize-space(@name) = 'DC.language']/@content"/>
+        </xsl:attribute>
+        <xsl:apply-templates select="div[normalize-space(@class) = 'references']"/>
+        <xsl:apply-templates select="div[normalize-space(@class) = 'footnotes']"/>
+      </partiesann>
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="h2[normalize-space(@id)!='bibliographie']">
+  <xsl:template match="h2[normalize-space(@id) != 'bibliographie']">
     <xsl:variable name="longTot">
       <xsl:call-template name="compte">
         <xsl:with-param name="de" select="."/>
@@ -386,46 +366,52 @@
       </alinea>
     </para>
   </xsl:template>
-  
+
   <xsl:template match="p[ancestor::div[normalize-space(@class) = 'references']]">
     <xsl:apply-templates select="node()"/>
   </xsl:template>
 
-  <xsl:template match="html/body//div[normalize-space(@class) = 'figure']">
-  <figure>
-    <xsl:if test="//p[normalize-space(@class) = 'caption']">
-    <legende>
-      <xsl:attribute name="lang">
-        <xsl:value-of select="//meta[normalize-space(@name)='DC.language']/@content"/>
-      </xsl:attribute>
-      <alinea><xsl:apply-templates select="//p[normalize-space(@class) = 'caption']/node()"/>
-      </alinea>
-    </legende>
+
+  <xsl:template match="//div[normalize-space(@class) = 'figure']">
+    <xsl:if test="//div[normalize-space(@class) = 'figure']">
+    <figure>
+      <xsl:if test="descendant::p[normalize-space(@class) = 'caption']">
+        <legende>
+          <xsl:attribute name="lang">
+            <xsl:value-of select="//meta[normalize-space(@name) = 'DC.language']/@content"/>
+          </xsl:attribute>
+          <alinea>
+            <xsl:apply-templates select="p[normalize-space(@class) = 'caption']/node()"/>
+          </alinea>
+        </legende>
+      </xsl:if>
+      <xsl:if test="descendant::img">
+        <objetmedia flot="bloc">
+          <xsl:for-each select="descendant::img">
+            <image>
+              <xsl:attribute name="id">
+                <xsl:value-of
+                  select="normalize-space(substring-after(@src, 'media/'))"
+                />
+              </xsl:attribute>
+              <xsl:attribute name="typeimage">
+                <xsl:value-of>figure</xsl:value-of>
+              </xsl:attribute>
+              <xsl:attribute name="xlink:type">
+                <xsl:value-of>simple</xsl:value-of>
+              </xsl:attribute>
+            </image>
+          </xsl:for-each>
+        </objetmedia>
+      </xsl:if>
+      <xsl:if test="/p[normalize-space(@class) = 'source']">
+        <source>
+          <xsl:apply-templates select="/p[normalize-space(@class) = 'source']/node()"/>
+        </source>
+      </xsl:if>
+    </figure>
     </xsl:if>
-    <xsl:if test="//div[normalize-space(@class) = 'figure']/img">
-    <objetmedia flot="bloc">
-      <xsl:for-each select="//div[normalize-space(@class) = 'figure']/img">
-      <image>
-      <xsl:attribute name="id">
-        <xsl:value-of select="//div[normalize-space(@class) = 'figure']/img/normalize-space(substring-after(@src, 'media/'))"/>
-      </xsl:attribute>  
-      <xsl:attribute name="typeimage">
-        <xsl:value-of>figure</xsl:value-of>
-      </xsl:attribute>
-      <xsl:attribute name="xlink:type">
-        <xsl:value-of>simple</xsl:value-of>
-      </xsl:attribute>
-      </image>
-      </xsl:for-each>
-    </objetmedia>
-    </xsl:if>
-    <xsl:if test="//p[normalize-space(@class) = 'source']">
-      <source>
-          <xsl:apply-templates select="//p[normalize-space(@class) = 'source']/node()"/>
-      </source>
-    </xsl:if>
-  </figure>
-</xsl:template>
+  </xsl:template>
 
   <xsl:template match="ol">
     <listenonord signe="cercle">
@@ -441,7 +427,8 @@
     </listenonord>
   </xsl:template>
 
-  <xsl:template match="div[normalize-space(@class) = 'article']/p/ul/li | div[normalize-space(@class) = 'article']/ul/li">
+  <xsl:template
+    match="div[normalize-space(@class) = 'article']/p/ul/li | div[normalize-space(@class) = 'article']/ul/li">
     <elemliste>
       <alinea>
         <xsl:apply-templates/>
@@ -461,11 +448,15 @@
       <xsl:apply-templates/>
     </bloccitation>
   </xsl:template>
-  
+
   <xsl:template match="em">
     <marquage typemarq="italique">
       <xsl:apply-templates/>
     </marquage>
+  </xsl:template>
+
+  <xsl:template match="sup[../@class='footnoteRef']">
+    <xsl:apply-templates/>
   </xsl:template>
 
   <xsl:template match="sup">
@@ -493,6 +484,7 @@
   <xsl:template match="hr">
     <xsl:apply-templates/>
   </xsl:template>
+
 
   <xsl:template match="a">
     <liensimple xlink:type="simple" xlink:href="{@href}">
@@ -525,11 +517,9 @@
   </xsl:template>
 
   <xsl:template match="html/body//div[normalize-space(@class) = 'footnotes']">
-    
-      <grnote>
-        <xsl:apply-templates select="ol"/>
-      </grnote>
-    
+    <grnote>
+      <xsl:apply-templates select="ol"/>
+    </grnote>
   </xsl:template>
 
   <xsl:template match="html/body//div[normalize-space(@class) = 'footnotes']/ol">
@@ -557,12 +547,12 @@
 
   <xsl:template
     match="
-    html/body//div[normalize-space(@class) =
+      html/body//div[normalize-space(@class) =
       'footnotes']//p/a[not(following-sibling::* | following-sibling::text()[normalize-space()])]"/>
-  
+
   <xsl:template match="div[normalize-space(@class) = 'references']">
     <grbiblio>
-      <titre>Bibliographie</titre>
+      <alinea>Bibliographie</alinea>
       <biblio>
         <xsl:for-each select="div">
           <refbiblio>
@@ -570,8 +560,9 @@
           </refbiblio>
         </xsl:for-each>
       </biblio>
-      
     </grbiblio>
+    
   </xsl:template>
+ 
 
 </xsl:stylesheet>
