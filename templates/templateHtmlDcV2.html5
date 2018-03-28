@@ -382,7 +382,7 @@ $endif$
        $endfor$
        $endif$
             </div>
-   <div class="authorKeywords_en" ocab="http://purl.org/dc/terms/" lang="en">
+   <div class="authorKeywords_en" vocab="http://purl.org/dc/terms/" lang="en">
        $if(keyword_en_f)$
        $for(keyword_en_f)$
                 <span property="subject">$keyword_en_f$</span>
