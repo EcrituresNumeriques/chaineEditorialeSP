@@ -23,7 +23,7 @@
         <xsl:value-of select="html/head/meta[normalize-space(@name) = 'DC.language']/@content"/>
       </xsl:attribute>
       <xsl:for-each select="div[normalize-space(@resource) = '#issue']">
-        <xsl:if test="span[normalize-space(@class) = 'titreDossier'] = 'varia |'">
+        <xsl:if test="span[normalize-space(@class) = 'titreDossier'] = 'varia'">
           <xsl:attribute name="horstheme">
             <xsl:value-of>oui</xsl:value-of>
           </xsl:attribute>
@@ -590,7 +590,7 @@
   <xsl:template match="a[normalize-space(@class) = 'footnoteRef']">
     <renvoi typeref="note">
       <xsl:attribute name="idref">
-        <xsl:value-of select="concat('sdfootnote', substring-after(@id, 'fn'), 'sym')"/>
+        <xsl:value-of select="concat('sdfootnote', substring-after(@id, 'fnref'), 'sym')"/>
       </xsl:attribute>
       <xsl:apply-templates/>
     </renvoi>
