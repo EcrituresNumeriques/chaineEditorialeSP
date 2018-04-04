@@ -23,7 +23,9 @@
      <meta name="DC.type" class="typeArticle" content="$typeArticle$" />
      <meta name="DC.title" content="$title$" />
      <meta name="DC.title.Main" content="$title$" />
-     <meta name="DC.title.Subtitle" content="$subtitle$" />
+   $if(subtitle)$
+   <meta name="DC.title.Subtitle" content="$subtitle$" />
+   $endif$
      <meta name="DC.publisher" class="editeur" content="$publisher$" />
      <meta name="DC.publisher" class="producteur" content="$prod$" />
      <meta name="DC.publisher" class="producteurNum" content="$prodnum$" />
@@ -122,7 +124,9 @@
      <meta name="citation_authors" content="$authors.forname$ $authors.surname$" />
   $endfor$
      <meta name="citation_title" content="$title$" />
-     <meta name="citation_subtitle" content="$subtitle$" />
+   $if(subtitle)$
+   <meta name="citation_subtitle" content="$subtitle$" />
+   $endif$
      <meta name="citation_publication_date" content="$date$" />
      <meta name="citation_online_date" content="$date$" />
      <meta name="citation_issn" content="$issnnum$" />
@@ -176,7 +180,9 @@ Schema specialise pour les revues et journaux-->
   $endif$
      <meta property="dc:title" content="$title$" />
      <meta property="dc:title.Main" content="$title$" />
-     <meta property="dc:title.Subtitle" content="$subtitle$" />
+   $if(subtitle)$
+   <meta property="dc:title.Subtitle" content="$subtitle$" />
+   $endif$
      <meta property="dc:publisher" content="$publisher$" />
      <meta property="dc:language" content="$lang$" />
      <meta property="dc:type" content="journalArticle" />
@@ -226,7 +232,7 @@ Schema specialise pour les revues et journaux-->
 
 <!--Balise Title pour affichage titre dans le navigateur--><!--
      <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>-->
-   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$ : $subtitle$</title>
+   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$$if(subtitle)$:$subtitle$$endif$</title>
 
 <!--style et lien vers CSS-->
      <style type="text/css">code{white-space: pre;}</style>
