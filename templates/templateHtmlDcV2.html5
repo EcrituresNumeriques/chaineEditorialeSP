@@ -122,6 +122,7 @@
      <meta name="citation_authors" content="$authors.forname$ $authors.surname$" />
   $endfor$
      <meta name="citation_title" content="$title$" />
+     <meta name="citation_subtitle" content="$subtitle$" />
      <meta name="citation_publication_date" content="$date$" />
      <meta name="citation_online_date" content="$date$" />
      <meta name="citation_issn" content="$issnnum$" />
@@ -174,6 +175,8 @@ Schema specialise pour les revues et journaux-->
      <meta property="dc:identifier" content="$issnnum$" />
   $endif$
      <meta property="dc:title" content="$title$" />
+     <meta property="dc:title.Main" content="$title$" />
+     <meta property="dc:title.Subtitle" content="$subtitle$" />
      <meta property="dc:publisher" content="$publisher$" />
      <meta property="dc:language" content="$lang$" />
      <meta property="dc:type" content="journalArticle" />
@@ -221,8 +224,9 @@ Schema specialise pour les revues et journaux-->
 
 <!--Fin des metadonnees dans le Head-->
 
-<!--Balise Title pour affichage titre dans le navigateur-->
-     <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+<!--Balise Title pour affichage titre dans le navigateur--><!--
+     <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>-->
+   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$ : $subtitle$</title>
 
 <!--style et lien vers CSS-->
      <style type="text/css">code{white-space: pre;}</style>
