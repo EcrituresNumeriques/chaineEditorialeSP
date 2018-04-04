@@ -232,7 +232,7 @@ Schema specialise pour les revues et journaux-->
 
 <!--Balise Title pour affichage titre dans le navigateur--><!--
      <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>-->
-   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$$if(subtitle)$:$subtitle$$endif$</title>
+   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$$if(subtitle)$ : $subtitle$$endif$</title>
 
 <!--style et lien vers CSS-->
      <style type="text/css">code{white-space: pre;}</style>
