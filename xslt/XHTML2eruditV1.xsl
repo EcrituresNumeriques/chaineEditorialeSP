@@ -23,7 +23,7 @@
         <xsl:value-of select="html/head/meta[normalize-space(@name) = 'DC.language']/@content"/>
       </xsl:attribute>
       <xsl:for-each select="div[normalize-space(@resource) = '#issue']">
-        <xsl:if test="span[normalize-space(@class) = 'titreDossier'] = 'varia'">
+        <xsl:if test="span[normalize-space(@class) = 'titreDossier'] = 'varia |'">
           <xsl:attribute name="horstheme">
             <xsl:value-of>oui</xsl:value-of>
           </xsl:attribute>
@@ -80,7 +80,8 @@
             <xsl:value-of select="count(.//div[normalize-space(@class) = 'footnotes']/ol/li)"/>
           </nbnote>
         </infoarticle>
-        <revue id="" lang="fr">
+        
+        <revue id="sp02131" lang="fr">
           <titrerev>
             <xsl:value-of select="html/head/meta[normalize-space(@name) = 'DC.source']/@content"/>
           </titrerev>
@@ -243,6 +244,23 @@
             </auteur>
           </xsl:for-each>
         </grauteur>
+        
+        
+        <xsl:if test="html/head/meta[normalize-space(@name) = 'DC.description' and normalize-space(@lang) = 'fr']">
+          <resume lang="fr">
+            <alinea>
+              <xsl:apply-templates select="html/head/meta[normalize-space(@name) = 'DC.description' and normalize-space(@lang) = 'fr']/@content"/>
+            </alinea>
+          </resume>
+        </xsl:if>
+        
+        <xsl:if test="html/head/meta[normalize-space(@name) = 'DC.description' and normalize-space(@lang) = 'en']">
+          <resume lang="en">
+            <alinea>
+              <xsl:apply-templates select="html/head/meta[normalize-space(@name) = 'DC.description' and normalize-space(@lang) = 'en']/@content"/>
+            </alinea>
+          </resume>
+        </xsl:if>
 
         <xsl:if test="html/body//div[normalize-space(@class) = 'authorKeywords_fr']">
           <grmotcle lang="fr">
@@ -278,15 +296,7 @@
 
   <xsl:template match="meta" mode="liminaire"/>
 
-  <xsl:template match="meta[normalize-space(@name) = 'DC.description']" mode="liminaire">
-    <resume lang="{@lang}">
-      <alinea>
-        <xsl:apply-templates select="@content"/>
-      </alinea>
-    </resume>
-  </xsl:template>
-
- 
+  
   <xsl:template match="div[normalize-space(@class) = 'article']">
     <corps>
       <xsl:variable name="premEnf" select="*[1][not(self::h2[@id != 'bibliographie'])]"/>
@@ -393,6 +403,9 @@
                 <xsl:value-of
                   select="normalize-space(substring-after(@src, 'media/'))"
                 />
+                <xsl:value-of
+                  select="normalize-space(substring-after(@src, 'Pictures/'))"
+                />
               </xsl:attribute>
               <xsl:attribute name="typeimage">
                 <xsl:value-of>figure</xsl:value-of>
@@ -410,6 +423,34 @@
         </source>
       </xsl:if>
     </figure>
+    </xsl:if>
+  </xsl:template>
+
+
+
+
+  <xsl:template match="//div[normalize-space(@class) = 'article']/p/img">
+    <xsl:if test="//div[normalize-space(@class) = 'article']/p/img">
+          <objetmedia flot="bloc">
+            <xsl:for-each select="//div[normalize-space(@class) = 'article']/p/img">
+              <image>
+                <xsl:attribute name="id">
+                  <xsl:value-of
+                    select="normalize-space(substring-after(@src, 'media/'))"
+                  />
+                  <xsl:value-of
+                    select="normalize-space(substring-after(@src, 'Pictures/'))"
+                  />
+                </xsl:attribute>
+                <xsl:attribute name="typeimage">
+                  <xsl:value-of>figure</xsl:value-of>
+                </xsl:attribute>
+                <xsl:attribute name="xlink:type">
+                  <xsl:value-of>simple</xsl:value-of>
+                </xsl:attribute>
+              </image>
+            </xsl:for-each>
+          </objetmedia>
     </xsl:if>
   </xsl:template>
 
@@ -480,16 +521,26 @@
   <xsl:template match="span">
     <xsl:apply-templates/>
   </xsl:template>
+  
+  <xsl:template match="br">
+    <xsl:apply-templates/>
+  </xsl:template>
 
   <xsl:template match="hr">
     <xsl:apply-templates/>
   </xsl:template>
 
-
   <xsl:template match="a">
-    <liensimple xlink:type="simple" xlink:href="{@href}">
-      <xsl:apply-templates/>
-    </liensimple>
+    <xsl:choose>
+      <xsl:when test="./@href[starts-with(., '#ref-')]">
+        <xsl:apply-templates/>
+      </xsl:when>
+      <xsl:otherwise>
+        <liensimple xlink:type="simple" xlink:href="{@href}">
+          <xsl:apply-templates/>
+        </liensimple>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="*">
@@ -552,8 +603,8 @@
 
   <xsl:template match="div[normalize-space(@class) = 'references']">
     <grbiblio>
-      <alinea>Bibliographie</alinea>
       <biblio>
+        <titre>Bibliographie</titre>
         <xsl:for-each select="div">
           <refbiblio>
             <xsl:apply-templates select="node()"/>
