@@ -403,9 +403,6 @@
                 <xsl:value-of
                   select="normalize-space(substring-after(@src, 'media/'))"
                 />
-                <xsl:value-of
-                  select="normalize-space(substring-after(@src, 'Pictures/'))"
-                />
               </xsl:attribute>
               <xsl:attribute name="typeimage">
                 <xsl:value-of>figure</xsl:value-of>
@@ -423,34 +420,6 @@
         </source>
       </xsl:if>
     </figure>
-    </xsl:if>
-  </xsl:template>
-
-
-
-
-  <xsl:template match="//div[normalize-space(@class) = 'article']/p/img">
-    <xsl:if test="//div[normalize-space(@class) = 'article']/p/img">
-          <objetmedia flot="bloc">
-            <xsl:for-each select="//div[normalize-space(@class) = 'article']/p/img">
-              <image>
-                <xsl:attribute name="id">
-                  <xsl:value-of
-                    select="normalize-space(substring-after(@src, 'media/'))"
-                  />
-                  <xsl:value-of
-                    select="normalize-space(substring-after(@src, 'Pictures/'))"
-                  />
-                </xsl:attribute>
-                <xsl:attribute name="typeimage">
-                  <xsl:value-of>figure</xsl:value-of>
-                </xsl:attribute>
-                <xsl:attribute name="xlink:type">
-                  <xsl:value-of>simple</xsl:value-of>
-                </xsl:attribute>
-              </image>
-            </xsl:for-each>
-          </objetmedia>
     </xsl:if>
   </xsl:template>
 
