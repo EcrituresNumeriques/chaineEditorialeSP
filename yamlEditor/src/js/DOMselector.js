@@ -1,37 +1,26 @@
-import YAML from 'js-yaml';
 import React from 'react';
 import { render } from 'react-dom';
 import YamlEditor from './components/YamlEditor.jsx';
 import _ from 'lodash';
-import {init} from './redux/init.js';
-
+import {init} from './components/default/init.js';
 
 let yaml = document.querySelector("#source");
 //let js = document.querySelector("#result");
 let reactForm = document.querySelector(".app");
 
-let SexyYamlType = new YAML.Type('!sexy', {
-  kind: 'sequence', // See node kinds in YAML spec: http://www.yaml.org/spec/1.2/spec.html#kind//
-  construct: function (data) {
-    return data.map(function (string) { return 'sexy ' + string; });
-  }
-});
-let SEXY_SCHEMA = YAML.Schema.create([ SexyYamlType ]);
-
-function updateYAML(js){
-  yaml.value = YAML.safeDump(js);
+function updateYAML(output){
+  yaml.value = output;
 }
 
 function YAMLupdate(){
   console.log("updating YAML");
-  let jsObj = YAML.load(yaml.value, { schema: SEXY_SCHEMA });
-  renderApp(jsObj);
+  renderApp(yaml.value);
 }
 
 function renderApp(jsObj){
   render(
       <YamlEditor yaml={jsObj} exportChange={updateYAML} rubriques='/json/rubriques.json' transformKeywords='/json/transformKeywords.json'
-      keywords='https://sphub.ecrituresnumeriques.ca/api/keywords/'
+      keywords='https://sphub.ecrituresnumeriques.ca/api/keywords' editor={true}
     />,
     document.querySelector('.app'));
 }
