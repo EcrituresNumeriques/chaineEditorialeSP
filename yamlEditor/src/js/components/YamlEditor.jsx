@@ -9,12 +9,21 @@ import { Rubriques} from './Rubriques.jsx';
 import { ControlledKeywords} from './ControlledKeywords.jsx';
 import { Keywords} from './Keywords.jsx';
 import _ from 'lodash';
-import {init} from '../redux/init.js';
-require('./../redux/rubriques.json');
-require('./../redux/transformKeywords.json');
+import {init} from './default/init.js';
+require('./default/rubriques.json');
+require('./default/transformKeywords.json');
 require('./../../logo.png')
 const removeMd = require('remove-markdown');
 const ST = require('stjs');
+import YAML from 'js-yaml';
+
+let SexyYamlType = new YAML.Type('!sexy', {
+  kind: 'sequence', // See node kinds in YAML spec: http://www.yaml.org/spec/1.2/spec.html#kind//
+  construct: function (data) {
+    return data.map(function (string) { return 'sexy ' + string; });
+  }
+});
+let SEXY_SCHEMA = YAML.Schema.create([ SexyYamlType ]);
 
 
 export default class YamlEditor extends Component {
@@ -29,26 +38,34 @@ export default class YamlEditor extends Component {
 
     //load rubriques if provided
     if(props.rubriques){
+      //check if it is a string(URL) or Object
+      if(typeof props.rubriques == 'string'){
         fetch(props.rubriques)
         .then(function(response) {
-            return response.json();
+          return response.json();
         })
         .then(function(rubriques) {
-            that.updateMisc(rubriques,'rubriques','rubriques');
+          that.updateMisc(rubriques,'rubriques','rubriques');
         });
+      }
+      else if (typeof props.rubriques == 'object') {
+        that.updateMisc(props,'rubriques','rubriques');
+      }
     }
 
-    //load keywords if provided
-    if(props.keywords){
+    //load keywords if provided as an object
+    if(props.keywords && typeof props.keywords == 'object'){
+      console.log("updating keywords");
+    }
+    //load keywords if provided as URL
+    if(props.keywords && typeof props.keywords == 'string'){
         fetch(props.keywords)
         .then(function(response) {
             return response.json();
             //return {}
         })
         .then(function(keywords) {
-
             if(props.transformKeywords){
-
                 fetch(props.transformKeywords)
                 .then(function(response) {
                     return response.json();
@@ -99,11 +116,11 @@ export default class YamlEditor extends Component {
   }
 
   componentWillReceiveProps(nextProp){
-      this.updateState(nextProp.yaml);
+      this.updateState(YAML.load(nextProp.yaml, { schema: SEXY_SCHEMA }));
   }
 
   componentWillUpdate(nextProp,nextState){
-    this.props.exportChange(nextState.obj);
+    this.props.exportChange(YAML.safeDump(nextState.obj));
   }
 
   updateState(value,target = undefined){
@@ -216,18 +233,18 @@ export default class YamlEditor extends Component {
   render(){
     return(
       <section>
-        <TextInput target="id_sp" alias={[{target:'bibliography',prefix:'',suffix:'.bib'}]} title="Identifiant" placeholder="SPxxxx" state={this.state.obj} updateState={this.updateState} />
+        {this.props.editor && <TextInput target="id_sp" alias={[{target:'bibliography',prefix:'',suffix:'.bib'}]} title="Identifiant" placeholder="SPxxxx" state={this.state.obj} updateState={this.updateState} />}
         <TextInput target="title_f" alias={[{target:'title',prefix:'',suffix:'',filterMD:true}]} title="Titre" state={this.state.obj} updateState={this.updateState} />
         <TextInput target="subtitle_f" alias={[{target:'subtitle',prefix:'',suffix:'',filterMD:true}]} title="Sous-titre" state={this.state.obj} updateState={this.updateState} />
-        <Date target="date" title="Date" state={this.state.obj} updateState={this.updateState} />
-        <TextInput target="url_article_sp" title="URL sens public" placeholder="http://sens-public.org/articleXXXX.html" state={this.state.obj} updateState={this.updateState} />
+        {this.props.editor && <Date target="date" title="Date" state={this.state.obj} updateState={this.updateState} />}
+        {this.props.editor && <TextInput target="url_article_sp" title="URL sens public" placeholder="http://sens-public.org/articleXXXX.html" state={this.state.obj} updateState={this.updateState} />}
         <Resumes state={this.state.obj}  updateState={this.updateState} />
-        <Dossier state={this.state.obj} updateState={this.updateState} />
+        {this.props.editor && <Dossier state={this.state.obj} updateState={this.updateState} />}
         <Authors state={this.state.obj} updateState={this.updateState} />
-        <Reviewers state={this.state.obj} updateState={this.updateState} />
-        <ControlledKeywords state={this.state.misc} updateMisc={this.updateMisc} />
+        {this.props.editor && <Reviewers state={this.state.obj} updateState={this.updateState} />}
+        {this.props.editor && <ControlledKeywords state={this.state.misc} updateMisc={this.updateMisc} />}
         <Keywords state={this.state} updateMisc={this.updateMisc} addKeyword={this.addKeyword} removeKeyword={this.removeKeyword} updateState={this.updateState}/>
-        <Rubriques state={this.state.misc} updateMisc={this.updateMisc} />
+        {this.props.editor && <Rubriques state={this.state.misc} updateMisc={this.updateMisc} />}
       </section>
     )
   }
