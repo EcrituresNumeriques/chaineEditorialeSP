@@ -31,7 +31,7 @@
      <meta name="DC.publisher" class="producteurNum" content="$prodnum$" />
      <meta name="DC.publisher" class="diffuseur" content="$diffnum$" />
      <meta name="DC.language" content="$lang$" />
-     <meta name="DC.date" class="completeDate" content="$date$" />
+     <meta name="DC.date" class="completeDate" content="$year$-$month$-$day$" />
      <meta name="DC.date" class="year" content="$year$" />
      <meta name="DC.rights" content="$rights$" />
      <meta name="DC.source" content="$journal$" />
