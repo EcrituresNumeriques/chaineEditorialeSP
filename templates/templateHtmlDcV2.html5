@@ -364,7 +364,7 @@ $if(controlledKeywords)$
 <div class="keywords" vocab="http://purl.org/dc/terms/">
 $for(controlledKeywords)$
 $if(controlledKeywords.label)$
-  <div class="$controlledKeywords.label$" lang="">
+  <div class="$controlledKeywords.label$" lang="fr">
     <span property="subject" class="label">$controlledKeywords.label$</span>,
     <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
     <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
