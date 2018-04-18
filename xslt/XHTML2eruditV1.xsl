@@ -429,8 +429,6 @@
     </listenonord>
   </xsl:template>
 
-
-
   <xsl:template match="ul">
     <listenonord signe="cercle">
       <xsl:apply-templates/>
@@ -445,7 +443,6 @@
       </alinea>
     </elemliste>
   </xsl:template>
-
 
   <xsl:template match="blockquote//p | li//p">
     <alinea>
@@ -482,6 +479,12 @@
   </xsl:template>
 
   <xsl:template match="b">
+    <marquage typemarq="gras">
+      <xsl:apply-templates/>
+    </marquage>
+  </xsl:template>
+  
+  <xsl:template match="strong">
     <marquage typemarq="gras">
       <xsl:apply-templates/>
     </marquage>
