@@ -274,7 +274,6 @@ Schema specialise pour les revues et journaux-->
       <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" class="foaf-author">
        <span property="familyName">$authors.surname$</span>
        <span property="firstName">$authors.forname$</span>
-       <span property="gender">$director.gender$</span>
        <span property="openid">$authors.orcid$</span>
       </div>
      </div>
@@ -288,7 +287,7 @@ Schema specialise pour les revues et journaux-->
       <div vocab="http://xmlns.com/foaf/0.1/" typeof="Person" class="foaf-redactor">
        <span property="familyName">$redacteurDossier.surname$</span>
        <span property="firstName">$redacteurDossier.forname$</span>
-       <span property="gender">$director.gender$</span>
+       <span property="gender">$redacteurDossier.gender$</span>
        <span property="openid">$redacteurDossier.orcid$</span>
       </div>
      </div>
