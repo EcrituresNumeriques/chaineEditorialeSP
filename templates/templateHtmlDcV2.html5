@@ -329,15 +329,15 @@ $endif$
 <!--Indexation editeur-->
        <span resource="#periodical">
          <span property="publisher">$publisher$</span><br />
-         <span property="issn">$issnnum$</span> ;<br />
+         <span property="issn">$issnnum$</span>
        </span>
 
 <!--Indexation revue-->
        <div property="isPartOf" typeof="PublicationIssue" resource="#issue">
          <span typeof="Periodical" resource="#periodical">
-         <span property="name">$journal$</span>,
+         <span property="name">$journal$</span>
          </span>
-         <span property="datePublished">$date$</span>,
+         <span property="datePublished">$date$</span>
 
 <!--Indexation dossier-->
   $if(dossier)$
