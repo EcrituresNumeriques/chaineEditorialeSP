@@ -3,6 +3,7 @@
 \usepackage[french,english]{babel}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage[all]{nowidow}
 \lhead{}
 \chead{$title_f$}
 \rhead{}
