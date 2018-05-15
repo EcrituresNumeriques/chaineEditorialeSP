@@ -300,11 +300,13 @@ $include-before$
 
 $endfor$
 
+$if(toc)$
 \newpage
 
 \thispagestyle{empty}
 \$lang$
 \tableofcontents
+$endif$
 
 $if(lot)$
 \listoftables
