@@ -364,12 +364,12 @@ $if(controlledKeywords)$
 $for(controlledKeywords)$
 $if(controlledKeywords.label)$
   <div class="$controlledKeywords.label$" lang="fr">
-    <span property="subject" class="label">$controlledKeywords.label$</span>,
+    <span property="subject" class="label">$controlledKeywords.label$</span>
 $if(controlledKeywords.uriRameau)$
-    <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
+    <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>
 $endif$
 $if(controlledKeywords.idRameau)$
-    <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
+    <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>
 $endif$
 $if(controlledKeywords.wikidata)$
     <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>
@@ -378,9 +378,9 @@ $endif$
 $endif$
 $if(controlledKeywords.fr)$
   <div class="$controlledKeywords.fr$" lang="fr">
-    <span property="subject" class="label">$controlledKeywords.fr$</span>,
-     <span property="subject" class="idRameau">$controlledKeywords.id$</span>,
-     <span property="subject" class="uriRameau">$controlledKeywords.url$</span>,
+    <span property="subject" class="label">$controlledKeywords.fr$</span>
+     <span property="subject" class="idRameau">$controlledKeywords.id$</span>
+     <span property="subject" class="uriRameau">$controlledKeywords.url$</span>
   </div>
 $endif$
 $endfor$
