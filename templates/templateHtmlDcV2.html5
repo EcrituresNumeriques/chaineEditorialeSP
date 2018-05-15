@@ -87,9 +87,6 @@
   $if(controlledKeywords.label)$
   <meta name="DC.subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
   $endif$
-  $if(controlledKeywords.fr)$
-  <meta name="DC.subject" xml:lang="fr" lang="fr" content="$controlledKeywords.fr$" />
-  $endif$
   $endfor$
   $endif$
 
@@ -205,10 +202,6 @@ Schema specialise pour les revues et journaux-->
   $if(controlledKeywords.label)$
   <meta property="dc:subject" xml:lang="fr" lang="fr" content="$controlledKeywords.label$" />
   <link rel="dc:subject" href="$controlledKeywords.uriRameau$"/>
-  $endif$
-  $if(controlledKeywords.fr)$
-  <meta property="dc:subject" xml:lang="fr" lang="fr" content="$controlledKeywords.fr$" />
-  <link rel="dc:subject" href="$controlledKeywords.url$"/>
   $endif$
   $endfor$
   $endif$
@@ -374,13 +367,6 @@ $endif$
 $if(controlledKeywords.wikidata)$
     <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>
 $endif$
-  </div>
-$endif$
-$if(controlledKeywords.fr)$
-  <div class="$controlledKeywords.fr$" lang="fr">
-    <span property="subject" class="label">$controlledKeywords.fr$</span>
-     <span property="subject" class="idRameau">$controlledKeywords.id$</span>
-     <span property="subject" class="uriRameau">$controlledKeywords.url$</span>
   </div>
 $endif$
 $endfor$
