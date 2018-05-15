@@ -365,9 +365,15 @@ $for(controlledKeywords)$
 $if(controlledKeywords.label)$
   <div class="$controlledKeywords.label$" lang="fr">
     <span property="subject" class="label">$controlledKeywords.label$</span>,
+$if(controlledKeywords.uriRameau)$
     <span property="subject" class="uriRameau">$controlledKeywords.uriRameau$</span>,
+$endif$
+$if(controlledKeywords.idRameau)$
     <span property="subject" class="idRameau">$controlledKeywords.idRameau$</span>,
+$endif$
+$if(controlledKeywords.wikidata)$
     <span property="subject" class="wikidata">$controlledKeywords.wikidata$</span>
+$endif$
   </div>
 $endif$
 $if(controlledKeywords.fr)$
