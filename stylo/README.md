@@ -24,14 +24,16 @@ l'identifiant sera
 4. Il télécharge le html
 5. Il change le nom du fichier bibliographique dans le yaml
 6. Il produit le .tex
-7. Il prodit le pdf
-8. Il donne les infos sur le status git
+7. Il copie les images dans le dossier media (qui doit être dans ../)
+8. Il télécharge les images dans l'article et les mets dans le dossier media (les images doivent avoir url https://i.imgur.com/nomDeLimage.jpg ou jpeg ou png ou bmp ou gif)
+9. Il prodit le pdf
+10. Il donne les infos sur le status git
 
 Après avoir fait tourner le script il reste
 
 1. À télécharger manuellement le xml
 2. git add .
-3 git push
+3. git push
 
 ## Software requis
 Il est nécessaire d'avoir installé (outre pandoc et LaTeX):
