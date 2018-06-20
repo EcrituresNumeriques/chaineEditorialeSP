@@ -26,8 +26,10 @@ l'identifiant sera
 6. Il produit le .tex
 7. Il copie les images dans le dossier media (qui doit être dans ../)
 8. Il télécharge les images dans l'article et les mets dans le dossier media (les images doivent avoir url https://i.imgur.com/nomDeLimage.jpg ou jpeg ou png ou bmp ou gif)
-9. Il prodit le pdf
-10. Il donne les infos sur le status git
+9. Il renomme les images en img1 img2 etc. (sauf les images chrochets et logo).
+10. Il renomme les images dans le md html et tex
+11. Il prodit le pdf
+12. Il donne les infos sur le status git
 
 Après avoir fait tourner le script il reste
 
