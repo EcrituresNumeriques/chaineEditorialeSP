@@ -1,6 +1,6 @@
 \documentclass[12pt,$if(lang)$$babel-lang$,letterpaper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{article}
   \usepackage[utf8]{inputenc}
-\usepackage[french,english]{babel}
+\usepackage[french,english,spanish, italian,portuguese,german,ukrainian,arabic]{babel}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage[all]{nowidow}
@@ -13,6 +13,12 @@
 
 \newcommand{\fr}{\selectlanguage{french}}
 \newcommand{\en}{\selectlanguage{english}}
+\newcommand{\es}{\selectlanguage{spanish}}
+\newcommand{\pt}{\selectlanguage{portuguese}}
+\newcommand{\de}{\selectlanguage{german}}
+\newcommand{\uk}{\selectlanguage{ukrainian}}
+\newcommand{\it}{\selectlanguage{italian}}
+\newcommand{\ar}{\selectlanguage{arabic}}
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
@@ -41,8 +47,6 @@ $if(mathspec)$
 $else$
   \usepackage{unicode-math}
 $endif$
-
-
 
 
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
@@ -285,14 +289,47 @@ $if(keyword_fr_f)$
 $keyword_fr_f$
 $endif$
 
-
 \thispagestyle{empty}
 $if(keyword_en_f)$
 \textbf{Keywords}:
 $keyword_en_f$
 $endif$
 
+\thispagestyle{empty}
+$if(keyword_es_f)$
+\textbf{Keywords}:
+$keyword_es_f$
+$endif$
 
+\thispagestyle{empty}
+$if(keyword_it_f)$
+\textbf{Keywords}:
+$keyword_it_f$
+$endif$
+
+\thispagestyle{empty}
+$if(keyword_pt_f)$
+\textbf{Keywords}:
+$keyword_pt_f$
+$endif$
+
+\thispagestyle{empty}
+$if(keyword_de_f)$
+\textbf{Keywords}:
+$keyword_de_f$
+$endif$
+
+\thispagestyle{empty}
+$if(keyword_uk_f)$
+\textbf{Keywords}:
+$keyword_uk_f$
+$endif$
+
+\thispagestyle{empty}
+$if(keyword_ar_f)$
+\textbf{Keywords}:
+$keyword_ar_f$
+$endif$
 
 
 $for(include-before)$
