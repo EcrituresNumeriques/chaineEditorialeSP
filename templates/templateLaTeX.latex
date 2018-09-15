@@ -1,6 +1,6 @@
 \documentclass[12pt,$if(lang)$$babel-lang$,letterpaper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{article}
   \usepackage[utf8]{inputenc}
-\usepackage[french,english,spanish, italian,portuguese,german,ukrainian,arabic]{babel}
+\usepackage[french,english,spanish,italian,portuguese,german,ukrainian,arabic]{babel}
 \usepackage{epigraph}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -18,7 +18,7 @@
 \newcommand{\pt}{\selectlanguage{portuguese}}
 \newcommand{\de}{\selectlanguage{german}}
 \newcommand{\uk}{\selectlanguage{ukrainian}}
-\newcommand{\it}{\selectlanguage{italian}}
+\newcommand{\ita}{\selectlanguage{italian}}
 \newcommand{\ar}{\selectlanguage{arabic}}
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
