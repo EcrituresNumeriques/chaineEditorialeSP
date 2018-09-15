@@ -390,7 +390,7 @@ div.indexations-foaf{
 div#schema-scholarly-article{
     background-color: #f0f0f0;
     padding: 0.5rem 1rem;
-  	
+
 }
 
 #schema-scholarly-article > span:nth-child(1)::before {
@@ -473,7 +473,7 @@ div.authorKeywords_en{
 div.indexations-foaf:before{
     content:"foaf: ";
     font-style:italic;
-    
+
 }
 div.authorKeywords_fr:before{
     content:"Mot-clefs: ";
@@ -482,6 +482,156 @@ div.authorKeywords_fr:before{
 div.authorKeywords_en:before{
     content:"Keywords: ";
     font-style:italic;
+}
+
+p span.epigraphe {
+  margin-left: 100px;
+  margin-right: 300px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  float: right;
+  font-style: italic;
+}
+
+p span.dedicace {
+  margin-left: 100px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  float: right;
+  font-style: italic;
+}
+
+p span.note {
+  margin-left: 100px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  float: right;
+  font-style: italic;
+}
+
+span.these {
+  background-color: MistyRose;
+}
+
+span.these:hover::before {
+  content: "Thèse: <";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.these:hover::after {
+  content: ">";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.exemple {
+  background-color: PowderBlue;
+}
+
+span.exemple:hover::before {
+  content: "Exemple: <";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.exemple:hover::after {
+  content: ">";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.concept {
+  background-color: Plum;
+}
+
+span.concept:hover::before {
+  content: "Concept clé: <";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.concept:hover::after {
+  content: ">";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.definition {
+  background-color: Peachpuff;
+}
+
+span.definition:hover::before {
+  content: "Définition: <";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.definition:hover::after {
+  content: ">";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.question {
+  background-color: PaleGoldenRod ;
+}
+
+span.question:hover::before {
+  content: "Question: <";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+span.question:hover::after {
+  content: ">";
+  position:relative;
+  color: purple;
+  background-color: whitesmoke;
+  font-size: 1em;
+  padding-left:5px;
+  padding-right:5px;
+}
+
 }
   </style>
 </head>
